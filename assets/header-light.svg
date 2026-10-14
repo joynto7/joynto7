@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title">
+  <title id="title">Joynto Ghosh — Full-stack engineer · AI security</title>
+  <defs>
+    <clipPath id="card"><rect width="1200" height="400" rx="24"/></clipPath>
+    <radialGradient id="glow-teal" gradientUnits="userSpaceOnUse" cx="140" cy="440" r="520">
+      <stop offset="0" stop-color="#14b8a6" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#14b8a6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-indigo" gradientUnits="userSpaceOnUse" cx="1060" cy="-80" r="560">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#0f172a" stroke-opacity="0.07"/>
+    </pattern>
+    <radialGradient id="grid-fade" gradientUnits="userSpaceOnUse" cx="910" cy="210" r="470">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="grid-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="400">
+      <rect width="1200" height="400" fill="url(#grid-fade)"/>
+    </mask>
+    <linearGradient id="name-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0.25" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0d9488"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+    <filter id="glow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <style>
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.2s ease-out infinite; }
+    .dash { animation: dash 1.2s linear infinite; }
+    @keyframes pulse { from { transform: scale(1); opacity: 0.7; } to { transform: scale(2.4); opacity: 0; } }
+    @keyframes dash { to { stroke-dashoffset: -18; } }
+    @media (prefers-reduced-motion: reduce) { .pulse, .dash { animation: none; } .packets { display: none; } }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="400" fill="#f8fafc"/>
+    <rect width="1200" height="400" fill="url(#glow-teal)"/>
+    <rect width="1200" height="400" fill="url(#glow-indigo)"/>
+    <rect width="1200" height="400" fill="url(#grid)" mask="url(#grid-mask)"/>
+  </g>
+  <rect x="0.5" y="0.5" width="1199" height="399" rx="23.5" fill="none" stroke="#0f172a" stroke-opacity="0.1"/>
+
+  <!-- Who -->
+  <g transform="translate(64 92)">
+    <rect width="372" height="36" rx="18" fill="#14b8a6" fill-opacity="0.08" stroke="#0d9488" stroke-opacity="0.35"/>
+    <circle cx="22" cy="18" r="4.5" fill="#10b981"/>
+    <circle class="pulse" cx="22" cy="18" r="4.5" fill="none" stroke="#10b981" stroke-width="2"/>
+    <text x="40" y="23" class="mono" font-size="15" fill="#0f766e">Open to internships &amp; junior roles</text>
+  </g>
+  <text x="60" y="214" class="sans" font-size="78" font-weight="800" letter-spacing="-2" fill="url(#name-fill)">Joynto Ghosh</text>
+  <text x="64" y="264" class="sans" font-size="30" font-weight="600" fill="url(#accent)">Full-stack engineer · AI security</text>
+  <text x="64" y="306" class="sans" font-size="19" fill="#475569">Web platforms · Real-time systems · LLM app security</text>
+
+  <!-- How: a request flows client → api → llm through the security check -->
+  <g fill="none" stroke-width="1.5">
+    <path d="M800 143 H1024" stroke="#64748b" stroke-opacity="0.45"/>
+    <path d="M912 168 V254" stroke="#64748b" stroke-opacity="0.45"/>
+    <path class="dash" d="M998 162 V279 H1024" stroke="#0d9488" stroke-opacity="0.7" stroke-dasharray="4 5"/>
+  </g>
+  <g class="packets">
+    <circle r="4" fill="#6366f1">
+      <animateMotion dur="3.2s" repeatCount="indefinite" path="M800 143 H1024"/>
+      <animate attributeName="fill" values="#6366f1;#6366f1;#0d9488;#0d9488" keyTimes="0;0.87;0.89;1" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#6366f1">
+      <animateMotion dur="3.2s" begin="-1.6s" repeatCount="indefinite" path="M800 143 H1024"/>
+      <animate attributeName="fill" values="#6366f1;#6366f1;#0d9488;#0d9488" keyTimes="0;0.87;0.89;1" dur="3.2s" begin="-1.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="3.5" fill="#d97706">
+      <animateMotion dur="2.6s" repeatCount="indefinite" path="M912 168 V254" keyPoints="0;1;0" keyTimes="0;0.5;1" calcMode="linear"/>
+    </circle>
+  </g>
+
+  <g class="mono">
+    <g transform="translate(680 118)">
+      <rect width="120" height="50" rx="12" fill="#ffffff" stroke="#0f172a" stroke-opacity="0.12"/>
+      <circle cx="18" cy="19" r="3.5" fill="#6366f1"/>
+      <text x="30" y="24" font-size="14" fill="#0f172a">client</text>
+      <text x="18" y="40" font-size="11" fill="#64748b">next.js</text>
+    </g>
+    <g transform="translate(852 118)">
+      <rect width="120" height="50" rx="12" fill="#ffffff" stroke="#0f172a" stroke-opacity="0.12"/>
+      <circle cx="18" cy="19" r="3.5" fill="#0284c7"/>
+      <text x="30" y="24" font-size="14" fill="#0f172a">api</text>
+      <text x="18" y="40" font-size="11" fill="#64748b">node · fastapi</text>
+    </g>
+    <g transform="translate(1024 118)">
+      <rect width="120" height="50" rx="12" fill="#ffffff" stroke="#0f172a" stroke-opacity="0.12"/>
+      <circle cx="18" cy="19" r="3.5" fill="#7c3aed"/>
+      <text x="30" y="24" font-size="14" fill="#0f172a">llm</text>
+      <text x="18" y="40" font-size="11" fill="#64748b">rag · agents</text>
+    </g>
+    <g transform="translate(852 254)">
+      <rect width="120" height="50" rx="12" fill="#ffffff" stroke="#0f172a" stroke-opacity="0.12"/>
+      <circle cx="18" cy="19" r="3.5" fill="#d97706"/>
+      <text x="30" y="24" font-size="14" fill="#0f172a">postgres</text>
+      <text x="18" y="40" font-size="11" fill="#64748b">prisma</text>
+    </g>
+    <g transform="translate(1024 254)">
+      <rect width="120" height="50" rx="12" fill="#f0fdfa" stroke="#0d9488" stroke-opacity="0.5"/>
+      <circle cx="18" cy="19" r="3.5" fill="#0d9488"/>
+      <text x="30" y="24" font-size="14" fill="#134e4a">sentra</text>
+      <text x="18" y="40" font-size="11" fill="#0f766e">scan · retest</text>
+    </g>
+  </g>
+
+  <g transform="translate(998 143)" filter="url(#glow)">
+    <path d="M0 -19 L15 -13.5 V-2 C15 9 8.5 16 0 20 C-8.5 16 -15 9 -15 -2 V-13.5 Z" fill="#ffffff" stroke="#0d9488" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M-6 0.5 L-1.5 5 L6.5 -3.5" fill="none" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

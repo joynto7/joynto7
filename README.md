@@ -1,48 +1,48 @@
-
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561115cb-1649-470a-88ed-2e1189280d52.gif" alt="Banner" width="100%">
-
-<h1 align="center">Hi 👋, I'm Joynto Ghosh</h1>
-<h3 align="center">[Software Engineer]</h3>
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/joynto7/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:jg.contact.me07@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
-  
+<p>
+  <a href="https://joyntoghosh.vercel.app">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+      <img src="assets/header-light.svg" width="100%" alt="Joynto Ghosh — Full-stack engineer · AI security">
+    </picture>
+  </a>
 </p>
 
----
+I'm a Software Engineering student at Daffodil International University who builds full-stack web apps end to end, from real-time IoT dashboards to marketplaces. Right now I'm co-building [Sentra](https://github.com/joynto7/Sentra), a platform that finds and fixes security flaws in AI apps.
 
-### 👨‍💻 About Me
-Write a short introduction about yourself here.
+- **Open to:** software engineering internships and junior full-stack roles, in Dhaka or remote
+- **Education:** BSc in Software Engineering, DIU · graduating December 2027
+- **Competitive programming:** competed in the final of DIU Unlock the Algorithm (Spring 2026), an invite-only ICPC-style contest
+- **Contact:** [Portfolio](https://joyntoghosh.vercel.app) · [LinkedIn](https://www.linkedin.com/in/joynto7/) · [Email](mailto:jg.contact.me07@gmail.com) · [CV](https://joyntoghosh.vercel.app/CV.pdf)
 
-### 🚀 Current Activities
-* 🔭 I’m currently working on a **[Club Connect]**
-* 🌱 I’m currently exploring and learning **[Next js 16 and TypeScript]**
-* 👯 I’m looking to collaborate on **[Open Source / Projects]**
-* 📫 How to reach me: **[jg.contact.me07@gmail.com]**
-* 🌍 Location: **[Dhaka, Bangladesh]**
+### Featured work
 
----
+**[Sentra](https://github.com/joynto7/Sentra)** — AI security testing platform · team of 3<br>
+Tests LLM apps such as chatbots, RAG systems and tool-using agents: maps the attack surface, runs security tests, records evidence, scores risk, and re-tests after fixes.<br>
+<sub>Next.js · TypeScript · FastAPI · PostgreSQL · Celery + Redis · LiteLLM · Docker</sub>
 
-### 💻 Skills & Technologies
-<p align="left">
-  <a href="https://reactjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="50" height="50"/> </a>
-  <a href="https://nextjs.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" alt="nextjs" width="50" height="50"/> </a>
-  <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/> </a>
-  <a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="50" height="50"/> </a>
-  <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="50" height="50"/> </a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/> </a>
-  <a href="https://tailwindcss.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="50" height="50"/> </a>
-  <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="50" height="50"/> </a>
-</p>
+**AgroSync** — real-time smart irrigation dashboard · [Live demo](https://agro-sync-seven.vercel.app/) · [Case study](https://joyntoghosh.vercel.app/case-studies/agrosync)<br>
+Streams soil moisture and temperature from ESP32 sensors, lets users start watering remotely, and stores history in PostgreSQL for trend charts.<br>
+<sub>ESP32 · MQTT · Socket.IO · Next.js · Express · Prisma · PostgreSQL</sub>
 
----
+**FixItNow** — home-services marketplace · [Live demo](https://fixitnow-frontend-peach.vercel.app) · [Frontend](https://github.com/joynto7/fixitnow-frontend) · [API](https://github.com/joynto7/fixitnow-backend)<br>
+Customers book a technician for a time slot and pay with Stripe or SSLCommerz. Technicians manage their availability and jobs, and admins moderate the platform.<br>
+<sub>Next.js · TanStack Query · Express · TypeScript · Prisma · PostgreSQL · Stripe</sub>
 
-### 📊 GitHub Stats & Streak
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=[YourGitHubUsername]&show_icons=true&theme=radical&hide_border=true" alt="Your GitHub Stats" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ArafatSany7&theme=radical&hide_border=true" alt="Your GitHub Streak" width="48%" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=[YourGitHubUsername]&layout=compact&theme=radical&hide_border=true" alt="Top Languages" width="48%" />
-</p>
+**[Occasio](https://github.com/joynto7/Novi)** — event discovery and booking · [Live demo](https://client-eight-rho-92.vercel.app)<br>
+People find, book and review events. Organizers and admins manage everything from role-based dashboards with analytics.<br>
+<sub>Next.js 16 · Tailwind CSS v4 · Express · Prisma · PostgreSQL · JWT</sub>
+
+**Also:** [SurplusBid](https://github.com/joynto7/surplusbid-backend) (auction backend with Stripe deposit holds) · [Club Connect](https://club-connect-rust.vercel.app) (university clubs platform) · [DevPulse](https://github.com/joynto7/devpulse) (bug-tracker API) · [Network Traffic Analyzer](https://github.com/joynto7/network-analysis) (Python packet sniffer)
+
+### Tech
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
