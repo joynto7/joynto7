@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="56" height="120" viewBox="0 0 56 120" role="img" aria-label="LinkedIn">
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="100" viewBox="0 0 56 100" role="img" aria-label="LinkedIn">
   <title>LinkedIn</title>
   <defs>
 
@@ -9,6 +9,7 @@
 .float { animation: float 7s ease-in-out infinite; }
 .lift { transform-box: fill-box; transform-origin: center; animation: lift 6s ease-in-out infinite; }
 .bob { animation: bob 5s ease-in-out infinite; }
+.bob2 { animation: bob 7.5s ease-in-out infinite; }
 .pulse { animation: pulse 3.2s ease-in-out infinite; }
 .twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 2.8s ease-in-out infinite; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
@@ -19,6 +20,6 @@
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-<circle cx="28" cy="60" r="22" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.22"/>
-<rect x="18" y="50" width="20" height="20" rx="4" fill="#e2e8f0"/><text x="21.4" y="66" class="sans" font-size="13.5" font-weight="800" fill="#0b1020">in</text>
+<circle cx="28" cy="50" r="22" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.24"/>
+<rect x="18" y="40" width="20" height="20" rx="4" fill="#e2e8f0"/><text x="21.4" y="56" class="sans" font-size="13.5" font-weight="800" fill="#0b1020">in</text>
 </svg>

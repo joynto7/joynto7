@@ -1,19 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="554" height="362" viewBox="0 0 554 362" role="img" aria-label="AgroSync — Smart Irrigation Dashboard">
-  <title>AgroSync — Smart Irrigation Dashboard</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="588" height="404" viewBox="0 0 588 404" role="img" aria-label="02 AgroSync — Smart Irrigation Dashboard">
+  <title>02 AgroSync — Smart Irrigation Dashboard</title>
   <defs>
 <linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset="1" stop-color="#f6f8fc" stop-opacity="1"/></linearGradient>
 <radialGradient id="wash" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="380"><stop offset="0" stop-color="#10b981" stop-opacity="0.12"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
-<radialGradient id="wash2" gradientUnits="userSpaceOnUse" cx="534" cy="342" r="300"><stop offset="0" stop-color="#10b981" stop-opacity="0.06"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+<radialGradient id="wash2" gradientUnits="userSpaceOnUse" cx="568" cy="384" r="300"><stop offset="0" stop-color="#10b981" stop-opacity="0.07"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
 <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#047857" stop-opacity="1"/><stop offset="1" stop-color="#10b981" stop-opacity="1"/></linearGradient>
-<radialGradient id="tileGlow" gradientUnits="userSpaceOnUse" cx="50" cy="86" r="58"><stop offset="0" stop-color="#10b981" stop-opacity="0.33"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
-<radialGradient id="thumbGlow" gradientUnits="userSpaceOnUse" cx="98" cy="68" r="121.52"><stop offset="0" stop-color="#10b981" stop-opacity="0.22"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+<radialGradient id="tileGlow" gradientUnits="userSpaceOnUse" cx="53" cy="95" r="60"><stop offset="0" stop-color="#10b981" stop-opacity="0.33"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+<radialGradient id="thumbGlow" gradientUnits="userSpaceOnUse" cx="100" cy="70" r="124"><stop offset="0" stop-color="#10b981" stop-opacity="0.22"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
 <radialGradient id="phoneGlow" gradientUnits="userSpaceOnUse" cx="28" cy="54" r="64.8"><stop offset="0" stop-color="#10b981" stop-opacity="0.25"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
 <linearGradient id="glare" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.7"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
-<clipPath id="card"><rect x="0" y="0" width="534" height="342" rx="20"/></clipPath>
-<clipPath id="thumbClip"><rect x="0" y="0" width="196" height="136" rx="10"/></clipPath>
+<clipPath id="card"><rect x="0" y="0" width="568" height="384" rx="20"/></clipPath>
+<clipPath id="thumbClip"><rect x="0" y="0" width="200" height="140" rx="10"/></clipPath>
 <clipPath id="phoneClip"><rect x="3" y="3" width="50" height="102" rx="8"/></clipPath>
 <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
-<symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
 <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
 <symbol id="i-espressif" viewBox="0 0 24 24"><path d="M12.926 19.324a7.6 7.6 0 00-2.983-6.754 7.44 7.44 0 00-3.828-1.554.697.697 0 01-.606-.731.674.674 0 01.743-.617 8.97 8.97 0 018 9.805 7.828 7.828 0 01-.298 1.542l1.989.56a11.039 11.039 0 001.714-.651 12.159 12.159 0 00.217-2.343A12.57 12.57 0 007.212 6.171a5.53 5.53 0 00-2 0 4.354 4.354 0 00-2.16 1.337 4.274 4.274 0 001.909 6.856 9.896 9.896 0 001.074.195 4.011 4.011 0 013.337 3.954 3.965 3.965 0 01-.64 2.16l1.371.88a10.182 10.182 0 002.057.342 7.52 7.52 0 00.754-2.628m.16 4.73A13.073 13.073 0 01.001 10.983 12.982 12.982 0 013.83 1.737l.743.697a12.067 12.067 0 000 17.141 12.067 12.067 0 0017.141 0l.697.697a12.97 12.97 0 01-9.336 3.726M24 10.993A10.993 10.993 0 0012.949 0c-.389 0-.766 0-1.143.057l-.252.732a18.912 18.912 0 0111.588 11.576l.731-.263c0-.366.069-.732.069-1.143m-1.269 5.165A17.53 17.53 0 007.818 1.27a11.119 11.119 0 00-2.457 1.77v1.635A13.919 13.919 0 0119.268 18.57h1.634a11.713 11.713 0 001.771-2.446M7.92 17.884a1.691 1.691 0 11-1.69-1.691 1.691 1.691 0 011.69 1.691"/></symbol>
 <symbol id="i-mqtt" viewBox="0 0 24 24"><path d="M10.657 23.994h-9.45A1.212 1.212 0 0 1 0 22.788v-9.18h.071c5.784 0 10.504 4.65 10.586 10.386Zm7.606 0h-4.045C14.135 16.246 7.795 9.977 0 9.942V6.038h.071c9.983 0 18.121 8.044 18.192 17.956Zm4.53 0h-.97C21.754 12.071 11.995 2.407 0 2.372v-1.16C0 .55.544.006 1.207.006h7.64C15.733 2.49 21.257 7.789 24 14.508v8.291c0 .663-.544 1.195-1.207 1.195ZM16.713.006h6.092A1.19 1.19 0 0 1 24 1.2v5.914c-.91-1.242-2.046-2.65-3.158-3.762C19.588 2.11 18.122.987 16.714.005Z"/></symbol>
@@ -29,6 +28,7 @@
 .float { animation: float 7s ease-in-out infinite; }
 .lift { transform-box: fill-box; transform-origin: center; animation: lift 6s ease-in-out infinite; }
 .bob { animation: bob 5s ease-in-out infinite; }
+.bob2 { animation: bob 7.5s ease-in-out infinite; }
 .pulse { animation: pulse 3.2s ease-in-out infinite; }
 .twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 2.8s ease-in-out infinite; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
@@ -37,47 +37,49 @@
 @keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
 @keyframes twinkle { 0%, 100% { opacity: 0.25; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1.15); } }
 .run { animation: run 7s linear infinite; }
-@keyframes run { to { stroke-dashoffset: -1717.66; } }
+@keyframes run { to { stroke-dashoffset: -1869.66; } }
 .glare { animation: glare 9s ease-in-out infinite; }
-@keyframes glare { 0% { transform: translateX(0); } 60%, 100% { transform: translateX(1094px); } }
+@keyframes glare { 0% { transform: translateX(0); } 60%, 100% { transform: translateX(1128px); } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 <g transform="translate(10 10)"><g class="float" style="animation-delay: -1.75s">
-<rect width="534" height="342" rx="20" fill="none" stroke="#10b981" stroke-width="12" stroke-opacity="0.03"/>
-<rect width="534" height="342" rx="20" fill="none" stroke="#10b981" stroke-width="7" stroke-opacity="0.04"/>
-<rect width="534" height="342" rx="20" fill="none" stroke="#10b981" stroke-width="3" stroke-opacity="0.09"/>
-<rect width="534" height="342" rx="20" fill="url(#body)"/>
-<rect width="534" height="342" rx="20" fill="url(#wash)"/>
-<rect width="534" height="342" rx="20" fill="url(#wash2)"/>
-<g clip-path="url(#card)"><g class="glare"><rect x="-260" y="-342" width="170" height="1026" fill="url(#glare)" transform="rotate(18 -175 171)"/></g></g>
-<rect x="0.5" y="0.5" width="533" height="341" rx="19.5" fill="none" stroke="#10b981" stroke-opacity="0.45" stroke-width="1.3"/>
-<rect class="run" width="534" height="342" rx="20" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-dasharray="110 1607.66"/>
-<path d="M6 26 V12 a6 6 0 0 1 6 -6 H26 M508 336 H522 a6 6 0 0 0 6 -6 V316" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9"/>
-<rect x="20.5" y="18.5" width="127" height="25" rx="12.5" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity="0.55"/>
-<g class="twinkle"><use href="#i-star" x="30" y="25" width="12" height="12" fill="#059669" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<text x="48" y="35.4" class="sans" font-size="12.5" font-weight="600" fill="#059669">IoT / AgriTech</text>
-<text x="514" y="35.5" class="sans" font-size="12.5" text-anchor="end" fill="#64748b">Dashboard</text>
-<circle class="pulse" cx="50" cy="86" r="58" fill="url(#tileGlow)"/>
-<rect x="20" y="56" width="60" height="60" rx="15.6" fill="url(#tile)"/>
-<rect x="20.5" y="56.5" width="59" height="59" rx="15.1" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
-<path d="M35.6 57.5 H64.4" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
-<use href="#i-leaf" x="35" y="71" width="30" height="30" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="96" y="85" class="sans" font-size="25" font-weight="700" letter-spacing="-0.3" fill="#0f172a" data-max="208">AgroSync</text>
-<text x="96" y="109" class="sans" font-size="15" fill="#475569" data-max="208">Smart Irrigation Dashboard</text>
-<text x="20" y="146" class="sans" font-size="14.5" fill="#475569" data-max="280">Streams soil moisture and temperature</text>
-<text x="20" y="167" class="sans" font-size="14.5" fill="#475569" data-max="280">from ESP32 sensors, lets users start</text>
-<text x="20" y="188" class="sans" font-size="14.5" fill="#475569" data-max="280">watering remotely, and stores history in</text>
-<text x="20" y="209" class="sans" font-size="14.5" fill="#475569" data-max="280">PostgreSQL for trend charts.</text>
-<g transform="translate(20 256)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-espressif" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="49">ESP32</text></g>
-<g transform="translate(109 256)"><rect x="0.5" y="0.5" width="76" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-mqtt" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="45">MQTT</text></g>
-<g transform="translate(194 256)"><rect x="0.5" y="0.5" width="98" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-socketdotio" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="67">Socket.IO</text></g>
-<g transform="translate(301 256)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-nextdotjs" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="49">Next.js</text></g>
-<g transform="translate(390 256)"><rect x="0.5" y="0.5" width="88" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-express" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="57">Express</text></g>
-<g transform="translate(20 292)"><rect x="0.5" y="0.5" width="81" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-prisma" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="50">Prisma</text></g>
-<g transform="translate(110 292)"><rect x="0.5" y="0.5" width="113" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-postgresql" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="82">PostgreSQL</text></g>
-<g class="lift" style="animation-delay: -1.3s"><g transform="translate(318 54)"><rect x="-18" y="-18" width="232" height="172" rx="26" fill="url(#thumbGlow)"/>
-<rect width="196" height="136" rx="10" fill="#0b1020"/>
-<g clip-path="url(#thumbClip)"><g transform="translate(0 14) scale(1.11)"><rect width="176" height="117" fill="#08110e"/>
+<rect width="568" height="384" rx="20" fill="none" stroke="#10b981" stroke-width="12" stroke-opacity="0.03"/>
+<rect width="568" height="384" rx="20" fill="none" stroke="#10b981" stroke-width="7" stroke-opacity="0.04"/>
+<rect width="568" height="384" rx="20" fill="none" stroke="#10b981" stroke-width="3" stroke-opacity="0.09"/>
+<rect width="568" height="384" rx="20" fill="url(#body)"/>
+<rect width="568" height="384" rx="20" fill="url(#wash)"/>
+<rect width="568" height="384" rx="20" fill="url(#wash2)"/>
+<g clip-path="url(#card)"><g class="glare"><rect x="-260" y="-384" width="170" height="1152" fill="url(#glare)" transform="rotate(18 -175 192)"/></g></g>
+<rect x="0.5" y="0.5" width="567" height="383" rx="19.5" fill="none" stroke="#10b981" stroke-opacity="0.45" stroke-width="1.3"/>
+<rect class="run" width="568" height="384" rx="20" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-dasharray="110 1759.66"/>
+<path d="M6 26 V12 a6 6 0 0 1 6 -6 H26 M542 378 H556 a6 6 0 0 0 6 -6 V358" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9"/>
+<text x="22" y="40" class="sans" font-size="17" font-weight="700" fill="#0f172a">02</text>
+<rect x="52.72728000000001" y="23.5" width="126" height="23" rx="11.5" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-opacity="0.55"/>
+<text x="64.23" y="38.8" class="sans" font-size="11" font-weight="700" letter-spacing="0.8" fill="#059669">IOT / AGRITECH</text>
+<circle class="pulse" cx="53" cy="95" r="60" fill="url(#tileGlow)"/>
+<rect x="22" y="64" width="62" height="62" rx="16.12" fill="url(#tile)"/>
+<rect x="22.5" y="64.5" width="61" height="61" rx="15.62" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M38.12 65.5 H67.88" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
+<use href="#i-leaf" x="37.5" y="79.5" width="31" height="31" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="102" y="94" class="sans" font-size="26" font-weight="700" letter-spacing="-0.3" fill="#0f172a" data-max="230">AgroSync</text>
+<text x="102" y="119" class="sans" font-size="15" fill="#475569" data-max="230">Smart Irrigation Dashboard</text>
+<text x="22" y="170" class="sans" font-size="14.5" fill="#475569" data-max="304">Streams soil moisture and temperature from</text>
+<text x="22" y="191" class="sans" font-size="14.5" fill="#475569" data-max="304">ESP32 sensors, lets users start watering</text>
+<text x="22" y="212" class="sans" font-size="14.5" fill="#475569" data-max="304">remotely, and stores history in PostgreSQL</text>
+<text x="22" y="233" class="sans" font-size="14.5" fill="#475569" data-max="304">for trend charts.</text>
+<g transform="translate(22 298)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-espressif" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="49">ESP32</text></g>
+<g transform="translate(111 298)"><rect x="0.5" y="0.5" width="76" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-mqtt" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="45">MQTT</text></g>
+<g transform="translate(196 298)"><rect x="0.5" y="0.5" width="98" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-socketdotio" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="67">Socket.IO</text></g>
+<g transform="translate(303 298)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-nextdotjs" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="49">Next.js</text></g>
+<g transform="translate(22 334)"><rect x="0.5" y="0.5" width="88" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-express" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="57">Express</text></g>
+<g transform="translate(119 334)"><rect x="0.5" y="0.5" width="81" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-prisma" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="50">Prisma</text></g>
+<g transform="translate(209 334)"><rect x="0.5" y="0.5" width="113" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-postgresql" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="82">PostgreSQL</text></g>
+<g class="pulse"><use href="#i-leaf" x="524" y="298" width="22" height="22" fill="none" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="546" y="342" class="sans" font-size="12.5" font-weight="500" text-anchor="end" fill="#059669" data-max="104">Smarter Farming</text>
+<text x="546" y="358" class="sans" font-size="12.5" font-weight="500" text-anchor="end" fill="#059669" data-max="104">Greener Future</text>
+<g class="lift" style="animation-delay: -1.3s"><g transform="translate(346 24)"><rect x="-18" y="-18" width="236" height="176" rx="26" fill="url(#thumbGlow)"/>
+<rect width="200" height="140" rx="10" fill="#0b1020"/>
+<g clip-path="url(#thumbClip)"><g transform="translate(0 14) scale(1.14)"><rect width="176" height="117" fill="#08110e"/>
 <rect width="34" height="117" fill="#0c1a15"/>
 <rect x="9" y="8" width="16" height="16" rx="4" fill="#059669"/>
 <use href="#i-leaf" x="12" y="11" width="10" height="10" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -100,10 +102,10 @@
 <text x="48" y="106" class="sans" font-size="5.4" font-weight="600" fill="#d1fae5">Pump</text>
 <text x="66" y="106" class="sans" font-size="4.6" fill="#8aa39a">Watering · 4 min left</text>
 <rect x="148" y="100.5" width="15" height="7" rx="3.5" fill="#10b981"/><circle cx="159.5" cy="104" r="2.6" fill="#ffffff"/></g></g>
-<path d="M0 10 a10 10 0 0 1 10 -10 H186 a10 10 0 0 1 10 10 V14 H0 Z" fill="#141c36"/>
+<path d="M0 10 a10 10 0 0 1 10 -10 H190 a10 10 0 0 1 10 10 V14 H0 Z" fill="#141c36"/>
 <circle cx="10" cy="7" r="2.2" fill="#f87171"/><circle cx="17.5" cy="7" r="2.2" fill="#fbbf24"/><circle cx="25" cy="7" r="2.2" fill="#34d399"/>
-<rect x="40" y="4" width="116" height="6" rx="3" fill="#ffffff" fill-opacity="0.08"/>
-<rect x="0.5" y="0.5" width="195" height="135" rx="9.5" fill="none" stroke="#10b981" stroke-opacity="0.6"/></g></g>
+<rect x="40" y="4" width="120" height="6" rx="3" fill="#ffffff" fill-opacity="0.08"/>
+<rect x="0.5" y="0.5" width="199" height="139" rx="9.5" fill="none" stroke="#10b981" stroke-opacity="0.6"/></g></g>
 
 </g></g>
 </svg>

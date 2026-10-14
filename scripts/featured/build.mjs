@@ -4,13 +4,13 @@
  *
  * GitHub strips CSS and scripts from READMEs, so every block is an SVG image in
  * assets/featured/ (a light and a dark variant, switched with <picture>). Each SVG animates
- * itself with CSS — floating layers at different depths, a glare sweep, a light running
- * round the border — which survives because GitHub serves the SVG as an image.
+ * itself with CSS — the coder scene in the hero, floating card layers, a glare sweep, a light
+ * running round each border — which survives because GitHub serves the SVG as an image.
  *
- * Layout: 1200 SVG units span the README width, so widths become percentages. All rows
- * after the hero sit in one <p> as align="top" images with no whitespace between them, so
- * they stack with no gaps and the timeline rail on the left reads as one line. Buttons are
- * separate images so each can carry its own link.
+ * Layout: 1200 SVG units span the README width, so widths become percentages. Rows inside a
+ * <p> are align="top" images with no whitespace between them, so they stack with no gaps (the
+ * "More Projects" frame is drawn across three rows). Buttons are separate images so each can
+ * carry its own link.
  *
  * Add or edit projects in projects.json (see README.md next to this file), then run:
  *   node scripts/featured/build.mjs
@@ -45,21 +45,37 @@ const ACCENTS = {
 const THEMES = {
   dark: {
     name: "dark", glow: 1, cardTop: "#111a35", cardBottom: "#0a0f20", borderOpacity: 0.55,
-    title: "#f8fafc", body: "#aeb8cc", muted: "#8a94aa", faint: "#5c6780",
+    title: "#f8fafc", body: "#aeb8cc", muted: "#8a94aa", faint: "#5c6780", greeting: "#cbd5e1",
     chipFill: ["#ffffff", 0.04], chipStroke: ["#ffffff", 0.12], chipText: "#d6deea", chipIcon: "#c3cddc",
-    outlineFill: ["#ffffff", 0.03], outlineStroke: ["#ffffff", 0.22], outlineText: "#e2e8f0",
-    rail: ["#3b82f6", "#8b5cf6"], railOpacity: 0.65, circleFill: "#0b1020",
-    eyebrow: "#60a5fa", gradient: ["#60a5fa", "#a78bfa"], glare: ["#ffffff", 0.1],
-    panel: "#0d1530", panelStroke: 0.55, note: "#cbd5e1", mountains: ["#1e293b", "#111827"],
+    outlineFill: ["#ffffff", 0.04], outlineStroke: ["#ffffff", 0.24], outlineText: "#e2e8f0",
+    cyan: "#22d3ee", sub: "#93c5fd", gradient: ["#22d3ee", "#a78bfa"], glare: ["#ffffff", 0.1],
+    frame: ["#6366f1", 0.45], note: "#cbd5e1",
   },
   light: {
     name: "light", glow: 0.55, cardTop: "#ffffff", cardBottom: "#f6f8fc", borderOpacity: 0.45,
-    title: "#0f172a", body: "#475569", muted: "#64748b", faint: "#94a3b8",
+    title: "#0f172a", body: "#475569", muted: "#64748b", faint: "#94a3b8", greeting: "#475569",
     chipFill: ["#f1f5f9", 1], chipStroke: ["#0f172a", 0.1], chipText: "#334155", chipIcon: "#475569",
     outlineFill: ["#ffffff", 1], outlineStroke: ["#0f172a", 0.2], outlineText: "#0f172a",
-    rail: ["#2563eb", "#7c3aed"], railOpacity: 0.45, circleFill: "#ffffff",
-    eyebrow: "#2563eb", gradient: ["#2563eb", "#7c3aed"], glare: ["#ffffff", 0.7],
-    panel: "#ffffff", panelStroke: 0.4, note: "#475569", mountains: ["#cbd5e1", "#e2e8f0"],
+    cyan: "#0891b2", sub: "#1d4ed8", gradient: ["#0891b2", "#7c3aed"], glare: ["#ffffff", 0.7],
+    frame: ["#6366f1", 0.35], note: "#475569",
+  },
+};
+
+/** The hero is a night scene in dark mode and a dawn scene in light mode. */
+const SCENES = {
+  dark: {
+    sky: ["#050816", "#0b1030", "#2a1552"], glow: ["#f97316", "#a855f7"], glowOpacity: 0.42,
+    back: ["#3b2f7a", "#0b1030"], front: ["#1b1846", "#050816"], rock: ["#16213f", "#030712"], rim: "#38bdf8",
+    overlay: "#050816", overlayOpacity: 0.97, star: "#ffffff", starOpacity: 1, border: ["#ffffff", 0.08],
+    glass: ["#0ea5e9", 0.08], glassStroke: ["#38bdf8", 0.6], glassText: "#e2e8f0", glassMuted: "#94a3b8",
+    card: ["#0b1020", 0.86], figure: "#060a16", cta: ["#06b6d4", "#3b82f6", "#8b5cf6"],
+  },
+  light: {
+    sky: ["#e0f2fe", "#ede9fe", "#fde7d6"], glow: ["#fb923c", "#c084fc"], glowOpacity: 0.38,
+    back: ["#a5b4fc", "#dbe4ff"], front: ["#7c83db", "#b4bcf5"], rock: ["#3b4a63", "#1e293b"], rim: "#0ea5e9",
+    overlay: "#ffffff", overlayOpacity: 0.95, star: "#6366f1", starOpacity: 0.35, border: ["#0f172a", 0.08],
+    glass: ["#ffffff", 0.62], glassStroke: ["#3b82f6", 0.45], glassText: "#0f172a", glassMuted: "#64748b",
+    card: ["#ffffff", 0.9], figure: "#0f172a", cta: ["#0891b2", "#2563eb", "#7c3aed"],
   },
 };
 
@@ -67,30 +83,31 @@ const SANS = `-apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvet
 const HAND = `"Segoe Print", "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive`;
 
 const PAGE_W = 1200;
-const RAIL_W = 72;
-const COL_GAP = 20;
-const CARD_W = (PAGE_W - RAIL_W - COL_GAP) / 2;
-const TILE_GAP = 14;
-const TILE_W = Math.floor((PAGE_W - RAIL_W - 3 * TILE_GAP) / 4);
-const PANEL_W = PAGE_W - RAIL_W;
-const SOCIAL_W = 56;
-const SOCIAL_GAP = 14;
+const CARD_W = 588;
+const COL_GAP = 24;
+const EDGE_W = 24;
+const TILE_GAP = 16;
+const TILE_W = (PAGE_W - 2 * EDGE_W - 3 * TILE_GAP) / 4;
+const TECH_NOTE_W = 190;
+const TECH_GAP = 20;
 
-const CARD = { inset: 10, pad: 20, tile: 60, radius: 20, thumbW: 196, thumbH: 136, bar: 14, descSize: 14.5, descLine: 21 };
+const CARD = { inset: 10, pad: 22, tile: 62, radius: 20, thumbW: 200, thumbH: 140, bar: 14, descSize: 14.5, descLine: 21, mottoW: 104 };
 const PHONE = { w: 56, h: 108 };
 const CHIP = { h: 28, gap: 8, size: 12.5, icon: 13 };
-const BTN = { top: 8, h: 40, bottom: 16, size: 14.5, gap: 10 };
-const TILE = { inset: 8, h: 112, icon: 44 };
+const LINK = { top: 6, h: 34, bottom: 12, size: 14.5, gap: 10 };
+const CTA = { top: 14, h: 46, size: 15.5 };
+const TILE = { inset: 6, h: 104, icon: 50 };
+const SOCIAL = { w: 56, h: 100 };
 
 // ---------------------------------------------------------------- content
 
 const LINK_ORDER = ["live", "source", "case", "api", "docs"];
-const BUTTONS = {
-  live: { label: "Live demo", icon: "arrow", primary: true },
-  source: { label: "Source", icon: "github" },
-  case: { label: "Case study", icon: "book" },
-  api: { label: "API", icon: "github" },
-  docs: { label: "Docs", icon: "book" },
+const LINKS = {
+  live: { label: "Live demo", icon: "external", trail: "arrow" },
+  source: { label: "Source", icon: "github", trail: "external" },
+  case: { label: "Case study", icon: "book", trail: "arrow" },
+  api: { label: "API", icon: "github", trail: "external" },
+  docs: { label: "Docs", icon: "book", trail: "arrow" },
 };
 
 /** Drawn stand-ins for apps without a public screen to capture. */
@@ -105,9 +122,9 @@ function check(condition, message) {
   process.exit(1);
 }
 
-function checkLook(item) {
-  check(ACCENTS[item.accent], `${item.name ?? item.title}: accent "${item.accent}" is not one of ${Object.keys(ACCENTS).join(", ")}`);
-  check(PROJECT_ICONS.includes(item.icon), `${item.name ?? item.title}: icon "${item.icon}" is not one of ${PROJECT_ICONS.join(", ")}`);
+function checkLook(item, label = item.name ?? item.title) {
+  check(ACCENTS[item.accent], `${label}: accent "${item.accent}" is not one of ${Object.keys(ACCENTS).join(", ")}`);
+  check(PROJECT_ICONS.includes(item.icon), `${label}: icon "${item.icon}" is not one of ${PROJECT_ICONS.join(", ")}`);
 }
 
 const FEATURED = DATA.featured.map((p) => {
@@ -117,7 +134,7 @@ const FEATURED = DATA.featured.map((p) => {
   check(unknown.length === 0, `${p.name}: link types must be ${LINK_ORDER.join(", ")} (got ${unknown.join(", ")})`);
   const links = LINK_ORDER.filter((kind) => p.links?.[kind]).map((kind) => [kind, p.links[kind]]);
   check(links.length > 0, `${p.name}: add at least one link (${LINK_ORDER.join(", ")})`);
-  return { ...p, slug: slugify(p.name), links, tech: p.tech ?? [] };
+  return { ...p, slug: slugify(p.name), links, tech: p.tech ?? [], motto: p.motto ?? [] };
 });
 
 const OTHERS = DATA.others.map((o) => {
@@ -128,8 +145,11 @@ const OTHERS = DATA.others.map((o) => {
 
 const TECH_GROUPS = DATA.techStack.map((group) => {
   checkLook(group);
+  check(!group.corner || PROJECT_ICONS.includes(group.corner), `${group.title}: corner icon "${group.corner}" is not one of ${PROJECT_ICONS.join(", ")}`);
   return group;
 });
+
+checkLook(DATA.hero.workingOn, "hero.workingOn");
 
 const PROJECT_COUNT = FEATURED.length + OTHERS.length;
 const TECH_COUNT = new Set(TECH_GROUPS.flatMap((group) => group.tech.map((tech) => tech.toLowerCase()))).size;
@@ -175,7 +195,7 @@ function techIcon(tech) {
 // system font, so measurements carry a safety margin and anything tight logs a warning.
 const REGULAR = [278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584];
 const BOLD = [278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584];
-const OTHER_GLYPHS = { "·": 278, "—": 1000, "→": 1000, "°": 400 };
+const OTHER_GLYPHS = { "·": 278, "•": 350, "—": 1000, "→": 1000, "°": 400 };
 const SAFETY = 1.07;
 
 function textWidth(text, size, weight = 400, spacing = 0) {
@@ -207,6 +227,16 @@ function wrap(text, size, maxWidth, weight = 400) {
   return lines;
 }
 
+/** Deterministic pseudo-random numbers, so rebuilding without changes produces identical files. */
+function seeded(seed) {
+  return () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
 // ---------------------------------------------------------------- svg helpers
 
 const n = (value) => Number(value.toFixed(2));
@@ -220,6 +250,7 @@ const BASE_CSS = `.sans { font-family: ${SANS}; }
 .float { animation: float 7s ease-in-out infinite; }
 .lift { transform-box: fill-box; transform-origin: center; animation: lift 6s ease-in-out infinite; }
 .bob { animation: bob 5s ease-in-out infinite; }
+.bob2 { animation: bob 7.5s ease-in-out infinite; }
 .pulse { animation: pulse 3.2s ease-in-out infinite; }
 .twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 2.8s ease-in-out infinite; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
@@ -264,8 +295,13 @@ function useIcon(name, x, y, size, color, { filled = false, width = 2 } = {}) {
   return `<use href="#i-${name}" x="${n(x)}" y="${n(y)}" width="${size}" height="${size}" ${colors}/>`;
 }
 
-const linear = (id, [from, to], { x2 = 1, y2 = 1, fromOpacity = 1, toOpacity = 1 } = {}) =>
-  `<linearGradient id="${id}" x1="0" y1="0" x2="${x2}" y2="${y2}"><stop offset="0" stop-color="${from}" stop-opacity="${fromOpacity}"/><stop offset="1" stop-color="${to}" stop-opacity="${toOpacity}"/></linearGradient>`;
+function linear(id, colors, { x2 = 1, y2 = 1, fromOpacity = 1, toOpacity = 1, units = "" } = {}) {
+  const stops = colors.map((color, i) => {
+    const opacity = i === 0 ? fromOpacity : i === colors.length - 1 ? toOpacity : 1;
+    return `<stop offset="${n(i / (colors.length - 1))}" stop-color="${color}" stop-opacity="${opacity}"/>`;
+  });
+  return `<linearGradient id="${id}"${units} x1="0" y1="0" x2="${x2}" y2="${y2}">${stops.join("")}</linearGradient>`;
+}
 
 const radial = (id, color, opacity, cx, cy, r) =>
   `<radialGradient id="${id}" gradientUnits="userSpaceOnUse" cx="${n(cx)}" cy="${n(cy)}" r="${n(r)}"><stop offset="0" stop-color="${color}" stop-opacity="${n(opacity)}"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></radialGradient>`;
@@ -408,21 +444,21 @@ function agrosyncScreen() {
   ].join("\n");
 }
 
-/** Placeholder app window for projects without a thumbnail, tinted with the project's accent. Drawn at 196×122. */
+/** Placeholder app window for projects without a thumbnail, tinted with the project's accent. Drawn at 200×126. */
 function genericScreen(p, a) {
-  const points = [30, 26, 28, 20, 23, 15, 18, 11, 14].map((v, i) => `${n(52 + i * 16.5)},${58 + v}`);
+  const points = [30, 26, 28, 20, 23, 15, 18, 11, 14].map((v, i) => `${n(54 + i * 16.8)},${60 + v}`);
   return [
-    `<rect width="196" height="122" fill="#0a0f1d"/>`,
-    `<rect width="38" height="122" fill="${a.deep}" fill-opacity="0.25"/>`,
+    `<rect width="200" height="126" fill="#0a0f1d"/>`,
+    `<rect width="38" height="126" fill="${a.deep}" fill-opacity="0.25"/>`,
     `<rect x="10" y="9" width="18" height="18" rx="5" fill="${a.base}"/>`,
     useIcon(p.icon, 13, 12, 12, "#ffffff"),
     ...[0, 1, 2, 3, 4].map((i) => `<rect x="10" y="${38 + i * 12}" width="18" height="5" rx="2.5" fill="${i === 0 ? a.base : "#1e293b"}"/>`),
     text(48, 18, p.name, { size: 8, weight: 700, fill: "#e2e8f0" }),
-    ...[0, 1, 2].map((i) => `<rect x="${n(48.5 + i * 47)}" y="26.5" width="41" height="24" rx="4" fill="#ffffff" fill-opacity="0.04" stroke="${a.base}" stroke-opacity="0.35"/><rect x="${n(54 + i * 47)}" y="33" width="18" height="3" rx="1.5" fill="#64748b"/><rect x="${n(54 + i * 47)}" y="40" width="${24 - i * 4}" height="5" rx="2.5" fill="${a.onDark}"/>`),
-    `<rect x="48.5" y="56.5" width="139" height="40" rx="4" fill="#ffffff" fill-opacity="0.03" stroke="#1e293b"/>`,
-    `<path d="M${points.join(" L")} L184,96 L52,96 Z" fill="${a.base}" fill-opacity="0.18"/>`,
+    ...[0, 1, 2].map((i) => `<rect x="${n(48.5 + i * 48)}" y="26.5" width="42" height="24" rx="4" fill="#ffffff" fill-opacity="0.04" stroke="${a.base}" stroke-opacity="0.35"/><rect x="${n(54 + i * 48)}" y="33" width="18" height="3" rx="1.5" fill="#64748b"/><rect x="${n(54 + i * 48)}" y="40" width="${24 - i * 4}" height="5" rx="2.5" fill="${a.onDark}"/>`),
+    `<rect x="48.5" y="58.5" width="143" height="40" rx="4" fill="#ffffff" fill-opacity="0.03" stroke="#1e293b"/>`,
+    `<path d="M${points.join(" L")} L188,98 L54,98 Z" fill="${a.base}" fill-opacity="0.18"/>`,
     `<polyline points="${points.join(" ")}" fill="none" stroke="${a.onDark}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`,
-    ...[0, 1].map((i) => `<rect x="48.5" y="${102.5 + i * 9}" width="139" height="6" rx="3" fill="#ffffff" fill-opacity="0.04"/>`),
+    ...[0, 1].map((i) => `<rect x="48.5" y="${105.5 + i * 9}" width="143" height="6" rx="3" fill="#ffffff" fill-opacity="0.04"/>`),
   ].join("\n");
 }
 
@@ -453,167 +489,263 @@ function thumbnail(p, a) {
 
 // ---------------------------------------------------------------- hero
 
-function heroSvg(t) {
-  const hero = DATA.hero;
-  const eyebrowWidth = textWidth(hero.eyebrow, 14, 700, 4);
-  const firstWidth = textWidth("Featured ", 66, 800, -1.6);
-  const wordWidth = textWidth("Work", 66, 800, -1.6);
-  const lines = wrap(hero.description, 20, 540);
-  const descY = 178;
-  const statsY = descY + (lines.length - 1) * 28 + 44;
-  const height = statsY + 44 + 52;
+/** Hooded coder sitting on a rock with a laptop, lit by the screen. Drawn facing right in a 200×200 box. */
+function coder(s) {
+  const code = [[10, "#a5f3fc"], [24, "#e0f2fe"], [16, "#c4b5fd"], [28, "#a5f3fc"], [12, "#86efac"]];
+  return `<circle cx="104" cy="110" r="118" fill="url(#halo)"/>
+<g class="breathe"><path d="M40 180 C 26 150, 28 116, 46 96 C 58 86, 82 84, 98 94 C 112 104, 118 128, 114 152 C 112 166, 104 176, 96 180 Z" fill="${s.figure}"/>
+<path d="M46 100 C 38 84, 40 60, 50 44 L56 26 L66 33 C 74 27, 84 25, 94 27 C 106 30, 114 42, 117 56 C 120 72, 115 86, 105 95 C 92 106, 64 108, 46 100 Z" fill="${s.figure}"/>
+<path d="M98 40 C 110 47, 115 62, 112 76 C 110 86, 104 93, 98 96 C 101 86, 102 70, 98 56 C 97 50, 97 45, 98 40 Z" fill="#000000" fill-opacity="0.6"/>
+<path d="M96 38 C 110 44, 117 60, 113 78 C 111 87, 106 93, 99 97" fill="none" stroke="${s.rim}" stroke-opacity="0.75" stroke-width="2.2" stroke-linecap="round"/>
+<path d="M104 60 C 106 66, 106 74, 103 80" fill="none" stroke="${s.rim}" stroke-opacity="0.35" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M98 94 C 112 104, 118 128, 114 152" fill="none" stroke="${s.rim}" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/></g>
+<path d="M60 170 C 86 166, 118 160, 150 162" fill="none" stroke="${s.figure}" stroke-width="24" stroke-linecap="round"/>
+<path d="M150 162 C 160 172, 164 184, 166 196" fill="none" stroke="${s.figure}" stroke-width="18" stroke-linecap="round"/>
+<ellipse cx="172" cy="199" rx="13" ry="5" fill="${s.figure}"/>
+<path d="M66 154 C 92 150, 120 146, 150 150" fill="none" stroke="${s.rim}" stroke-opacity="0.3" stroke-width="2" stroke-linecap="round"/>
+<path d="M100 104 C 114 118, 124 132, 142 140" fill="none" stroke="${s.figure}" stroke-width="16" stroke-linecap="round"/>
+<path d="M106 100 C 120 112, 130 126, 146 133" fill="none" stroke="${s.rim}" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round"/>
+<circle class="flicker" cx="150" cy="126" r="70" fill="url(#screenGlow)"/>
+<polygon points="118,152 186,147 188,152 120,157" fill="#1e293b"/>
+<polygon points="120,152 114,106 174,100 186,147" fill="url(#screen)"/>
+<g class="flicker">${code.map(([w, color], i) => `<rect x="${124 + (i % 2) * 6}" y="${113 + i * 7}" width="${w}" height="2.6" rx="1.3" fill="${color}" fill-opacity="0.9" transform="skewY(-6)"/>`).join("")}</g>`;
+}
 
-  const stats = [["box", `${PROJECT_COUNT}+`, "Projects"], ["cpu", `${TECH_COUNT}+`, "Technologies"], ["badge", "100%", "Passion"]];
-  let x = 4;
-  const statParts = stats.map(([icon, value, label], i) => {
-    const width = 44 + 14 + Math.max(textWidth(value, 20, 700), textWidth(label, 13.5)) + 30;
-    const part = `${i ? `<path d="M${n(x - 16)} ${statsY + 4} V${statsY + 40}" stroke="${t.faint}" stroke-opacity="0.5"/>` : ""}
-<rect x="${n(x + 0.5)}" y="${statsY + 0.5}" width="43" height="43" rx="11" fill="${t.eyebrow}" fill-opacity="0.1" stroke="${t.eyebrow}" stroke-opacity="0.45"/>
-${useIcon(icon, x + 11, statsY + 11, 22, t.eyebrow)}
-${text(x + 58, statsY + 19, value, { size: 20, weight: 700, fill: t.title })}
-${text(x + 58, statsY + 39, label, { size: 13.5, fill: t.muted })}`;
-    x += width;
+function holoPanel(x, y, w, h, skew, rows, s, { delay = 0, cls = "bob", typing = -1 } = {}) {
+  const lines = rows.map((row, i) => {
+    let cx = 10;
+    return row.map(([width, color], j) => {
+      const bar = `<rect${i === typing && j === row.length - 1 ? ` class="type"` : ""} x="${cx}" y="${22 + i * 11}" width="${width}" height="4.5" rx="2.25" fill="${color}" fill-opacity="0.85"/>`;
+      cx += width + 5;
+      return bar;
+    }).join("");
+  }).join("");
+  return `<g class="${cls}" style="animation-delay: ${delay}s"><g transform="translate(${x} ${y}) skewY(${skew})">
+<rect width="${w}" height="${h}" rx="10" ${paint("fill", s.glass)} ${paint("stroke", s.glassStroke)} stroke-width="1.3"/>
+<rect x="1.5" y="1.5" width="${w - 3}" height="${h - 3}" rx="9" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+<circle cx="10" cy="10" r="2.2" fill="#f87171"/><circle cx="17" cy="10" r="2.2" fill="#fbbf24"/><circle cx="24" cy="10" r="2.2" fill="#34d399"/>
+${lines}</g></g>`;
+}
+
+const ROLES_SEPARATOR = "  •  ";
+
+function heroSvg(t) {
+  const s = SCENES[t.name];
+  const hero = DATA.hero;
+  const work = hero.workingOn;
+  const x0 = 56;
+  const [first, second] = hero.name;
+  const firstWidth = textWidth(first, 72, 800, -2);
+  const secondWidth = textWidth(second ?? "", 72, 800, -2);
+  const desc = wrap(hero.description, 17.5, 470);
+  const descY = 250;
+  const statsY = descY + (desc.length - 1) * 27 + 42;
+  const H = Math.max(statsY + 42 + 46, 470);
+  const W = PAGE_W;
+  const random = seeded(7);
+
+  const stars = Array.from({ length: 46 }, () => {
+    const x = 600 + random() * 590;
+    const y = 10 + random() * 250;
+    const r = 0.6 + random() * 1.1;
+    return `<circle class="twinkle" style="animation-delay: -${n(random() * 3)}s; animation-duration: ${n(2 + random() * 3)}s" cx="${n(x)}" cy="${n(y)}" r="${n(r)}" fill="${s.star}" fill-opacity="${s.starOpacity}"/>`;
+  });
+  const fireflies = Array.from({ length: 10 }, (_, i) => {
+    const x = 760 + random() * 250;
+    const y = 250 + random() * 110;
+    return `<circle class="rise" style="animation-delay: -${n(random() * 6)}s" cx="${n(x)}" cy="${n(y)}" r="${n(1.4 + random() * 1.2)}" fill="${i % 2 ? "#22d3ee" : "#c084fc"}"/>`;
+  });
+
+  const roles = hero.roles.map((role, i) => `${i ? `<tspan fill="${t.cyan}">${ROLES_SEPARATOR}</tspan>` : ""}${esc(role)}`).join("");
+  const rolesWidth = textWidth(hero.roles.join(ROLES_SEPARATOR), 17);
+  if (rolesWidth > 520) console.warn("warning: hero roles may not fit");
+
+  let sx = x0;
+  const stats = [["box", `${PROJECT_COUNT}+`, "Projects"], ["cpu", `${TECH_COUNT}+`, "Technologies"], ["badge", "100%", "Passion"]].map(([icon, value, label], i) => {
+    const width = 42 + 14 + Math.max(textWidth(value, 19, 700), textWidth(label, 13)) + 30;
+    const part = `${i ? `<path d="M${n(sx - 16)} ${statsY + 4} V${statsY + 38}" stroke="${t.faint}" stroke-opacity="0.5"/>` : ""}
+<rect x="${n(sx + 0.5)}" y="${statsY + 0.5}" width="41" height="41" rx="11" fill="${t.cyan}" fill-opacity="0.1" stroke="${t.cyan}" stroke-opacity="0.45"/>
+${useIcon(icon, sx + 10.5, statsY + 10.5, 20, t.cyan)}
+${text(sx + 56, statsY + 18, value, { size: 19, weight: 700, fill: t.title })}
+${text(sx + 56, statsY + 37, label, { size: 13, fill: t.muted })}`;
+    sx += width;
     return part;
   });
 
-  const panel = (px, py, w, h, content, cls, delay, stroke = "#3b82f6") =>
-    `<g class="${cls}" style="animation-delay: ${delay}s"><g transform="translate(${px} ${py}) skewY(-6)">
-<rect width="${w}" height="${h}" rx="12" fill="${t.panel}" fill-opacity="0.94" stroke="${stroke}" stroke-opacity="${t.panelStroke}" stroke-width="1.4"/>
-${content}</g></g>`;
+  const workAccent = ACCENTS[work.accent];
+  const workLines = wrap(work.detail, 11.5, 116);
+  const workH = 70 + workLines.length * 14;
+  const workY = H - workH - 22;
 
-  const codeRows = [[[18, "#c084fc"], [46, "#60a5fa"], [24, "#34d399"]], [[30, "#60a5fa"], [60, "#94a3b8"]], [[12, "#f472b6"], [38, "#fbbf24"], [30, "#60a5fa"]],
-    [[52, "#34d399"], [26, "#c084fc"]], [[20, "#60a5fa"], [70, "#94a3b8"]], [[36, "#fbbf24"], [22, "#f472b6"], [28, "#34d399"]], [[44, "#c084fc"], [40, "#60a5fa"]], [[26, "#94a3b8"], [34, "#34d399"]]];
-  const code = `<circle cx="16" cy="14" r="3" fill="#f87171"/><circle cx="26" cy="14" r="3" fill="#fbbf24"/><circle cx="36" cy="14" r="3" fill="#34d399"/>
-${codeRows.map((row, i) => {
-  let cx = 30;
-  return `<circle cx="17" cy="${36 + i * 14}" r="1.6" fill="${t.faint}"/>` + row.map(([w, color]) => {
-    const bar = `<rect x="${cx}" y="${33 + i * 14}" width="${w}" height="6" rx="3" fill="${color}" fill-opacity="0.9"/>`;
-    cx += w + 6;
-    return bar;
-  }).join("");
-}).join("\n")}`;
-  const chart = `${[18, 30, 22, 38, 28].map((h, i) => `<rect x="${14 + i * 13}" y="${56 - h}" width="8" height="${h}" rx="2" fill="url(#bars)"/>`).join("")}
-<rect x="12" y="10" width="34" height="5" rx="2.5" fill="${t.faint}"/>`;
-  const list = [0, 1, 2, 3].map((i) => `<circle cx="18" cy="${18 + i * 19}" r="5" fill="${["#60a5fa", "#a78bfa", "#34d399", "#f472b6"][i]}" fill-opacity="0.85"/><rect x="30" y="${14 + i * 19}" width="${80 - i * 9}" height="4" rx="2" fill="${t.faint}"/><rect x="30" y="${21 + i * 19}" width="${50 - i * 5}" height="3" rx="1.5" fill="${t.faint}" fill-opacity="0.6"/>`).join("");
-  const front = `<rect x="12" y="12" width="60" height="6" rx="3" fill="${t.title}" fill-opacity="0.75"/>
-<rect x="12" y="24" width="40" height="4" rx="2" fill="${t.faint}"/>
-<path d="M12 84 L36 70 L58 76 L82 56 L104 62 L128 44 L150 50" fill="none" stroke="#34d399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 84 L36 70 L58 76 L82 56 L104 62 L128 44 L150 50 V96 H12 Z" fill="#34d399" fill-opacity="0.14"/>
-<rect x="116" y="12" width="36" height="16" rx="8" fill="#3b82f6" fill-opacity="0.85"/><circle cx="144" cy="20" r="5" fill="#ffffff"/>`;
+  const panels = [
+    holoPanel(588, 66, 150, 104, 6, [[[18, "#c084fc"], [44, "#60a5fa"], [22, "#34d399"]], [[30, "#60a5fa"], [56, "#94a3b8"]], [[12, "#f472b6"], [36, "#fbbf24"], [28, "#60a5fa"]], [[50, "#34d399"], [24, "#c084fc"]], [[22, "#60a5fa"], [60, "#94a3b8"]], [[36, "#fbbf24"], [20, "#f472b6"]], [[44, "#c084fc"], [34, "#60a5fa"]]], s, { delay: 0, typing: 3 }),
+    holoPanel(646, 214, 112, 78, 6, [[[30, "#22d3ee"], [40, "#94a3b8"]], [[18, "#a78bfa"], [50, "#60a5fa"]], [[44, "#34d399"]], [[26, "#fbbf24"], [30, "#94a3b8"]], [[38, "#60a5fa"]]], s, { delay: -2.4, cls: "bob2" }),
+    holoPanel(764, 38, 128, 90, -3, [[[24, "#60a5fa"], [48, "#94a3b8"]], [[14, "#f472b6"], [40, "#22d3ee"], [20, "#a78bfa"]], [[56, "#34d399"]], [[30, "#fbbf24"], [36, "#60a5fa"]], [[20, "#a78bfa"], [50, "#94a3b8"]], [[40, "#22d3ee"]]], s, { delay: -1.2, typing: 5 }),
+    holoPanel(926, 34, 154, 106, -7, [[[16, "#c084fc"], [52, "#60a5fa"], [26, "#34d399"]], [[34, "#22d3ee"], [58, "#94a3b8"]], [[24, "#fbbf24"], [40, "#60a5fa"]], [[60, "#34d399"], [22, "#f472b6"]], [[30, "#a78bfa"], [44, "#94a3b8"]], [[46, "#60a5fa"], [28, "#fbbf24"]], [[38, "#22d3ee"]]], s, { delay: -3.3, cls: "bob2", typing: 6 }),
+    holoPanel(1040, 186, 100, 70, -9, [[[26, "#a78bfa"], [40, "#94a3b8"]], [[44, "#22d3ee"]], [[18, "#fbbf24"], [34, "#60a5fa"]], [[36, "#34d399"]]], s, { delay: -0.8 }),
+  ];
 
-  const note = wrap(hero.note, 18, 128);
   const defs = [
-    `<linearGradient id="word" gradientUnits="userSpaceOnUse" x1="${n(firstWidth)}" y1="0" x2="${n(firstWidth + wordWidth)}" y2="0"><stop offset="0" stop-color="${t.gradient[0]}"/><stop offset="1" stop-color="${t.gradient[1]}"/></linearGradient>`,
-    linear("rule", [t.eyebrow, t.eyebrow], { y2: 0, toOpacity: 0 }),
-    linear("ring", ["#3b82f6", "#a855f7"], { y2: 0 }),
-    linear("codeTile", ["#1d4ed8", "#6366f1"]),
-    linear("bars", ["#a78bfa", "#3b82f6"], { x2: 0 }),
-    linear("prismA", ["#c4b5fd", "#8b5cf6"]),
-    linear("prismB", ["#7c3aed", "#4c1d95"]),
-    linear("prismC", ["#a78bfa", "#6d28d9"], { x2: 0 }),
-    radial("platform", "#3b82f6", 0.32 * t.glow + 0.08, 905, 282, 260),
-    radial("tileGlow", "#6366f1", 0.55, 932, 78, 70),
-    radial("prismGlow", "#a855f7", 0.5, 1052, 236, 70),
-    iconSymbols(["box", "cpu", "badge", "code"]),
+    `<clipPath id="heroClip"><rect width="${W}" height="${H}" rx="24"/></clipPath>`,
+    linear("sky", s.sky, { x2: 0 }),
+    linear("overlay", [s.overlay, s.overlay, s.overlay], { y2: 0, fromOpacity: s.overlayOpacity, toOpacity: 0 }),
+    `<radialGradient id="horizon" gradientUnits="userSpaceOnUse" cx="1080" cy="300" r="380"><stop offset="0" stop-color="${s.glow[0]}" stop-opacity="${s.glowOpacity}"/><stop offset="0.45" stop-color="${s.glow[1]}" stop-opacity="${n(s.glowOpacity * 0.55)}"/><stop offset="1" stop-color="${s.glow[1]}" stop-opacity="0"/></radialGradient>`,
+    linear("aurora", ["#22d3ee", "#6366f1", "#a855f7"], { y2: 0 }),
+    linear("back", s.back, { x2: 0 }),
+    linear("front", s.front, { x2: 0 }),
+    linear("rock", s.rock, { x2: 0 }),
+    `<radialGradient id="planet" cx="0.35" cy="0.35" r="0.8"><stop offset="0" stop-color="#bfdbfe"/><stop offset="1" stop-color="#1d4ed8"/></radialGradient>`,
+    radial("halo", "#22d3ee", t.name === "dark" ? 0.16 : 0.12, 104, 110, 118),
+    radial("screenGlow", "#22d3ee", 0.55, 150, 126, 70),
+    linear("screen", ["#0e7490", "#22d3ee"]),
+    `<linearGradient id="name" gradientUnits="userSpaceOnUse" x1="${n(x0 + firstWidth)}" y1="0" x2="${n(x0 + firstWidth + secondWidth)}" y2="0"><stop offset="0" stop-color="${t.gradient[0]}"/><stop offset="1" stop-color="${t.gradient[1]}"/></linearGradient>`,
+    linear("workTile", [workAccent.deep, workAccent.base]),
+    linear("progress", ["#22d3ee", "#a855f7"], { y2: 0 }),
+    `<clipPath id="track"><rect x="14" y="${workH - 18}" width="154" height="5" rx="2.5"/></clipPath>`,
+    iconSymbols(["box", "cpu", "badge", work.icon]),
   ].join("\n");
+
+  const css = `.drift { animation: drift 16s ease-in-out infinite; }
+.drift.slow { animation-duration: 23s; animation-direction: reverse; }
+@keyframes drift { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-40px); } }
+.flicker { animation: flicker 4s ease-in-out infinite; }
+@keyframes flicker { 0%, 100% { opacity: 0.75; } 45% { opacity: 1; } 50% { opacity: 0.82; } 55% { opacity: 1; } }
+.rise { animation: rise 6s ease-in-out infinite; }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-46px); opacity: 0; } }
+.type { transform-box: fill-box; transform-origin: left center; animation: type 3.6s steps(12) infinite; }
+@keyframes type { 0% { transform: scaleX(0.05); } 70%, 100% { transform: scaleX(1); } }
+.shimmer { animation: shimmer 2.8s ease-in-out infinite; }
+@keyframes shimmer { 0% { transform: translateX(-70px); } 100% { transform: translateX(170px); } }
+.wheel { animation: wheel 1.8s ease-in-out infinite; }
+@keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(7px); opacity: 0; } 100% { transform: translateY(0); opacity: 0; } }
+.breathe { transform-box: fill-box; transform-origin: center bottom; animation: breathe 5s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.015); } }`;
 
   const body = [
-    text(4, 44, hero.eyebrow, { size: 14, weight: 700, spacing: 4, fill: t.eyebrow }),
-    `<rect x="${n(4 + eyebrowWidth + 12)}" y="38.5" width="60" height="2" rx="1" fill="url(#rule)"/>`,
-    `<text x="0" y="126" class="sans" font-size="66" font-weight="800" letter-spacing="-1.6" fill="${t.title}">Featured <tspan fill="url(#word)">Work</tspan></text>`,
-    ...lines.map((line, i) => text(4, descY + i * 28, line, { size: 20, fill: t.body, max: 560 })),
-    ...statParts,
-    `<rect x="4" y="${statsY + 74}" width="72" height="2" rx="1" fill="url(#rule)"/>`,
-    // art: platform, orbit rings, floating panels
-    `<ellipse cx="905" cy="282" rx="260" ry="60" fill="url(#platform)"/>`,
-    `<ellipse class="orbit" cx="905" cy="276" rx="272" ry="66" fill="none" stroke="url(#ring)" stroke-width="2" stroke-dasharray="10 14"/>`,
-    `<ellipse class="orbit slow" cx="905" cy="270" rx="206" ry="46" fill="none" stroke="${t.title}" stroke-opacity="0.14" stroke-dasharray="3 9"/>`,
-    panel(612, 214, 150, 92, list, "bob", -2.4),
-    panel(676, 96, 236, 150, code, "bob", 0),
-    panel(978, 116, 84, 66, chart, "bob", -1.2, "#8b5cf6"),
-    panel(790, 196, 166, 104, front, "bob", -3.4),
-    `<circle class="pulse" cx="932" cy="78" r="66" fill="url(#tileGlow)"/>`,
-    `<g class="bob" style="animation-delay: -1.8s"><g transform="translate(892 38) skewY(-6)"><rect width="80" height="80" rx="20" fill="url(#codeTile)"/><rect x="0.5" y="0.5" width="79" height="79" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.3"/>${useIcon("code", 18, 18, 44, "#ffffff", { width: 2.2 })}</g></g>`,
-    `<circle class="pulse" cx="1052" cy="236" r="70" fill="url(#prismGlow)"/>`,
-    `<g class="lift" style="animation-delay: -0.7s"><g transform="translate(1022 192)"><path d="M30 0 L60 30 L30 34 Z" fill="url(#prismA)"/><path d="M30 0 L0 30 L30 34 Z" fill="url(#prismC)"/><path d="M0 30 L30 34 L30 92 Z" fill="url(#prismB)"/><path d="M60 30 L30 34 L30 92 Z" fill="url(#prismA)" fill-opacity="0.85"/></g></g>`,
-    `<g class="bob" style="animation-delay: -0.9s"><rect x="1078" y="70" width="14" height="14" rx="3" fill="#60a5fa" transform="rotate(45 1085 77)"/></g>`,
-    `<g class="bob" style="animation-delay: -3.1s"><rect x="958" y="44" width="10" height="10" rx="2" fill="#a78bfa" transform="rotate(45 963 49)"/></g>`,
-    `<g class="bob" style="animation-delay: -2.2s"><rect x="1146" y="300" width="12" height="12" rx="3" fill="#3b82f6" fill-opacity="0.8" transform="rotate(45 1152 306)"/></g>`,
-    sparkle(640, 70, 7, "#93c5fd", 0), sparkle(1130, 44, 6, "#c4b5fd", -1.1), sparkle(760, 336, 5, "#93c5fd", -0.5), sparkle(1176, 250, 6, "#f0abfc", -1.8), sparkle(860, 20, 4, "#e0e7ff", -2.2),
-    `<g transform="translate(1072 112) rotate(-10)">${note.map((line, i) => text(0, i * 22, line, { size: 18, fill: t.note, cls: "hand" })).join("")}</g>`,
-    `<path class="draw" d="M1154 ${112 + note.length * 22 - 4} C 1172 ${142 + note.length * 22}, 1150 ${166 + note.length * 22}, 1108 ${170 + note.length * 22}" fill="none" stroke="${t.note}" stroke-width="1.6" stroke-linecap="round"/>`,
-    `<path d="M1117 ${163 + note.length * 22} L1107 ${170 + note.length * 22} L1118 ${176 + note.length * 22}" fill="none" stroke="${t.note}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
+    `<g clip-path="url(#heroClip)">`,
+    `<rect width="${W}" height="${H}" fill="url(#sky)"/>`,
+    `<rect width="${W}" height="${H}" fill="url(#horizon)"/>`,
+    ...stars,
+    `<circle cx="742" cy="30" r="12" fill="url(#planet)"/><circle cx="742" cy="30" r="20" fill="#60a5fa" fill-opacity="0.08"/>`,
+    `<g class="drift"><path d="M560 128 C 680 64, 780 158, 900 96 S 1120 44, 1240 112" fill="none" stroke="url(#aurora)" stroke-width="38" stroke-linecap="round" stroke-opacity="${t.name === "dark" ? 0.16 : 0.12}"/></g>`,
+    `<g class="drift slow"><path d="M600 188 C 720 136, 840 210, 960 160 S 1140 118, 1240 170" fill="none" stroke="url(#aurora)" stroke-width="22" stroke-linecap="round" stroke-opacity="${t.name === "dark" ? 0.12 : 0.1}"/></g>`,
+    `<path d="M520 ${H} L520 330 L600 300 L660 320 L720 280 L790 310 L850 270 L920 300 L990 262 L1060 296 L1120 270 L1200 300 L1200 ${H} Z" fill="url(#back)"/>`,
+    `<rect x="520" y="318" width="680" height="60" fill="#ffffff" fill-opacity="${t.name === "dark" ? 0.04 : 0.18}"/>`,
+    `<path d="M560 ${H} L560 362 L640 342 L700 358 L760 332 L820 352 L880 338 L960 354 L1040 332 L1110 350 L1200 338 L1200 ${H} Z" fill="url(#front)"/>`,
+    `<rect width="760" height="${H}" fill="url(#overlay)"/>`,
+    ...panels,
+    `<path d="M690 ${H} L718 412 L760 384 L800 377 L840 371 L900 367 L960 373 L1000 387 L1030 410 L1062 ${H} Z" fill="url(#rock)"/>`,
+    `<path d="M718 412 L760 384 L800 377 L840 371 L900 367 L960 373 L1000 387 L1030 410" fill="none" stroke="${s.rim}" stroke-opacity="0.35" stroke-width="1.5" stroke-linejoin="round"/>`,
+    `<g transform="translate(758 140) scale(1.3)">${coder(s)}</g>`,
+    ...fireflies,
+    `<g class="bob" style="animation-delay: -2.2s"><g transform="translate(1086 66) rotate(-12)"><rect width="104" height="84" rx="12" ${paint("fill", s.glass)} ${paint("stroke", s.glassStroke)} stroke-width="1.3"/>${hero.note.map((line, i) => text(52, 27 + i * 21, line, { size: 16, fill: s.glassText, anchor: "middle", cls: "hand" })).join("")}</g></g>`,
+    `<g class="bob2" style="animation-delay: -1s"><g transform="translate(1000 ${workY})">
+<rect width="182" height="${workH}" rx="14" ${paint("fill", s.card)} stroke="#6366f1" stroke-opacity="0.5"/>
+<circle class="pulse" cx="17" cy="19" r="3.5" fill="#22c55e"/>
+${text(27, 23, "Working On", { size: 11.5, fill: s.glassMuted })}
+<rect x="14" y="34" width="30" height="30" rx="8" fill="url(#workTile)"/>
+${useIcon(work.icon, 21, 41, 16, "#ffffff")}
+${text(54, 47, work.title, { size: 14, weight: 700, fill: s.glassText, max: 116 })}
+${workLines.map((line, i) => text(54, 62 + i * 14, line, { size: 11.5, fill: s.glassMuted, max: 120 })).join("")}
+<rect x="14" y="${workH - 18}" width="154" height="5" rx="2.5" fill="${s.glassMuted}" fill-opacity="0.25"/>
+<g clip-path="url(#track)"><rect class="shimmer" x="14" y="${workH - 18}" width="70" height="5" rx="2.5" fill="url(#progress)"/></g>
+</g></g>`,
+    text(600, H - 40, "Scroll", { size: 10.5, fill: s.glassMuted, anchor: "middle" }),
+    `<rect x="593" y="${H - 32}" width="14" height="22" rx="7" fill="none" stroke="${s.glassMuted}" stroke-opacity="0.8"/>`,
+    `<circle class="wheel" cx="600" cy="${H - 25}" r="1.8" fill="${s.glassMuted}"/>`,
+    `</g>`,
+    `<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="23.5" fill="none" ${paint("stroke", s.border)}/>`,
+    text(x0, 92, hero.greeting, { size: 22, fill: t.greeting }),
+    `<text x="${x0 - 3}" y="164" class="sans" font-size="72" font-weight="800" letter-spacing="-2" fill="${t.title}">${esc(first)}<tspan fill="url(#name)">${esc(second ?? "")}</tspan></text>`,
+    `<text x="${x0}" y="204" class="sans" font-size="17" fill="${t.muted}">${roles}</text>`,
+    ...desc.map((line, i) => text(x0, descY + i * 27, line, { size: 17.5, fill: t.body, max: 500 })),
+    ...stats,
   ].join("\n");
-
-  const css = `.orbit { animation: orbit 14s linear infinite; }
-.orbit.slow { animation-duration: 22s; animation-direction: reverse; }
-@keyframes orbit { to { stroke-dashoffset: -240; } }
-.draw { stroke-dasharray: 130; animation: draw 6s ease-in-out infinite; }
-@keyframes draw { 0% { stroke-dashoffset: 130; } 40%, 80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -130; } }`;
-  return svgDoc(PAGE_W, height, `Featured Work — ${hero.description}`, defs, body, css);
+  return svgDoc(W, H, `${hero.greeting} ${hero.name.join("")} — ${hero.roles.join(", ")}`, defs, body, css);
 }
 
-// ---------------------------------------------------------------- timeline pieces
+const ctaWidth = (kind) => Math.ceil(22 + (kind === "contact" ? 17 + 9 : 0) + textWidth(DATA.hero.buttons[kind].label, CTA.size, 600) + (kind === "projects" ? 12 + 16 : 0) + 22);
 
-function sectionSvg(number, section, t, { first = false, linkLabel } = {}) {
-  const height = 104;
-  const cx = RAIL_W / 2;
-  const cy = 60;
-  const r = 24;
-  const defs = [linear("rail", t.rail, { x2: 0 }), linear("ringStroke", t.rail), iconSymbols(linkLabel ? ["arrow"] : [])].join("\n");
-  const body = [
-    first ? "" : `<rect x="${cx - 1}" y="0" width="2" height="${cy - r - 4}" fill="url(#rail)" fill-opacity="${t.railOpacity}"/>`,
-    `<rect x="${cx - 1}" y="${cy + r + 4}" width="2" height="${height - cy - r - 4}" fill="url(#rail)" fill-opacity="${t.railOpacity}"/>`,
-    `<circle class="pulse" cx="${cx}" cy="${cy}" r="${r + 7}" fill="none" stroke="${t.rail[0]}" stroke-opacity="0.35" stroke-width="5"/>`,
-    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${t.circleFill}" stroke="url(#ringStroke)" stroke-width="2"/>`,
-    text(cx, cy + 5.3, number, { size: 15, weight: 700, fill: t.title, anchor: "middle" }),
-    text(RAIL_W + 24, cy - 4, section.title, { size: 26, weight: 700, spacing: -0.3, fill: t.title }),
-    text(RAIL_W + 24, cy + 22, section.subtitle, { size: 15.5, fill: t.body }),
-    linkLabel ? text(PAGE_W - 30, cy + 6, linkLabel, { size: 15, weight: 600, fill: t.eyebrow, anchor: "end" }) : "",
-    linkLabel ? useIcon("arrow", PAGE_W - 22, cy - 7, 16, t.eyebrow) : "",
-  ].join("\n");
-  return svgDoc(PAGE_W, height, `${number} ${section.title} — ${section.subtitle}`, defs, body);
+function ctaSvg(kind, t) {
+  const s = SCENES[t.name];
+  const label = DATA.hero.buttons[kind].label;
+  const width = ctaWidth(kind);
+  const y = CTA.top;
+  const H = CTA.top + CTA.h + 6;
+  if (kind === "projects") {
+    const defs = [linear("fill", s.cta, { y2: 0 }), iconSymbols(["arrow"])].join("\n");
+    const body = `<rect class="pulse" x="1.5" y="${y + 1.5}" width="${width - 3}" height="${CTA.h - 3}" rx="13" fill="none" stroke="#22d3ee" stroke-width="3" stroke-opacity="0.5"/>
+<rect x="3" y="${y + 3}" width="${width - 6}" height="${CTA.h - 6}" rx="11" fill="url(#fill)"/>
+<path d="M14 ${y + 4} H${width - 14}" stroke="#ffffff" stroke-opacity="0.4" stroke-linecap="round"/>
+${text(22, y + CTA.h / 2 + 5.4, label, { size: CTA.size, weight: 600, fill: "#ffffff" })}
+${useIcon("arrow", width - 22 - 16, y + (CTA.h - 16) / 2, 16, "#ffffff")}`;
+    return svgDoc(width, H, label, defs, body);
+  }
+  const body = `<rect x="3.5" y="${y + 3.5}" width="${width - 7}" height="${CTA.h - 7}" rx="11" ${paint("fill", t.outlineFill)} ${paint("stroke", t.outlineStroke)}/>
+${useIcon("mail", 22, y + (CTA.h - 17) / 2, 17, t.outlineText)}
+${text(22 + 17 + 9, y + CTA.h / 2 + 5.4, label, { size: CTA.size, weight: 600, fill: t.outlineText })}`;
+  return svgDoc(width, H, label, iconSymbols(["mail"]), body);
 }
 
-/** One slice of the timeline line, as tall as the row it sits beside. */
-function railSvg(height, t, { dot = false, fade = false } = {}) {
-  const cx = RAIL_W / 2;
+// ---------------------------------------------------------------- section headings
+
+function selectedHeadingSvg(t) {
+  const section = DATA.sections.featured;
+  const [first, second] = section.title;
+  const firstWidth = textWidth(`${first} `, 46, 800, -1);
+  const secondWidth = textWidth(second ?? "", 46, 800, -1);
+  const lines = wrap(section.subtitle, 17, 540);
+  const H = 132 + (lines.length - 1) * 24 + 28;
   const defs = [
-    linear("rail", t.rail, { x2: 0, toOpacity: fade ? 0 : 1 }),
-    dot ? radial("dotGlow", t.rail[0], 0.6, cx, height / 2, 14) : "",
+    linear("chev", t.gradient, { y2: 0 }),
+    `<linearGradient id="word" gradientUnits="userSpaceOnUse" x1="${n(firstWidth)}" y1="0" x2="${n(firstWidth + secondWidth)}" y2="0"><stop offset="0" stop-color="${t.gradient[0]}"/><stop offset="1" stop-color="${t.gradient[1]}"/></linearGradient>`,
   ].join("\n");
   const body = [
-    `<rect x="${cx - 1}" y="0" width="2" height="${n(height)}" fill="url(#rail)" fill-opacity="${t.railOpacity}"/>`,
-    dot ? `<circle class="pulse" cx="${cx}" cy="${n(height / 2)}" r="14" fill="url(#dotGlow)"/><circle cx="${cx}" cy="${n(height / 2)}" r="4" fill="${t.rail[0]}"/>` : "",
+    `<path d="M14 26 L4 37 L14 48 M26 26 L36 37 L26 48" fill="none" stroke="url(#chev)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>`,
+    text(48, 42, section.eyebrow, { size: 13.5, weight: 700, spacing: 3, fill: t.cyan }),
+    `<text x="0" y="98" class="sans" font-size="46" font-weight="800" letter-spacing="-1" fill="${t.title}">${esc(first)} <tspan fill="url(#word)">${esc(second ?? "")}</tspan></text>`,
+    ...lines.map((line, i) => text(2, 132 + i * 24, line, { size: 17, fill: t.sub, max: 580 })),
   ].join("\n");
-  return svgDoc(RAIL_W, height, "", defs, body);
+  return svgDoc(PAGE_W, H, `${section.eyebrow}: ${section.title.join(" ")}`, defs, body);
+}
+
+function techHeadingSvg(t) {
+  const section = DATA.sections.tech;
+  const defs = linear("bar", t.gradient, { x2: 0 });
+  const body = [
+    `<rect x="2" y="22" width="4" height="54" rx="2" fill="url(#bar)"/>`,
+    text(22, 50, section.title, { size: 27, weight: 700, spacing: -0.3, fill: t.title }),
+    text(22, 76, section.subtitle, { size: 15.5, fill: t.body }),
+  ].join("\n");
+  return svgDoc(PAGE_W, 96, section.title, defs, body);
 }
 
 // ---------------------------------------------------------------- featured cards
 
 function cardLayout(p) {
-  const { pad, tile, thumbW, thumbH } = CARD;
+  const { pad, tile, thumbW, thumbH, mottoW } = CARD;
   const w = CARD_W - 2 * CARD.inset;
   const thumbX = w - pad - thumbW;
-  const thumbY = 54;
-  const thumbBottom = thumbY + thumbH + (p.mobile ? 26 : 0);
-  const textX = pad + tile + 16;
-  const descMax = thumbX - 18 - pad;
+  const thumbY = 24;
+  const thumbBottom = thumbY + thumbH + (p.mobile ? 24 : 0);
+  const textX = pad + tile + 18;
+  const descMax = thumbX - 20 - pad;
   const lines = wrap(p.description, CARD.descSize, descMax);
-  const descY = 146;
+  const descY = 170;
   const descBottom = descY + (lines.length - 1) * CARD.descLine + 6;
-  const chipsY = Math.max(descBottom, thumbBottom) + 20;
-  const chipRows = layoutChips(p.tech, w - 2 * pad);
-  const height = chipsY + chipRows.height + 22;
-  return { w, thumbX, thumbY, textX, descMax, lines, descY, chipsY, chipRows, height };
+  const chipRows = layoutChips(p.tech, w - 2 * pad - mottoW - 8);
+  const mottoH = p.motto.length ? 32 + p.motto.length * 16 : 0;
+  const footer = Math.max(chipRows.height, mottoH);
+  const height = Math.max(descBottom, thumbBottom) + 22 + footer + pad;
+  return { w, thumbX, thumbY, textX, descMax, lines, descY, chipRows, mottoH, height };
 }
 
-function badge(label, x, y, a, t) {
+function categoryPill(label, x, y, a, t) {
+  const upper = label.toUpperCase();
   const color = accentText(a, t);
-  const width = Math.ceil(28 + textWidth(label, 12.5, 600) + 12);
-  return `<rect x="${x + 0.5}" y="${y + 0.5}" width="${width - 1}" height="25" rx="12.5" fill="${a.base}" fill-opacity="${t.name === "dark" ? 0.14 : 0.1}" stroke="${a.base}" stroke-opacity="0.55"/>
-<g class="twinkle">${useIcon("star", x + 10, y + 7, 12, color, { filled: true })}</g>
-${text(x + 28, y + 17.4, label, { size: 12.5, weight: 600, fill: color })}`;
+  const width = Math.ceil(24 + textWidth(upper, 11, 700, 0.8));
+  return `<rect x="${x + 0.5}" y="${y + 0.5}" width="${width - 1}" height="23" rx="11.5" fill="${a.base}" fill-opacity="${t.name === "dark" ? 0.14 : 0.1}" stroke="${a.base}" stroke-opacity="0.55"/>
+${text(x + 12, y + 15.8, upper, { size: 11, weight: 700, spacing: 0.8, fill: color })}`;
 }
 
 function cardSvg(p, t, height, index) {
@@ -626,21 +758,24 @@ function cardSvg(p, t, height, index) {
   const thumb = thumbnail(p, a);
   const titleMax = L.thumbX - 14 - L.textX;
   const drawnIcons = DRAWN[p.thumbnail] ? ["shield", "leaf"] : [];
-  const phoneX = w - pad - PHONE.w + 8;
-  const phoneY = L.thumbY + thumbH - PHONE.h + 26;
+  const phoneX = w - pad - PHONE.w + 10;
+  const phoneY = L.thumbY + thumbH - PHONE.h + 24;
+  const number = String(index + 1).padStart(2, "0");
+  const numberWidth = textWidth(number, 17, 700);
+  const mottoTop = h - pad - L.mottoH;
   const defs = [
     linear("body", [t.cardTop, t.cardBottom]),
     radial("wash", a.base, 0.22 * t.glow, 0, 0, 380),
-    radial("wash2", a.base, 0.1 * t.glow, w, h, 300),
+    radial("wash2", a.base, 0.12 * t.glow, w, h, 300),
     linear("tile", [a.deep, a.base]),
-    radial("tileGlow", a.base, 0.6 * t.glow, pad + tile / 2, 56 + tile / 2, 58),
+    radial("tileGlow", a.base, 0.6 * t.glow, pad + tile / 2, 64 + tile / 2, 60),
     radial("thumbGlow", a.base, 0.4 * t.glow, thumbW / 2, thumbH / 2, thumbW * 0.62),
     radial("phoneGlow", a.base, 0.45 * t.glow, PHONE.w / 2, PHONE.h / 2, PHONE.h * 0.6),
     glareGradient(t),
     clipRect("card", w, h, radius),
     clipRect("thumbClip", thumbW, thumbH, 10),
     clipRect("phoneClip", PHONE.w - 6, PHONE.h - 6, 8, 3, 3),
-    iconSymbols([p.icon, "star", ...drawnIcons, ...L.chipRows.placed.map((chip) => chip.icon)]),
+    iconSymbols([p.icon, ...drawnIcons, ...L.chipRows.placed.map((chip) => chip.icon)]),
   ].join("\n");
   const body = `<g transform="translate(${inset} ${inset})"><g class="float" style="animation-delay: -${n(index * 1.75)}s">
 ${neon(w, h, radius, a.base, t.glow)}
@@ -651,42 +786,40 @@ ${glare(h, "card")}
 <rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="${radius - 0.5}" fill="none" stroke="${a.base}" stroke-opacity="${t.borderOpacity}" stroke-width="1.3"/>
 ${runner(w, h, radius, color)}
 ${brackets(w, h, color)}
-${p.badge ? badge(p.badge, pad, 18, a, t) : ""}
-${p.type ? text(w - pad, 35.5, p.type, { size: 12.5, fill: t.muted, anchor: "end" }) : ""}
-<circle class="pulse" cx="${pad + tile / 2}" cy="${56 + tile / 2}" r="58" fill="url(#tileGlow)"/>
-${iconTile(p.icon, pad, 56, tile, 30)}
-${text(L.textX, 85, p.name, { size: 25, weight: 700, spacing: -0.3, fill: t.title, max: titleMax })}
-${p.subtitle ? text(L.textX, 109, p.subtitle, { size: 15, fill: t.body, max: titleMax }) : ""}
+${text(pad, 40, number, { size: 17, weight: 700, fill: t.title })}
+${p.category ? categoryPill(p.category, pad + numberWidth + 10, 23, a, t) : ""}
+<circle class="pulse" cx="${pad + tile / 2}" cy="${64 + tile / 2}" r="60" fill="url(#tileGlow)"/>
+${iconTile(p.icon, pad, 64, tile, 31)}
+${text(L.textX, 94, p.name, { size: 26, weight: 700, spacing: -0.3, fill: t.title, max: titleMax })}
+${p.subtitle ? text(L.textX, 119, p.subtitle, { size: 15, fill: t.body, max: titleMax }) : ""}
 ${L.lines.map((line, i) => text(pad, L.descY + i * CARD.descLine, line, { size: CARD.descSize, fill: t.body, max: L.descMax })).join("\n")}
-${chips(L.chipRows, pad, h - 22 - L.chipRows.height, t)}
+${chips(L.chipRows, pad, h - pad - L.chipRows.height, t)}
+${p.motto.length ? `<g class="pulse">${useIcon(p.icon, w - pad - 22, mottoTop, 22, color, { width: 1.8 })}</g>
+${p.motto.map((line, i) => text(w - pad, mottoTop + 44 + i * 16, line, { size: 12.5, weight: 500, fill: color, anchor: "end", max: CARD.mottoW })).join("\n")}` : ""}
 <g class="lift" style="animation-delay: -${n(index * 1.3)}s"><g transform="translate(${L.thumbX} ${L.thumbY})">${thumb.window}</g></g>
 ${thumb.phone ? `<g class="bob" style="animation-delay: -${n(index * 0.9 + 0.6)}s"><g transform="translate(${phoneX} ${phoneY})">${thumb.phone}</g></g>` : ""}
 </g></g>`;
-  return svgDoc(CARD_W, height, `${p.name} — ${p.subtitle ?? ""}`, defs, body, `${runCss(rectPerimeter(w, h, radius))}\n${glareCss(w)}`);
+  return svgDoc(CARD_W, height, `${number} ${p.name} — ${p.subtitle ?? ""}`, defs, body, `${runCss(rectPerimeter(w, h, radius))}\n${glareCss(w)}`);
 }
 
-const buttonWidth = (kind) => Math.ceil(18 + 15 + 8 + textWidth(BUTTONS[kind].label, BTN.size, 600) + 18);
-const buttonHeight = BTN.top + BTN.h + BTN.bottom;
-const buttonFile = (kind, accent) => (BUTTONS[kind].primary ? `btn-${kind}-${accent}` : `btn-${kind}`);
+const linkWidth = (kind) => Math.ceil(14 + 15 + 8 + textWidth(LINKS[kind].label, LINK.size, 600) + 7 + 13 + 14);
+const linkHeight = LINK.top + LINK.h + LINK.bottom;
+const linkFile = (kind, accent) => `link-${kind}-${accent}`;
 
-function buttonSvg(kind, accent, t) {
-  const button = BUTTONS[kind];
-  const width = buttonWidth(kind);
-  const y = BTN.top;
-  if (button.primary) {
-    const a = ACCENTS[accent];
-    const defs = [linear("fill", [a.deep, a.base], { y2: 0 }), iconSymbols([button.icon])].join("\n");
-    const body = `<rect class="pulse" x="1.5" y="${y + 1.5}" width="${width - 3}" height="${BTN.h - 3}" rx="11" fill="none" stroke="${a.base}" stroke-width="3" stroke-opacity="${n(0.5 * t.glow + 0.2)}"/>
-<rect x="3" y="${y + 3}" width="${width - 6}" height="${BTN.h - 6}" rx="9" fill="url(#fill)"/>
-<path d="M12 ${y + 4} H${width - 12}" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
-${text(18, y + BTN.h / 2 + 5, button.label, { size: BTN.size, weight: 600, fill: "#ffffff" })}
-${useIcon(button.icon, width - 18 - 15, y + (BTN.h - 15) / 2, 15, "#ffffff")}`;
-    return svgDoc(width, buttonHeight, button.label, defs, body);
-  }
-  const body = `<rect x="3.5" y="${y + 3.5}" width="${width - 7}" height="${BTN.h - 7}" rx="9" ${paint("fill", t.outlineFill)} ${paint("stroke", t.outlineStroke)}/>
-${useIcon(button.icon, 18, y + (BTN.h - 15) / 2, 15, t.outlineText)}
-${text(18 + 15 + 8, y + BTN.h / 2 + 5, button.label, { size: BTN.size, weight: 600, fill: t.outlineText })}`;
-  return svgDoc(width, buttonHeight, button.label, iconSymbols([button.icon]), body);
+/** Text-style link under a card, in the card's accent color. */
+function linkSvg(kind, accent, t) {
+  const link = LINKS[kind];
+  const a = ACCENTS[accent];
+  const color = accentText(a, t);
+  const width = linkWidth(kind);
+  const y = LINK.top;
+  const labelWidth = textWidth(link.label, LINK.size, 600) / SAFETY;
+  const body = `<rect x="0.5" y="${y + 0.5}" width="${width - 1}" height="${LINK.h - 1}" rx="10" fill="${a.base}" fill-opacity="${t.name === "dark" ? 0.08 : 0.06}" stroke="${a.base}" stroke-opacity="0.35"/>
+${useIcon(link.icon, 14, y + (LINK.h - 15) / 2, 15, color)}
+${text(14 + 15 + 8, y + LINK.h / 2 + 5, link.label, { size: LINK.size, weight: 600, fill: color })}
+<path d="M${14 + 15 + 8} ${y + LINK.h / 2 + 8.5} H${n(14 + 15 + 8 + labelWidth)}" stroke="${color}" stroke-opacity="0.35"/>
+${useIcon(link.trail, width - 14 - 13, y + (LINK.h - 13) / 2, 13, color)}`;
+  return svgDoc(width, linkHeight, link.label, iconSymbols([link.icon, link.trail]), body);
 }
 
 const teamLabel = (size) => `Team of ${size}`;
@@ -694,12 +827,42 @@ const teamWidth = (size) => Math.ceil(16 + 7 + textWidth(teamLabel(size), 13.5, 
 
 function teamSvg(size, t) {
   const width = teamWidth(size);
-  const body = `${useIcon("users", 0, BTN.top + (BTN.h - 16) / 2, 16, t.muted)}
-${text(16 + 7, BTN.top + BTN.h / 2 + 4.7, teamLabel(size), { size: 13.5, weight: 500, fill: t.muted })}`;
-  return svgDoc(width, buttonHeight, teamLabel(size), iconSymbols(["users"]), body);
+  const body = `${useIcon("users", 0, LINK.top + (LINK.h - 16) / 2, 16, t.muted)}
+${text(16 + 7, LINK.top + LINK.h / 2 + 4.7, teamLabel(size), { size: 13.5, weight: 500, fill: t.muted })}`;
+  return svgDoc(width, linkHeight, teamLabel(size), iconSymbols(["users"]), body);
 }
 
-// ---------------------------------------------------------------- other projects
+// ---------------------------------------------------------------- more projects
+
+const FRAME_TOP_H = 118;
+const FRAME_BOTTOM_H = 30;
+
+function moreTopSvg(t) {
+  const section = DATA.sections.others;
+  const W = PAGE_W;
+  const defs = [linear("icon", t.gradient), iconSymbols(["layers", "arrow"])].join("\n");
+  const body = [
+    `<path d="M0.75 ${FRAME_TOP_H} V20.75 A20 20 0 0 1 20.75 0.75 H${W - 20.75} A20 20 0 0 1 ${W - 0.75} 20.75 V${FRAME_TOP_H}" fill="none" ${paint("stroke", t.frame)} stroke-width="1.5"/>`,
+    `<rect x="30" y="32" width="44" height="44" rx="12" fill="${t.gradient[1]}" fill-opacity="0.12" stroke="${t.gradient[1]}" stroke-opacity="0.4"/>`,
+    useIcon("layers", 40, 42, 24, t.gradient[1]),
+    text(92, 56, section.title, { size: 25, weight: 700, spacing: -0.3, fill: t.title }),
+    text(92, 82, section.subtitle, { size: 15.5, fill: t.body }),
+    text(W - 54, 62, "View all projects", { size: 15, weight: 600, fill: t.cyan, anchor: "end" }),
+    useIcon("arrow", W - 46, 49.5, 16, t.cyan),
+  ].join("\n");
+  return svgDoc(W, FRAME_TOP_H, `${section.title} — ${section.subtitle}`, defs, body);
+}
+
+function moreEdgeSvg(side, t) {
+  const x = side === "left" ? 0.75 : EDGE_W - 0.75;
+  return svgDoc(EDGE_W, TILE.h, "", "", `<path d="M${x} 0 V${TILE.h}" ${paint("stroke", t.frame)} stroke-width="1.5"/>`);
+}
+
+function moreBottomSvg(t) {
+  const W = PAGE_W;
+  const body = `<path d="M0.75 0 V${FRAME_BOTTOM_H - 20.75} A20 20 0 0 0 20.75 ${FRAME_BOTTOM_H - 0.75} H${W - 20.75} A20 20 0 0 0 ${W - 0.75} ${FRAME_BOTTOM_H - 20.75} V0" fill="none" ${paint("stroke", t.frame)} stroke-width="1.5"/>`;
+  return svgDoc(W, FRAME_BOTTOM_H, "", "", body);
+}
 
 function tileSvg(o, t, index) {
   const a = ACCENTS[o.accent];
@@ -709,17 +872,17 @@ function tileSvg(o, t, index) {
   const radius = 16;
   const iconY = (h - TILE.icon) / 2;
   const textX = 14 + TILE.icon + 12;
-  const arrowX = w - 26;
+  const arrowX = w - 24;
   const max = arrowX - 13 - 9 - textX;
-  const name = wrap(o.name, 14.5, max, 700);
+  const name = wrap(o.name, 15, max, 700);
   const sub = o.subtitle ? wrap(o.subtitle, 12.5, max) : [];
-  const blockHeight = name.length * 18 + sub.length * 16;
+  const blockHeight = name.length * 19 + sub.length * 16;
   const top = (h - blockHeight) / 2 + 13;
   const defs = [
     linear("body", [t.cardTop, t.cardBottom]),
     radial("wash", a.base, 0.24 * t.glow, 0, 0, 200),
     linear("tile", [a.deep, a.base]),
-    radial("tileGlow", a.base, 0.6 * t.glow, 14 + TILE.icon / 2, h / 2, 40),
+    radial("tileGlow", a.base, 0.6 * t.glow, 14 + TILE.icon / 2, h / 2, 44),
     glareGradient(t),
     clipRect("card", w, h, radius),
     iconSymbols([o.icon, "arrow"]),
@@ -731,10 +894,10 @@ ${neon(w, h, radius, a.base, t.glow * 0.8)}
 ${glare(h, "card")}
 <rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="${radius - 0.5}" fill="none" stroke="${a.base}" stroke-opacity="${t.borderOpacity}" stroke-width="1.2"/>
 ${runner(w, h, radius, color, 70)}
-<circle class="pulse" cx="${14 + TILE.icon / 2}" cy="${n(h / 2)}" r="40" fill="url(#tileGlow)"/>
-${iconTile(o.icon, 14, iconY, TILE.icon, 22)}
-${name.map((line, i) => text(textX, top + i * 18, line, { size: 14.5, weight: 700, fill: t.title, max })).join("\n")}
-${sub.map((line, i) => text(textX, top + name.length * 18 + i * 16, line, { size: 12.5, fill: t.body, max })).join("\n")}
+<circle class="pulse" cx="${14 + TILE.icon / 2}" cy="${n(h / 2)}" r="44" fill="url(#tileGlow)"/>
+${iconTile(o.icon, 14, iconY, TILE.icon, 25)}
+${name.map((line, i) => text(textX, top + i * 19, line, { size: 15, weight: 700, fill: t.title, max })).join("\n")}
+${sub.map((line, i) => text(textX, top + name.length * 19 + i * 16, line, { size: 12.5, fill: t.body, max })).join("\n")}
 <circle cx="${arrowX}" cy="${n(h / 2)}" r="13" fill="none" ${paint("stroke", t.outlineStroke)}/>
 ${useIcon("arrow", arrowX - 7, h / 2 - 7, 14, color)}
 </g></g>`;
@@ -744,76 +907,86 @@ ${useIcon("arrow", arrowX - 7, h / 2 - 7, 14, color)}
 // ---------------------------------------------------------------- tech stack
 
 function techLayout() {
-  const w = PANEL_W - 2 * CARD.inset;
-  const colW = w / TECH_GROUPS.length;
+  const cardW = (PAGE_W - TECH_NOTE_W - 2 * TECH_GAP) / TECH_GROUPS.length;
   const columns = TECH_GROUPS.map((group) => {
-    const lines = wrap(group.subtitle ?? "", 12.5, colW - 68 - 28);
-    const chipsY = 40 + Math.max(52, 44 + lines.length * 17) + 18;
-    const chipRows = layoutChips(group.tech, colW - 48);
+    const lines = wrap(group.subtitle ?? "", 12.5, cardW - 86 - 36);
+    const chipsY = Math.max(20 + 54, 66 + (lines.length - 1) * 17 + 6) + 18;
+    const chipRows = layoutChips(group.tech, cardW - 36);
     return { group, lines, chipsY, chipRows, bottom: chipsY + chipRows.height };
   });
-  const h = Math.max(...columns.map((column) => column.bottom)) + 26;
-  return { w, h, colW, columns };
+  const cardH = Math.max(...columns.map((column) => column.bottom)) + 20;
+  return { cardW, cardH, columns };
 }
 
-function techSvg(t) {
-  const { w, h, colW, columns } = techLayout();
-  const height = h + 2 * CARD.inset;
-  const shape = `M0 30 V${h - 16} a16 16 0 0 0 16 16 H${w - 16} a16 16 0 0 0 16 -16 V34 L${w - 34} 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z`;
-  const perimeter = 2 * (w + h) + 40;
+function techRowSvg(t) {
+  const { cardW, cardH, columns } = techLayout();
+  const top = 10;
+  const H = cardH + 2 * top;
+  const radius = 16;
+  const noteLines = wrap(DATA.sections.tech.note, 18, 150);
   const defs = [
     linear("body", [t.cardTop, t.cardBottom]),
-    ...columns.map(({ group }, i) => radial(`wash-${i}`, ACCENTS[group.accent].base, 0.2 * t.glow, colW * (i + 0.5), h + 40, 260)),
-    ...columns.map(({ group }, i) => linear(`tile-${i}`, [ACCENTS[group.accent].deep, ACCENTS[group.accent].base])),
+    clipRect("card", cardW, cardH, radius),
     glareGradient(t),
-    `<clipPath id="panel"><path d="${shape}"/></clipPath>`,
-    iconSymbols(columns.flatMap(({ group, chipRows }) => [group.icon, ...chipRows.placed.map((chip) => chip.icon)])),
+    ...columns.flatMap(({ group }, i) => [
+      linear(`tile-${i}`, [ACCENTS[group.accent].deep, ACCENTS[group.accent].base]),
+      radial(`wash-${i}`, ACCENTS[group.accent].base, 0.24 * t.glow, cardW * 0.75, cardH + 30, 240),
+    ]),
+    iconSymbols(columns.flatMap(({ group, chipRows }) => [group.icon, group.corner, ...chipRows.placed.map((chip) => chip.icon)])),
   ].join("\n");
-  const body = `<g transform="translate(${CARD.inset} ${CARD.inset})"><g class="float">
-<path d="${shape}" fill="none" stroke="#3b82f6" stroke-width="10" stroke-opacity="${n(0.05 * t.glow)}"/>
-<path d="${shape}" fill="none" stroke="#3b82f6" stroke-width="4" stroke-opacity="${n(0.12 * t.glow)}"/>
-<path d="${shape}" fill="url(#body)"/>
-${columns.map((_, i) => `<path d="${shape}" fill="url(#wash-${i})"/>`).join("\n")}
-${glare(h, "panel")}
-<path d="${shape}" fill="none" stroke="#3b82f6" stroke-opacity="${t.borderOpacity}" stroke-width="1.3"/>
-<path class="run" d="${shape}" fill="none" stroke="${accentText(ACCENTS.blue, t)}" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 ${n(perimeter - 140)}"/>
-${columns.slice(1).map((_, i) => `<path d="M${n(colW * (i + 1))} 44 V${h - 24}" stroke="${t.title}" stroke-opacity="0.1"/>`).join("\n")}
-${columns.map(({ group, lines, chipsY, chipRows }, i) => {
-  const x = colW * i + 24;
-  const a = ACCENTS[group.accent];
-  return `<circle class="pulse" style="animation-delay: -${i}s" cx="${n(x + 26)}" cy="66" r="44" fill="${a.base}" fill-opacity="${n(0.12 * t.glow)}"/>
-${iconTile(group.icon, x, 40, 52, 26, `tile-${i}`)}
-${text(x + 68, 62, group.title, { size: 18, weight: 700, fill: t.title, max: colW - 68 - 28 })}
-${lines.map((line, j) => text(x + 68, 84 + j * 17, line, { size: 12.5, fill: t.body, max: colW - 68 - 28 })).join("\n")}
-${chips(chipRows, x, chipsY, t)}`;
-}).join("\n")}
+  const note = `<g transform="translate(14 ${n(H / 2 - 30)}) rotate(-8)">${noteLines.map((line, i) => text(0, i * 24, line, { size: 18, fill: t.note, cls: "hand" })).join("")}
+<path d="M40 ${noteLines.length * 24 + 2} C 70 ${noteLines.length * 24 + 18}, 110 ${noteLines.length * 24 + 14}, 138 ${noteLines.length * 24 - 6}" fill="none" stroke="${t.note}" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M128 ${noteLines.length * 24 - 8} L139 ${noteLines.length * 24 - 7} L136 ${noteLines.length * 24 + 4}" fill="none" stroke="${t.note}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>`;
+  const cards = columns.map(({ group, lines, chipsY, chipRows }, i) => {
+    const a = ACCENTS[group.accent];
+    const color = accentText(a, t);
+    const x = TECH_NOTE_W + i * (cardW + TECH_GAP);
+    return `<g transform="translate(${n(x)} ${top})"><g class="float" style="animation-delay: -${n(i * 2.1)}s">
+${neon(cardW, cardH, radius, a.base, t.glow * 0.8)}
+<rect width="${n(cardW)}" height="${cardH}" rx="${radius}" fill="url(#body)"/>
+<rect width="${n(cardW)}" height="${cardH}" rx="${radius}" fill="url(#wash-${i})"/>
+${glare(cardH, "card")}
+<rect x="0.5" y="0.5" width="${n(cardW - 1)}" height="${cardH - 1}" rx="${radius - 0.5}" fill="none" stroke="${a.base}" stroke-opacity="${t.borderOpacity}" stroke-width="1.2"/>
+${runner(cardW, cardH, radius, color, 90)}
+<circle class="pulse" style="animation-delay: -${i}s" cx="${18 + 27}" cy="${20 + 27}" r="46" fill="${a.base}" fill-opacity="${n(0.12 * t.glow)}"/>
+${iconTile(group.icon, 18, 20, 54, 27, `tile-${i}`)}
+${group.corner ? useIcon(group.corner, cardW - 34, 16, 18, color) : ""}
+${text(86, 44, group.title, { size: 18, weight: 700, fill: t.title, max: cardW - 86 - 36 })}
+${lines.map((line, j) => text(86, 66 + j * 17, line, { size: 12.5, fill: t.body, max: cardW - 86 - 36 })).join("\n")}
+${chips(chipRows, 18, chipsY, t)}
 </g></g>`;
-  return svgDoc(PANEL_W, height, `Tech stack — ${TECH_GROUPS.map((group) => `${group.title}: ${group.tech.join(", ")}`).join(". ")}`, defs, body, `${runCss(perimeter, 10)}\n${glareCss(w, 12)}`);
+  });
+  const perimeter = rectPerimeter(cardW, cardH, radius);
+  return svgDoc(PAGE_W, H, `Tech stack — ${TECH_GROUPS.map((group) => `${group.title}: ${group.tech.join(", ")}`).join(". ")}`, defs, [note, ...cards].join("\n"), `${runCss(perimeter, 8)}\n${glareCss(cardW, 10)}`);
 }
 
 // ---------------------------------------------------------------- footer
 
-const FOOTER_H = 120;
-const FOOTER_ART_W = PAGE_W - 3 * SOCIAL_W - 2 * SOCIAL_GAP;
+const FOOTER_LEFT_W = 520;
+const FOOTER_RIGHT_W = 300;
+const SOCIAL_GAP = 14;
+const FOOTER_LEAD = 128;
 
-function footerSvg(t) {
-  const w = FOOTER_ART_W;
-  const tagline = DATA.footer.tagline;
-  const taglineWidth = textWidth(tagline, 21, 400);
-  const defs = [
-    linear("rail", t.rail, { x2: 0, toOpacity: 0 }),
-    linear("fade", [t.mountains[0], t.mountains[0]], { x2: 1, y2: 0, toOpacity: 0 }),
-    linear("fade2", [t.mountains[1], t.mountains[1]], { x2: 1, y2: 0, toOpacity: 0 }),
-  ].join("\n");
-  const cx = RAIL_W / 2;
+function footerLeftSvg(t) {
+  const footer = DATA.footer;
+  const defs = [linear("logo", t.gradient), iconSymbols(["code"])].join("\n");
   const body = [
-    `<path d="M0 ${FOOTER_H} L60 84 L110 100 L180 66 L250 94 L320 74 L400 102 L480 80 L560 104 L640 86 L720 ${FOOTER_H} Z" fill="url(#fade)" fill-opacity="0.6"/>`,
-    `<path d="M0 ${FOOTER_H} L90 100 L170 110 L260 92 L360 112 L470 98 L600 ${FOOTER_H} Z" fill="url(#fade2)" fill-opacity="0.8"/>`,
-    `<path d="M${cx} 0 V26 Q${cx} 52 ${cx + 30} 56" fill="none" stroke="${t.rail[0]}" stroke-opacity="${t.railOpacity}" stroke-width="2" stroke-linecap="round"/>`,
-    text(cx + 40, 62, tagline, { size: 21, fill: t.note, cls: "hand" }),
-    `<path d="M${n(cx + 52 + taglineWidth)} 56 H${n(cx + 82 + taglineWidth)} M${n(cx + 74 + taglineWidth)} 50 L${n(cx + 82 + taglineWidth)} 56 L${n(cx + 74 + taglineWidth)} 62" fill="none" stroke="${t.note}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`,
+    `<use href="#i-code" x="4" y="30" width="40" height="40" fill="none" stroke="url(#logo)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>`,
+    text(58, 50, footer.name, { size: 22, weight: 700, fill: t.title }),
+    text(58, 74, footer.tagline, { size: 14, fill: t.muted }),
   ].join("\n");
-  return svgDoc(w, FOOTER_H, tagline, defs, body);
+  return svgDoc(FOOTER_LEFT_W, SOCIAL.h, `${footer.name} — ${footer.tagline}`, defs, body);
+}
+
+function footerRightSvg(t) {
+  const [first, second] = DATA.footer.motto;
+  const secondWidth = textWidth(second ?? "", 17);
+  const body = [
+    text(FOOTER_RIGHT_W - 4, 46, first, { size: 17, fill: t.note, anchor: "end", cls: "hand" }),
+    second ? `<circle class="pulse" cx="${n(FOOTER_RIGHT_W - 4 - secondWidth - 12)}" cy="64" r="4" fill="${t.cyan}"/>` : "",
+    second ? text(FOOTER_RIGHT_W - 4, 70, second, { size: 17, fill: t.note, anchor: "end", cls: "hand" }) : "",
+  ].join("\n");
+  return svgDoc(FOOTER_RIGHT_W, SOCIAL.h, DATA.footer.motto.join(" "), "", body);
 }
 
 const SOCIALS = {
@@ -823,15 +996,15 @@ const SOCIALS = {
 };
 
 function socialSvg(kind, t) {
-  const cx = SOCIAL_W / 2;
-  const cy = FOOTER_H / 2;
+  const cx = SOCIAL.w / 2;
+  const cy = SOCIAL.h / 2;
   const color = t.outlineText;
   const mark = kind === "linkedin"
     ? `<rect x="${cx - 10}" y="${cy - 10}" width="20" height="20" rx="4" fill="${color}"/><text x="${cx - 6.6}" y="${cy + 6}" class="sans" font-size="13.5" font-weight="800" fill="${t.name === "dark" ? "#0b1020" : "#ffffff"}">in</text>`
     : useIcon(SOCIALS[kind].icon, cx - 10, cy - 10, 20, color);
   const body = `<circle cx="${cx}" cy="${cy}" r="22" ${paint("fill", t.outlineFill)} ${paint("stroke", t.outlineStroke)}/>
 ${mark}`;
-  return svgDoc(SOCIAL_W, FOOTER_H, SOCIALS[kind].label, iconSymbols(SOCIALS[kind].icon ? [SOCIALS[kind].icon] : []), body);
+  return svgDoc(SOCIAL.w, SOCIAL.h, SOCIALS[kind].label, iconSymbols(SOCIALS[kind].icon ? [SOCIALS[kind].icon] : []), body);
 }
 
 // ---------------------------------------------------------------- README markup
@@ -840,6 +1013,7 @@ ${mark}`;
 const pct = (units) => `${Math.floor((units / PAGE_W) * 1e6) / 1e4}%`;
 const anchor = (href, inner) => `<a href="${attr(href)}">${inner}</a>`;
 const spacer = (units) => (units > 0 ? `<img src="${ASSET_URL}/spacer.svg" width="${pct(units)}" align="top" alt="">` : "");
+const block = (lines) => `<p>\n${lines.join("<br>\n")}\n</p>`;
 
 function picture(name, units, alt) {
   return `<picture><source media="(prefers-color-scheme: dark)" srcset="${ASSET_URL}/${name}-dark.svg"><img src="${ASSET_URL}/${name}-light.svg" width="${pct(units)}" align="top" alt="${attr(alt)}"></picture>`;
@@ -848,20 +1022,22 @@ function picture(name, units, alt) {
 const cardAlt = (p) =>
   `${p.name}${p.subtitle ? ` — ${p.subtitle}` : ""}. ${p.description}${p.tech.length ? ` Built with ${p.tech.join(", ")}.` : ""}`;
 
-function buttonGroup(p) {
-  const parts = [spacer(CARD.inset)];
-  let used = CARD.inset;
+/** The links under a card, starting at the card's text column and ending with the team size. */
+function linkGroup(p) {
+  const start = CARD.inset + CARD.pad;
+  const parts = [spacer(start)];
+  let used = start;
   p.links.forEach(([kind, href], i) => {
     if (i) {
-      parts.push(spacer(BTN.gap));
-      used += BTN.gap;
+      parts.push(spacer(LINK.gap));
+      used += LINK.gap;
     }
-    parts.push(anchor(href, picture(buttonFile(kind, p.accent), buttonWidth(kind), `${p.name}: ${BUTTONS[kind].label}`)));
-    used += buttonWidth(kind);
+    parts.push(anchor(href, picture(linkFile(kind, p.accent), linkWidth(kind), `${p.name}: ${LINKS[kind].label}`)));
+    used += linkWidth(kind);
   });
   if (p.team) {
     const width = teamWidth(p.team);
-    parts.push(spacer(CARD_W - CARD.inset - width - used), anchor(p.links[0][1], picture(`team-${p.team}`, width, teamLabel(p.team))), spacer(CARD.inset));
+    parts.push(spacer(CARD_W - start - width - used), anchor(p.links[0][1], picture(`team-${p.team}`, width, teamLabel(p.team))), spacer(start));
   } else {
     parts.push(spacer(CARD_W - used));
   }
@@ -870,22 +1046,40 @@ function buttonGroup(p) {
 
 function readmeSection() {
   const portfolio = DATA.portfolio;
-  const lines = [anchor(`${portfolio}/#projects`, picture("section-featured", PAGE_W, `01 ${DATA.sections.featured.title}`))];
+  const hero = DATA.hero;
+  const { projects, contact } = hero.buttons;
+
+  const featured = [anchor(`${portfolio}/#projects`, picture("selected", PAGE_W, `${DATA.sections.featured.eyebrow}: ${DATA.sections.featured.title.join(" ")}`))];
   for (let i = 0; i < FEATURED.length; i += 2) {
     const [a, b] = [FEATURED[i], FEATURED[i + 1]];
     const card = (p) => anchor(p.links[0][1], picture(`card-${p.slug}`, CARD_W, cardAlt(p)));
-    lines.push(picture("rail-card", RAIL_W, "") + card(a) + spacer(COL_GAP) + (b ? card(b) : spacer(CARD_W)));
-    lines.push(picture("rail-buttons", RAIL_W, "") + buttonGroup(a) + spacer(COL_GAP) + (b ? buttonGroup(b) : ""));
+    featured.push(card(a) + spacer(COL_GAP) + (b ? card(b) : spacer(CARD_W)));
+    featured.push(linkGroup(a) + spacer(COL_GAP) + (b ? linkGroup(b) : ""));
   }
-  lines.push(anchor(DATA.sections.others.link, picture("section-others", PAGE_W, `02 ${DATA.sections.others.title} — view all projects`)));
-  lines.push(picture("rail-tiles", RAIL_W, "") + OTHERS.map((o, i) => (i ? spacer(TILE_GAP) : "") + anchor(o.link, picture(`other-${o.slug}`, TILE_W, `${o.name}${o.subtitle ? ` — ${o.subtitle}` : ""}`))).join(""));
-  lines.push(anchor(`${portfolio}/#skills`, picture("section-tech", PAGE_W, `03 ${DATA.sections.tech.title}`)));
-  lines.push(picture("rail-end", RAIL_W, "") + anchor(`${portfolio}/#skills`, picture("tech-stack", PANEL_W, `Tech stack — ${TECH_GROUPS.map((group) => `${group.title}: ${group.tech.join(", ")}`).join(". ")}.`)));
-  lines.push(anchor(portfolio, picture("footer", FOOTER_ART_W, DATA.footer.tagline)) + Object.entries(DATA.footer.links).map(([kind, href], i) => (i ? spacer(SOCIAL_GAP) : "") + anchor(href, picture(`social-${kind}`, SOCIAL_W, SOCIALS[kind].label))).join(""));
+
+  const tiles = OTHERS.map((o, i) => (i ? spacer(TILE_GAP) : "") + anchor(o.link, picture(`other-${o.slug}`, TILE_W, `${o.name}${o.subtitle ? ` — ${o.subtitle}` : ""}`))).join("");
+  const socials = Object.entries(DATA.footer.links).map(([kind, href], i) => (i ? spacer(SOCIAL_GAP) : "") + anchor(href, picture(`social-${kind}`, SOCIAL.w, SOCIALS[kind].label))).join("");
+  const socialsWidth = Object.keys(DATA.footer.links).length * (SOCIAL.w + SOCIAL_GAP) - SOCIAL_GAP;
 
   return [
-    `<p>\n${anchor(`${portfolio}/#projects`, picture("hero", PAGE_W, `Featured Work — ${DATA.hero.description}`))}\n</p>`,
-    `<p>\n${lines.join("<br>\n")}\n</p>`,
+    block([
+      anchor(projects.link, picture("hero", PAGE_W, `${hero.greeting} ${hero.name.join("")}. ${hero.roles.join(", ")}. ${hero.description}`)),
+      spacer(56) + anchor(projects.link, picture("cta-projects", ctaWidth("projects"), projects.label)) + spacer(14) + anchor(contact.link, picture("cta-contact", ctaWidth("contact"), contact.label)),
+    ]),
+    block(featured),
+    block([
+      anchor(DATA.sections.others.link, picture("more-top", PAGE_W, `${DATA.sections.others.title} — view all projects`)),
+      picture("more-edge-left", EDGE_W, "") + tiles + picture("more-edge-right", EDGE_W, ""),
+      picture("more-bottom", PAGE_W, ""),
+    ]),
+    block([
+      anchor(`${portfolio}/#skills`, picture("tech-heading", PAGE_W, DATA.sections.tech.title)),
+      anchor(`${portfolio}/#skills`, picture("tech-stack", PAGE_W, `Tech stack — ${TECH_GROUPS.map((group) => `${group.title}: ${group.tech.join(", ")}`).join(". ")}.`)),
+    ]),
+    block([
+      anchor(portfolio, picture("footer-left", FOOTER_LEFT_W, `${DATA.footer.name} — ${DATA.footer.tagline}`)) + spacer(FOOTER_LEAD) + socials +
+        spacer(PAGE_W - FOOTER_LEFT_W - FOOTER_LEAD - socialsWidth - FOOTER_RIGHT_W) + picture("footer-right", FOOTER_RIGHT_W, DATA.footer.motto.join(" ")),
+    ]),
   ].join("\n\n");
 }
 
@@ -896,22 +1090,23 @@ mkdirSync(OUT_DIR, { recursive: true });
 const write = (name, svg) => writeFileSync(join(OUT_DIR, name), svg);
 
 const cardHeight = Math.max(...FEATURED.map((p) => cardLayout(p).height)) + 2 * CARD.inset;
-const techHeight = techLayout().h + 2 * CARD.inset;
 for (const t of Object.values(THEMES)) {
   write(`hero-${t.name}.svg`, heroSvg(t));
-  write(`section-featured-${t.name}.svg`, sectionSvg("01", DATA.sections.featured, t, { first: true }));
-  write(`section-others-${t.name}.svg`, sectionSvg("02", DATA.sections.others, t, { linkLabel: "View all projects" }));
-  write(`section-tech-${t.name}.svg`, sectionSvg("03", DATA.sections.tech, t));
-  write(`rail-card-${t.name}.svg`, railSvg(cardHeight, t, { dot: true }));
-  write(`rail-buttons-${t.name}.svg`, railSvg(buttonHeight, t));
-  write(`rail-tiles-${t.name}.svg`, railSvg(TILE.h, t, { dot: true }));
-  write(`rail-end-${t.name}.svg`, railSvg(techHeight, t));
+  write(`cta-projects-${t.name}.svg`, ctaSvg("projects", t));
+  write(`cta-contact-${t.name}.svg`, ctaSvg("contact", t));
+  write(`selected-${t.name}.svg`, selectedHeadingSvg(t));
   FEATURED.forEach((p, i) => write(`card-${p.slug}-${t.name}.svg`, cardSvg(p, t, cardHeight, i)));
-  for (const p of FEATURED) for (const [kind] of p.links) write(`${buttonFile(kind, p.accent)}-${t.name}.svg`, buttonSvg(kind, p.accent, t));
+  for (const p of FEATURED) for (const [kind] of p.links) write(`${linkFile(kind, p.accent)}-${t.name}.svg`, linkSvg(kind, p.accent, t));
   for (const size of new Set(FEATURED.map((p) => p.team).filter(Boolean))) write(`team-${size}-${t.name}.svg`, teamSvg(size, t));
+  write(`more-top-${t.name}.svg`, moreTopSvg(t));
+  write(`more-edge-left-${t.name}.svg`, moreEdgeSvg("left", t));
+  write(`more-edge-right-${t.name}.svg`, moreEdgeSvg("right", t));
+  write(`more-bottom-${t.name}.svg`, moreBottomSvg(t));
   OTHERS.forEach((o, i) => write(`other-${o.slug}-${t.name}.svg`, tileSvg(o, t, i)));
-  write(`tech-stack-${t.name}.svg`, techSvg(t));
-  write(`footer-${t.name}.svg`, footerSvg(t));
+  write(`tech-heading-${t.name}.svg`, techHeadingSvg(t));
+  write(`tech-stack-${t.name}.svg`, techRowSvg(t));
+  write(`footer-left-${t.name}.svg`, footerLeftSvg(t));
+  write(`footer-right-${t.name}.svg`, footerRightSvg(t));
   for (const kind of Object.keys(DATA.footer.links)) write(`social-${kind}-${t.name}.svg`, socialSvg(kind, t));
 }
 write("spacer.svg", `<svg xmlns="http://www.w3.org/2000/svg" width="100" height="1" viewBox="0 0 100 1"/>\n`);
