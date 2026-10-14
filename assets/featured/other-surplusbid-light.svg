@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="286" height="84" viewBox="0 0 286 84" role="img" aria-label="SurplusBid — Auction backend (Stripe)">
+  <title>SurplusBid — Auction backend (Stripe)</title>
+  <defs>
+<linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e40af"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
+<radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="20" cy="0" r="170"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.08000000000000002"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<clipPath id="clip"><rect width="286" height="84" rx="14"/></clipPath>
+<symbol id="i-gavel" viewBox="0 0 24 24"><path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381"/><path d="m16 16 6-6"/><path d="m21.5 10.5-8-8"/><path d="m8 8 6-6"/><path d="m8.5 7.5 8 8"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  </defs>
+  <style>.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }</style>
+<g clip-path="url(#clip)"><rect width="286" height="84" fill="#ffffff"/><rect width="286" height="84" fill="url(#glow)"/></g>
+<rect x="0.5" y="0.5" width="285" height="83" rx="13.5" fill="none" stroke="#0f172a" stroke-opacity="0.12"/>
+<rect x="16" y="21" width="42" height="42" rx="10.92" fill="url(#tile)"/>
+<rect x="16.5" y="21.5" width="41" height="41" rx="10.42" fill="none" stroke="#ffffff" stroke-opacity="0.2"/>
+<use href="#i-gavel" x="26.5" y="31.5" width="21" height="21" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="69" y="38" class="sans" font-size="13" font-weight="700" fill="#0f172a" data-max="173">SurplusBid</text>
+<text x="69" y="57" class="sans" font-size="12" fill="#475569" data-max="173">Auction backend (Stripe)</text>
+<circle cx="260" cy="42" r="12" fill="none" stroke="#0f172a" stroke-opacity="0.18"/>
+<use href="#i-arrow" x="253.5" y="35.5" width="13" height="13" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
