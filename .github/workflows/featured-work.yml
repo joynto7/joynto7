@@ -1,0 +1,38 @@
+name: Featured work
+
+# Rebuilds the README's Featured Work cards whenever projects.json, a thumbnail or the
+# generator changes, so a project can be added straight from GitHub's web editor.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/featured/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: featured-work
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/featured/build.mjs
+      - name: Commit rebuilt cards
+        run: |
+          if [ -z "$(git status --porcelain -- README.md assets/featured)" ]; then
+            echo "Cards are already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/featured
+          git commit -m "Rebuild featured work cards"
+          git push

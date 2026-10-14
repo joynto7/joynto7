@@ -1,0 +1,149 @@
+{
+  "portfolio": "https://joyntoghosh.vercel.app",
+  "hero": {
+    "eyebrow": "MY WORK",
+    "description": "A collection of projects I've built, showcasing my skills in modern web technologies, real-time systems and problem solving.",
+    "note": "Turning ideas into real-world solutions"
+  },
+  "sections": {
+    "featured": {
+      "title": "Featured Projects",
+      "subtitle": "Selected work that defines my journey."
+    },
+    "others": {
+      "title": "Other Projects",
+      "subtitle": "More projects I've worked on.",
+      "link": "https://github.com/joynto7?tab=repositories"
+    },
+    "tech": {
+      "title": "Tech Stack",
+      "subtitle": "Technologies I work with."
+    }
+  },
+  "featured": [
+    {
+      "name": "Sentra",
+      "subtitle": "AI Security Testing Platform",
+      "badge": "Featured",
+      "type": "Web App",
+      "team": 3,
+      "icon": "shield",
+      "accent": "blue",
+      "description": "Tests LLM apps such as chatbots, RAG systems and tool-using agents: maps the attack surface, runs security tests, records evidence, scores risk, and re-tests after fixes.",
+      "tech": ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Celery + Redis", "LiteLLM", "Docker"],
+      "thumbnail": "sentra",
+      "links": {
+        "source": "https://github.com/joynto7/Sentra"
+      }
+    },
+    {
+      "name": "AgroSync",
+      "subtitle": "Smart Irrigation Dashboard",
+      "badge": "IoT / AgriTech",
+      "type": "Dashboard",
+      "icon": "leaf",
+      "accent": "green",
+      "description": "Streams soil moisture and temperature from ESP32 sensors, lets users start watering remotely, and stores history in PostgreSQL for trend charts.",
+      "tech": ["ESP32", "MQTT", "Socket.IO", "Next.js", "Express", "Prisma", "PostgreSQL"],
+      "thumbnail": "agrosync",
+      "links": {
+        "live": "https://agro-sync-seven.vercel.app/",
+        "case": "https://joyntoghosh.vercel.app/case-studies/agrosync"
+      }
+    },
+    {
+      "name": "FixItNow",
+      "subtitle": "Home Services Marketplace",
+      "badge": "Marketplace",
+      "type": "Web App",
+      "icon": "wrench",
+      "accent": "indigo",
+      "description": "Customers book a technician for a time slot and pay with Stripe or SSLCommerz. Technicians manage their availability and jobs, and admins moderate the platform.",
+      "tech": ["Next.js", "TanStack Query", "Express", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
+      "thumbnail": "fixitnow.jpg",
+      "mobile": "fixitnow-mobile.jpg",
+      "links": {
+        "live": "https://fixitnow-frontend-peach.vercel.app",
+        "source": "https://github.com/joynto7/fixitnow-frontend",
+        "api": "https://github.com/joynto7/fixitnow-backend"
+      }
+    },
+    {
+      "name": "Occasio",
+      "subtitle": "Event Discovery & Booking",
+      "badge": "Events",
+      "type": "Web App",
+      "icon": "calendar",
+      "accent": "magenta",
+      "description": "People find, book and review events. Organizers and admins manage everything from role-based dashboards with analytics.",
+      "tech": ["Next.js 16", "Tailwind CSS v4", "Express", "Prisma", "PostgreSQL", "JWT"],
+      "thumbnail": "occasio.jpg",
+      "mobile": "occasio-mobile.jpg",
+      "links": {
+        "live": "https://client-eight-rho-92.vercel.app",
+        "source": "https://github.com/joynto7/Novi"
+      }
+    }
+  ],
+  "others": [
+    {
+      "name": "SurplusBid",
+      "subtitle": "Auction platform (Stripe)",
+      "icon": "gavel",
+      "accent": "blue",
+      "link": "https://github.com/joynto7/surplusbid-backend"
+    },
+    {
+      "name": "Club Connect",
+      "subtitle": "University clubs platform",
+      "icon": "users",
+      "accent": "green",
+      "link": "https://club-connect-rust.vercel.app"
+    },
+    {
+      "name": "DevPulse",
+      "subtitle": "Bug-tracker API",
+      "icon": "activity",
+      "accent": "indigo",
+      "link": "https://github.com/joynto7/devpulse"
+    },
+    {
+      "name": "Network Traffic Analyzer",
+      "subtitle": "Python packet sniffer",
+      "icon": "network",
+      "accent": "amber",
+      "link": "https://github.com/joynto7/network-analysis"
+    }
+  ],
+  "techStack": [
+    {
+      "title": "Frontend",
+      "subtitle": "Modern, responsive and interactive UIs",
+      "icon": "monitor",
+      "accent": "blue",
+      "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"]
+    },
+    {
+      "title": "Backend",
+      "subtitle": "Scalable APIs and real-time systems",
+      "icon": "server",
+      "accent": "green",
+      "tech": ["Python", "Node.js", "Express", "FastAPI"]
+    },
+    {
+      "title": "Data & Infrastructure",
+      "subtitle": "Databases, cloud and deployment",
+      "icon": "database",
+      "accent": "violet",
+      "tech": ["PostgreSQL", "Prisma", "Docker"]
+    }
+  ],
+  "footer": {
+    "tagline": "Build · Learn · Improve",
+    "links": {
+      "github": "https://github.com/joynto7",
+      "linkedin": "https://www.linkedin.com/in/joynto7/",
+      "email": "mailto:jg.contact.me07@gmail.com"
+    }
+  }
+}
