@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="141" height="64" viewBox="0 0 141 64" role="img" aria-label="Case study">
+  <title>Case study</title>
+  <defs>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+  </defs>
+  <style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.hand { font-family: "Segoe Print", "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive; }
+.float { animation: float 7s ease-in-out infinite; }
+.lift { transform-box: fill-box; transform-origin: center; animation: lift 6s ease-in-out infinite; }
+.bob { animation: bob 5s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 2.8s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes lift { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0, -7px) rotate(-0.8deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes twinkle { 0%, 100% { opacity: 0.25; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1.15); } }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+<rect x="3.5" y="11.5" width="134" height="33" rx="9" fill="#ffffff" fill-opacity="0.03" stroke="#ffffff" stroke-opacity="0.22"/>
+<use href="#i-book" x="18" y="20.5" width="15" height="15" fill="none" stroke="#e2e8f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="41" y="33" class="sans" font-size="14.5" font-weight="600" fill="#e2e8f0">Case study</text>
+</svg>

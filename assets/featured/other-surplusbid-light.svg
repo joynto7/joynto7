@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="271" height="112" viewBox="0 0 271 112" role="img" aria-label="SurplusBid — Auction platform (Stripe)">
+  <title>SurplusBid — Auction platform (Stripe)</title>
+  <defs>
+<linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset="1" stop-color="#f6f8fc" stop-opacity="1"/></linearGradient>
+<radialGradient id="wash" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="200"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.13"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8" stop-opacity="1"/><stop offset="1" stop-color="#3b82f6" stop-opacity="1"/></linearGradient>
+<radialGradient id="tileGlow" gradientUnits="userSpaceOnUse" cx="36" cy="48" r="40"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.33"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<linearGradient id="glare" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.7"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<clipPath id="card"><rect x="0" y="0" width="255" height="96" rx="16"/></clipPath>
+<symbol id="i-gavel" viewBox="0 0 24 24"><path d="m14 13-8.381 8.38a1 1 0 0 1-3.001-3l8.384-8.381"/><path d="m16 16 6-6"/><path d="m21.5 10.5-8-8"/><path d="m8 8 6-6"/><path d="m8.5 7.5 8 8"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  </defs>
+  <style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.hand { font-family: "Segoe Print", "Bradley Hand", "Marker Felt", "Comic Sans MS", cursive; }
+.float { animation: float 7s ease-in-out infinite; }
+.lift { transform-box: fill-box; transform-origin: center; animation: lift 6s ease-in-out infinite; }
+.bob { animation: bob 5s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.twinkle { transform-box: fill-box; transform-origin: center; animation: twinkle 2.8s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes lift { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(0, -7px) rotate(-0.8deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes twinkle { 0%, 100% { opacity: 0.25; transform: scale(0.7); } 50% { opacity: 1; transform: scale(1.15); } }
+.run { animation: run 6s linear infinite; }
+@keyframes run { to { stroke-dashoffset: -674.53; } }
+.glare { animation: glare 8s ease-in-out infinite; }
+@keyframes glare { 0% { transform: translateX(0); } 60%, 100% { transform: translateX(815px); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+<g transform="translate(8 8)"><g class="float" style="animation-delay: -0s">
+<rect width="255" height="96" rx="16" fill="none" stroke="#3b82f6" stroke-width="12" stroke-opacity="0.02"/>
+<rect width="255" height="96" rx="16" fill="none" stroke="#3b82f6" stroke-width="7" stroke-opacity="0.04"/>
+<rect width="255" height="96" rx="16" fill="none" stroke="#3b82f6" stroke-width="3" stroke-opacity="0.07"/>
+<rect width="255" height="96" rx="16" fill="url(#body)"/>
+<rect width="255" height="96" rx="16" fill="url(#wash)"/>
+<g clip-path="url(#card)"><g class="glare"><rect x="-260" y="-96" width="170" height="288" fill="url(#glare)" transform="rotate(18 -175 48)"/></g></g>
+<rect x="0.5" y="0.5" width="254" height="95" rx="15.5" fill="none" stroke="#3b82f6" stroke-opacity="0.45" stroke-width="1.2"/>
+<rect class="run" width="255" height="96" rx="16" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-dasharray="70 604.53"/>
+<circle class="pulse" cx="36" cy="48" r="40" fill="url(#tileGlow)"/>
+<rect x="14" y="26" width="44" height="44" rx="11.44" fill="url(#tile)"/>
+<rect x="14.5" y="26.5" width="43" height="43" rx="10.94" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M25.44 27.5 H46.56" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
+<use href="#i-gavel" x="25" y="37" width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="70" y="36" class="sans" font-size="14.5" font-weight="700" fill="#0f172a" data-max="137">SurplusBid</text>
+<text x="70" y="54" class="sans" font-size="12.5" fill="#475569" data-max="137">Auction platform</text>
+<text x="70" y="70" class="sans" font-size="12.5" fill="#475569" data-max="137">(Stripe)</text>
+<circle cx="229" cy="48" r="13" fill="none" stroke="#0f172a" stroke-opacity="0.2"/>
+<use href="#i-arrow" x="222" y="41" width="14" height="14" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g></g>
+</svg>
