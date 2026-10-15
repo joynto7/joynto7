@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="306" height="390" viewBox="0 784 306 390" preserveAspectRatio="none" role="img" aria-label="Sentra — AI Security Testing Platform. Tests LLM apps such as chatbots, RAG systems and tool-using agents: maps the attack surface, runs security tests, records evidence, scores risk, and re-tests after fixes. Built with Next.js, TypeScript, FastAPI, PostgreSQL, Celery + Redis, LiteLLM, Docker.">
+<title>Sentra — AI Security Testing Platform. Tests LLM apps such as chatbots, RAG systems and tool-using agents: maps the attack surface, runs security tests, records evidence, scores risk, and re-tests after fixes. Built with Next.js, TypeScript, FastAPI, PostgreSQL, Celery + Redis, LiteLLM, Docker.</title>
+<defs>
+<linearGradient id="space" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="2336"><stop offset="0" stop-color="#050817"/><stop offset="0.33" stop-color="#080c23"/><stop offset="0.67" stop-color="#070a1d"/><stop offset="1" stop-color="#04060f"/></linearGradient>
+<radialGradient id="nebula-1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#1d4ed8" stop-opacity="0.22"/><stop offset="1" stop-color="#1d4ed8" stop-opacity="0"/></radialGradient>
+<radialGradient id="nebula-3" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#0e7490" stop-opacity="0.2"/><stop offset="1" stop-color="#0e7490" stop-opacity="0"/></radialGradient>
+<linearGradient id="wash-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.28"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
+<pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" fill-opacity="0.025"/></pattern>
+<linearGradient id="cardEdge-blue" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="0.5" stop-color="#3b82f6"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+<linearGradient id="wash-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10b981" stop-opacity="0.28"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></linearGradient>
+<linearGradient id="cardEdge-green" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="0.5" stop-color="#10b981"/><stop offset="1" stop-color="#047857"/></linearGradient>
+<radialGradient id="tileGlow-blue" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.6"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<linearGradient id="tile-blue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+<radialGradient id="shotGlow-blue" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.4"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<clipPath id="shot-sentra"><rect x="36" y="1002" width="246" height="150" rx="9"/></clipPath>
+<clipPath id="glare-sentra"><rect x="20" y="800" width="278" height="374" rx="18"/></clipPath>
+<linearGradient id="glareBand" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.1"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+</defs>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+.bob { animation: bob 6s ease-in-out infinite; }
+.bob-s { animation: bob-s 5s ease-in-out infinite; }
+.tw { animation: tw 3s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.lava { animation: lava 2.6s ease-in-out infinite; }
+.spin { transform-box: fill-box; transform-origin: center; animation: spin 18s linear infinite; }
+.dash { animation: dash 3s linear infinite; }
+.rise { animation: rise 5s ease-in infinite; }
+.rise-s { animation: rise-s 3.4s ease-in infinite; }
+.type { transform-box: fill-box; transform-origin: left center; animation: type 3.6s steps(12) infinite; }
+.sweep { animation: sweep 8s ease-in-out infinite; }
+.sheen { animation: sheen 4.5s ease-in-out infinite; }
+.flicker { animation: flicker 4s ease-in-out infinite; }
+.blink { animation: blink 1.8s steps(2, jump-none) infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes bob-s { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes tw { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes lava { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes dash { to { stroke-dashoffset: -64; } }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+@keyframes rise-s { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-24px); opacity: 0; } }
+@keyframes type { 0% { transform: scaleX(0.05); } 70%, 100% { transform: scaleX(1); } }
+@keyframes sweep { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(600px); } }
+@keyframes sheen { 0% { transform: translateX(0); } 50%, 100% { transform: translateX(260px); } }
+@keyframes flicker { 0%, 100% { opacity: 0.8; } 45% { opacity: 1; } 50% { opacity: 0.85; } 55% { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="1200" height="2336" fill="url(#space)"/>
+<circle cx="130" cy="520" r="440" fill="url(#nebula-1)"/>
+<circle cx="120" cy="1300" r="420" fill="url(#nebula-3)"/>
+<circle cx="54.12" cy="1038.44" r="0.92" fill="#ffffff" fill-opacity="0.84"/>
+<circle cx="75.62" cy="1032.05" r="0.59" fill="#ffffff" fill-opacity="0.33"/>
+<circle cx="25.63" cy="865.16" r="0.4" fill="#ffffff" fill-opacity="0.39"/>
+<circle cx="20.9" cy="919.92" r="1.04" fill="#ffffff" fill-opacity="0.74"/>
+<circle class="tw" style="animation-delay: -1.3s; animation-duration: 4.71s" cx="199.05" cy="1029.52" r="0.62" fill="#ffffff" fill-opacity="0.37"/>
+<circle cx="205" cy="1089.01" r="0.54" fill="#ffffff" fill-opacity="0.85"/>
+<circle cx="291.83" cy="809.46" r="1.37" fill="#ffffff" fill-opacity="0.65"/>
+<circle cx="281.47" cy="1005.14" r="0.63" fill="#ffffff" fill-opacity="0.32"/>
+<circle class="tw" style="animation-delay: -2.48s; animation-duration: 2.49s" cx="26.1" cy="955.76" r="1.22" fill="#ffffff" fill-opacity="0.25"/>
+<circle cx="182.5" cy="806.2" r="0.72" fill="#ffffff" fill-opacity="0.47"/>
+<circle cx="292.5" cy="934.07" r="0.75" fill="#ffffff" fill-opacity="0.84"/>
+<circle cx="107.03" cy="1013.33" r="0.41" fill="#ffffff" fill-opacity="0.72"/>
+<circle cx="144.68" cy="1165.54" r="0.86" fill="#ffffff" fill-opacity="0.76"/>
+<circle cx="196.69" cy="1014.62" r="0.58" fill="#ffffff" fill-opacity="0.74"/>
+<circle cx="190" cy="1090.88" r="0.45" fill="#ffffff" fill-opacity="0.6"/>
+<circle cx="146.04" cy="1044.8" r="0.51" fill="#ffffff" fill-opacity="0.67"/>
+<circle class="tw" style="animation-delay: -2.16s; animation-duration: 3.94s" cx="193.36" cy="1089.59" r="1.55" fill="#ffffff" fill-opacity="0.32"/>
+<circle cx="104.13" cy="829.94" r="0.6" fill="#ffffff" fill-opacity="0.7"/>
+<circle cx="265.34" cy="1120.46" r="1.07" fill="#ffffff" fill-opacity="0.68"/>
+<circle cx="275.16" cy="881.73" r="1.12" fill="#ffffff" fill-opacity="0.69"/>
+<circle cx="83.85" cy="856.57" r="1.06" fill="#ffffff" fill-opacity="0.77"/>
+<circle class="tw" style="animation-delay: -3.24s; animation-duration: 2.97s" cx="205.22" cy="1159.33" r="1.18" fill="#ffffff" fill-opacity="0.31"/>
+<circle cx="197.63" cy="815.13" r="1.66" fill="#ffffff" fill-opacity="0.72"/>
+<circle cx="184.14" cy="843.82" r="0.4" fill="#ffffff" fill-opacity="0.56"/>
+<circle cx="145.25" cy="801.58" r="0.97" fill="#ffffff" fill-opacity="0.54"/>
+<circle cx="166.57" cy="1027.15" r="0.52" fill="#ffffff" fill-opacity="0.5"/>
+<circle class="tw" style="animation-delay: -0.07s; animation-duration: 2.96s" cx="105.67" cy="1055.95" r="0.57" fill="#ffffff" fill-opacity="0.68"/>
+<circle class="tw" style="animation-delay: -3.12s; animation-duration: 4.5s" cx="74.29" cy="987.38" r="0.68" fill="#ffffff" fill-opacity="0.85"/>
+<circle cx="146.16" cy="846.25" r="0.4" fill="#ffffff" fill-opacity="0.46"/>
+<circle cx="47.63" cy="1147.79" r="0.45" fill="#ffffff" fill-opacity="0.69"/>
+<circle cx="37.56" cy="1016.66" r="0.67" fill="#ffffff" fill-opacity="0.67"/>
+<circle cx="141.06" cy="1052.08" r="1.35" fill="#ffffff" fill-opacity="0.38"/>
+<circle class="tw" style="animation-delay: -2.58s; animation-duration: 3.16s" cx="162.17" cy="914.53" r="1.4" fill="#ffffff" fill-opacity="0.52"/>
+<circle cx="112.64" cy="974.54" r="1.28" fill="#ffffff" fill-opacity="0.47"/>
+<circle cx="113.24" cy="1065.36" r="1.17" fill="#ffffff" fill-opacity="0.27"/>
+<circle cx="119.35" cy="899.63" r="0.48" fill="#ffffff" fill-opacity="0.55"/>
+<circle cx="255.73" cy="1153.51" r="0.56" fill="#ffffff" fill-opacity="0.4"/>
+<polygon points="-27.2,987.68 43.97,1001.11 4.9,1038.89" fill="#0d1024"/><polygon points="-27.2,987.68 4.9,1038.89 -33.59,1038.98" fill="#141831"/><polygon points="-27.2,987.68 -33.59,1038.98 -63.62,1015.46" fill="#1d2343"/><polygon points="-27.2,987.68 -63.62,1015.46 -50.06,975.41" fill="#3a4270"/><polygon points="-27.2,987.68 -50.06,975.41 -25.37,953.54" fill="#3a4270"/><polygon points="-27.2,987.68 -25.37,953.54 16.73,975.78" fill="#2b3259"/><polygon points="-27.2,987.68 16.73,975.78 43.97,1001.11" fill="#141831"/><polygon points="43.97,1001.11 4.9,1038.89 -33.59,1038.98 -63.62,1015.46 -50.06,975.41 -25.37,953.54 16.73,975.78" fill="none" stroke="#818cf8" stroke-opacity="0.28" stroke-width="1" stroke-linejoin="round"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="#3b82f6" stroke-width="16" stroke-opacity="0.05"/><rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="#3b82f6" stroke-width="9" stroke-opacity="0.1"/><rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="#3b82f6" stroke-width="3.5" stroke-opacity="0.24"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="#0a1029" fill-opacity="0.95"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="url(#wash-blue)"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="url(#scanlines)"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="url(#cardEdge-blue)" stroke-width="1.5"/>
+<path d="M44 801.2 H274" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M21 840 V818 A17 17 0 0 1 38 801 H60" fill="none" stroke="#60a5fa" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M297 1270 V1292 A17 17 0 0 1 280 1309 H258" fill="none" stroke="#60a5fa" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="#10b981" stroke-width="16" stroke-opacity="0.05"/><rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="#10b981" stroke-width="9" stroke-opacity="0.1"/><rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="#10b981" stroke-width="3.5" stroke-opacity="0.24"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="#0a1029" fill-opacity="0.95"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="url(#wash-green)"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="url(#scanlines)"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="url(#cardEdge-green)" stroke-width="1.5"/>
+<path d="M338 801.2 H568" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M315 840 V818 A17 17 0 0 1 332 801 H354" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M591 1270 V1292 A17 17 0 0 1 574 1309 H552" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linecap="round"/>
+<circle class="pulse" style="animation-delay: -0s" cx="59" cy="841" r="36" fill="url(#tileGlow-blue)"/>
+<rect x="36" y="818" width="46" height="46" rx="11.96" fill="url(#tile-blue)"/>
+<rect x="36.5" y="818.5" width="45" height="45" rx="11.46" fill="none" stroke="#ffffff" stroke-opacity="0.25"/>
+<path d="M47.96 819.5 H70.04" stroke="#ffffff" stroke-opacity="0.4" stroke-linecap="round"/>
+<use href="#i-shield" x="47" y="829" width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="94" y="841" class="sans" font-size="19" font-weight="700" letter-spacing="-0.2" fill="#f8fafc">Sentra</text>
+<text x="94" y="860" class="sans" font-size="11.5" fill="#60a5fa">AI Security Testing Platform</text>
+<rect x="214" y="818" width="68" height="20" rx="10" fill="#3b82f6" fill-opacity="0.22" stroke="#60a5fa" stroke-opacity="0.7"/>
+<text x="248" y="832" class="sans" font-size="10.5" font-weight="700" text-anchor="middle" fill="#60a5fa">Featured</text>
+<rect x="37" y="882" width="6" height="6" rx="1" fill="#60a5fa" transform="rotate(45 40 885)"/><text x="50" y="889" class="mono" font-size="10" font-weight="600" letter-spacing="1.2" fill="#60a5fa">AI SECURITY</text>
+<text x="36" y="912" class="sans" font-size="13" fill="#b6c0dc">Tests LLM apps such as chatbots, RAG</text>
+<text x="36" y="930.5" class="sans" font-size="13" fill="#b6c0dc">systems and tool-using agents: maps</text>
+<text x="36" y="949" class="sans" font-size="13" fill="#b6c0dc">the attack surface, runs security tests,</text>
+<text x="36" y="967.5" class="sans" font-size="13" fill="#b6c0dc">records evidence, scores risk, and</text>
+<text x="36" y="986" class="sans" font-size="13" fill="#b6c0dc">re-tests after fixes.</text>
+<ellipse cx="159" cy="1077" rx="152.52" ry="102" fill="url(#shotGlow-blue)"/>
+<g class="bob-s" style="animation-delay: -0s">
+<rect x="36" y="1002" width="246" height="150" rx="9" fill="#070b18"/>
+<g clip-path="url(#shot-sentra)"><g transform="translate(36 1017) scale(1.4)"><rect width="176" height="117" fill="#0a0f1c"/>
+<rect width="34" height="117" fill="#0f172a"/>
+<rect x="9" y="8" width="16" height="16" rx="4" fill="#2563eb"/>
+<use href="#i-shield" x="12" y="11" width="10" height="10" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="9" y="34" width="16" height="5" rx="2.5" fill="#3b82f6"/>
+<rect x="9" y="45" width="16" height="5" rx="2.5" fill="#1e293b"/>
+<rect x="9" y="56" width="16" height="5" rx="2.5" fill="#1e293b"/>
+<rect x="9" y="67" width="16" height="5" rx="2.5" fill="#1e293b"/>
+<rect x="9" y="78" width="16" height="5" rx="2.5" fill="#1e293b"/>
+<text x="42" y="15" class="sans" font-size="7" font-weight="700" fill="#e2e8f0">Security Overview</text>
+<rect x="142" y="8" width="26" height="9" rx="4.5" fill="#1d4ed8"/>
+<text x="155" y="14.2" class="sans" font-size="4.6" font-weight="600" text-anchor="middle" fill="#ffffff">Re-test</text>
+<rect x="42.5" y="22.5" width="55" height="53" rx="5" fill="#111a2e" stroke="#1e293b"/>
+<circle cx="70" cy="45" r="14" fill="none" stroke="#1e293b" stroke-width="4"/>
+<circle cx="70" cy="45" r="14" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" stroke-dasharray="68.6 100" transform="rotate(-90 70 45)"/>
+<text x="70" y="48.6" class="sans" font-size="10" font-weight="800" text-anchor="middle" fill="#f8fafc">78</text>
+<text x="70" y="70" class="sans" font-size="5" text-anchor="middle" fill="#94a3b8">Risk score</text>
+<rect x="104.5" y="22.5" width="63" height="53" rx="5" fill="#111a2e" stroke="#1e293b"/>
+<text x="110" y="31" class="sans" font-size="5.2" font-weight="600" fill="#cbd5e1">Findings</text>
+<rect x="111" y="48" width="5.5" height="22" rx="1.5" fill="#f43f5e"/>
+<rect x="120" y="40" width="5.5" height="30" rx="1.5" fill="#fb7185"/>
+<rect x="129" y="53" width="5.5" height="17" rx="1.5" fill="#f59e0b"/>
+<rect x="138" y="45" width="5.5" height="25" rx="1.5" fill="#3b82f6"/>
+<rect x="147" y="58" width="5.5" height="12" rx="1.5" fill="#22c55e"/>
+<rect x="156" y="51" width="5.5" height="19" rx="1.5" fill="#8b5cf6"/>
+<rect x="42" y="84" width="126" height="8" rx="2" fill="#0f172a"/><circle cx="47" cy="88" r="2" fill="#f43f5e"/><rect x="53" y="86.5" width="70" height="3" rx="1.5" fill="#334155"/><rect x="148" y="85.5" width="16" height="5" rx="2.5" fill="#f43f5e" fill-opacity="0.3"/>
+<rect x="42" y="95" width="126" height="8" rx="2" fill="#0f172a"/><circle cx="47" cy="99" r="2" fill="#f59e0b"/><rect x="53" y="97.5" width="56" height="3" rx="1.5" fill="#334155"/><rect x="148" y="96.5" width="16" height="5" rx="2.5" fill="#f59e0b" fill-opacity="0.3"/>
+<rect x="42" y="106" width="126" height="8" rx="2" fill="#0f172a"/><circle cx="47" cy="110" r="2" fill="#22c55e"/><rect x="53" y="108.5" width="82" height="3" rx="1.5" fill="#334155"/><rect x="148" y="107.5" width="16" height="5" rx="2.5" fill="#22c55e" fill-opacity="0.3"/></g></g>
+<path d="M36 1011 a9 9 0 0 1 9 -9 H273 a9 9 0 0 1 9 9 V1017 H36 Z" fill="#121a35"/>
+<circle cx="45" cy="1009.5" r="2.2" fill="#f87171"/><circle cx="52.5" cy="1009.5" r="2.2" fill="#fbbf24"/><circle cx="60" cy="1009.5" r="2.2" fill="#34d399"/>
+<rect x="74" y="1006.5" width="170" height="6" rx="3" fill="#ffffff" fill-opacity="0.08"/>
+<rect x="36.5" y="1002.5" width="245" height="149" rx="8.5" fill="none" stroke="#60a5fa" stroke-opacity="0.55"/>
+</g>
+<g clip-path="url(#glare-sentra)"><g class="sweep" style="animation-delay: -0s"><rect x="-150" y="740" width="110" height="494" fill="url(#glareBand)" transform="rotate(16 -95 987)"/></g></g>
+</svg>

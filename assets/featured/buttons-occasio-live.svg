@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="126" viewBox="914 1174 121 126" preserveAspectRatio="none" role="img" aria-label="Occasio: Live demo">
+<title>Occasio: Live demo</title>
+<defs>
+<linearGradient id="space" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="2336"><stop offset="0" stop-color="#050817"/><stop offset="0.33" stop-color="#080c23"/><stop offset="0.67" stop-color="#070a1d"/><stop offset="1" stop-color="#04060f"/></linearGradient>
+<radialGradient id="nebula-2" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#6d28d9" stop-opacity="0.26"/><stop offset="1" stop-color="#6d28d9" stop-opacity="0"/></radialGradient>
+<radialGradient id="nebula-4" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4338ca" stop-opacity="0.28"/><stop offset="1" stop-color="#4338ca" stop-opacity="0"/></radialGradient>
+<linearGradient id="wash-orange" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f97316" stop-opacity="0.28"/><stop offset="1" stop-color="#f97316" stop-opacity="0"/></linearGradient>
+<pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" fill-opacity="0.025"/></pattern>
+<linearGradient id="cardEdge-orange" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="0.5" stop-color="#f97316"/><stop offset="1" stop-color="#c2410c"/></linearGradient>
+<symbol id="i-nextdotjs" viewBox="0 0 24 24"><path d="M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z"/></symbol>
+<symbol id="i-tailwindcss" viewBox="0 0 24 24"><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></symbol>
+<symbol id="i-express" viewBox="0 0 24 24"><path d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957 6.272 6.272 0 01-7.306-.933 6.575 6.575 0 01-1.64-3.858c0-.235-.08-.455-.134-.666A88.33 88.33 0 010 11.577zm1.127-.286h9.654c-.06-3.076-2.001-5.258-4.59-5.278-2.882-.04-4.944 2.094-5.071 5.264z"/></symbol>
+<symbol id="i-prisma" viewBox="0 0 24 24"><path d="M21.8068 18.2848L13.5528.7565c-.207-.4382-.639-.7273-1.1286-.7541-.5023-.0293-.9523.213-1.2062.6253L2.266 15.1271c-.2773.4518-.2718 1.0091.0158 1.4555l4.3759 6.7786c.2608.4046.7127.6388 1.1823.6388.1332 0 .267-.0188.3987-.0577l12.7019-3.7568c.3891-.1151.7072-.3904.8737-.7553s.1633-.7828-.0075-1.1454zm-1.8481.7519L9.1814 22.2242c-.3292.0975-.6448-.1873-.5756-.5194l3.8501-18.4386c.072-.3448.5486-.3996.699-.0803l7.1288 15.138c.1344.2856-.019.6224-.325.7128z"/></symbol>
+<linearGradient id="btn-orange" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c2410c"/><stop offset="0.5" stop-color="#f97316"/><stop offset="1" stop-color="#fb923c"/></linearGradient>
+<symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+<clipPath id="sheen-occasio"><rect x="918" y="1256" width="114" height="34" rx="10"/></clipPath>
+<linearGradient id="btnSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.32"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+</defs>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+.bob { animation: bob 6s ease-in-out infinite; }
+.bob-s { animation: bob-s 5s ease-in-out infinite; }
+.tw { animation: tw 3s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.lava { animation: lava 2.6s ease-in-out infinite; }
+.spin { transform-box: fill-box; transform-origin: center; animation: spin 18s linear infinite; }
+.dash { animation: dash 3s linear infinite; }
+.rise { animation: rise 5s ease-in infinite; }
+.rise-s { animation: rise-s 3.4s ease-in infinite; }
+.type { transform-box: fill-box; transform-origin: left center; animation: type 3.6s steps(12) infinite; }
+.sweep { animation: sweep 8s ease-in-out infinite; }
+.sheen { animation: sheen 4.5s ease-in-out infinite; }
+.flicker { animation: flicker 4s ease-in-out infinite; }
+.blink { animation: blink 1.8s steps(2, jump-none) infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes bob-s { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes tw { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes lava { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes dash { to { stroke-dashoffset: -64; } }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+@keyframes rise-s { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-24px); opacity: 0; } }
+@keyframes type { 0% { transform: scaleX(0.05); } 70%, 100% { transform: scaleX(1); } }
+@keyframes sweep { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(600px); } }
+@keyframes sheen { 0% { transform: translateX(0); } 50%, 100% { transform: translateX(260px); } }
+@keyframes flicker { 0%, 100% { opacity: 0.8; } 45% { opacity: 1; } 50% { opacity: 0.85; } 55% { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="1200" height="2336" fill="url(#space)"/>
+<circle cx="1080" cy="900" r="480" fill="url(#nebula-2)"/>
+<circle cx="980" cy="1700" r="460" fill="url(#nebula-4)"/>
+<circle cx="969.7" cy="1280.15" r="0.6" fill="#ffffff" fill-opacity="0.42"/>
+<circle class="tw" style="animation-delay: -2.96s; animation-duration: 4.2s" cx="995.11" cy="1174.77" r="0.68" fill="#ffffff" fill-opacity="0.78"/>
+<circle cx="960.43" cy="1187.07" r="0.4" fill="#ffffff" fill-opacity="0.76"/>
+<circle cx="1005.14" cy="1256.12" r="0.48" fill="#ffffff" fill-opacity="0.73"/>
+<rect x="902" y="800" width="278" height="510" rx="18" fill="none" stroke="#f97316" stroke-width="16" stroke-opacity="0.05"/><rect x="902" y="800" width="278" height="510" rx="18" fill="none" stroke="#f97316" stroke-width="9" stroke-opacity="0.1"/><rect x="902" y="800" width="278" height="510" rx="18" fill="none" stroke="#f97316" stroke-width="3.5" stroke-opacity="0.24"/>
+<rect x="902" y="800" width="278" height="510" rx="18" fill="#0a1029" fill-opacity="0.95"/>
+<rect x="902" y="800" width="278" height="510" rx="18" fill="url(#wash-orange)"/>
+<rect x="902" y="800" width="278" height="510" rx="18" fill="url(#scanlines)"/>
+<rect x="902" y="800" width="278" height="510" rx="18" fill="none" stroke="url(#cardEdge-orange)" stroke-width="1.5"/>
+<path d="M926 801.2 H1156" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M903 840 V818 A17 17 0 0 1 920 801 H942" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M1179 1270 V1292 A17 17 0 0 1 1162 1309 H1140" fill="none" stroke="#fb923c" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="918.5" y="1180.5" width="87" height="23" rx="7" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><use href="#i-nextdotjs" x="926" y="1186" width="12" height="12" fill="#f8fafc"/><text x="943" y="1196" class="sans" font-size="11" font-weight="500" fill="#d9e1f2">Next.js 16</text>
+<rect x="1012.5" y="1180.5" width="121" height="23" rx="7" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><use href="#i-tailwindcss" x="1020" y="1186" width="12" height="12" fill="#38bdf8"/><text x="1037" y="1196" class="sans" font-size="11" font-weight="500" fill="#d9e1f2">Tailwind CSS v4</text>
+<rect x="918.5" y="1210.5" width="77" height="23" rx="7" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><use href="#i-express" x="926" y="1216" width="12" height="12" fill="#e2e8f0"/><text x="943" y="1226" class="sans" font-size="11" font-weight="500" fill="#d9e1f2">Express</text>
+<rect x="1002.5" y="1210.5" width="71" height="23" rx="7" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.15"/><use href="#i-prisma" x="1010" y="1216" width="12" height="12" fill="#c7d2fe"/><text x="1027" y="1226" class="sans" font-size="11" font-weight="500" fill="#d9e1f2">Prisma</text>
+<rect x="1080.5" y="1210.5" width="31" height="23" rx="7" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-dasharray="3 3"/><text x="1096" y="1226" class="sans" font-size="11" font-weight="600" text-anchor="middle" fill="#8a94b8">+2</text>
+<path d="M928 1256 H1022 A10 10 0 0 1 1032 1266 V1280 A10 10 0 0 1 1022 1290 H928 A10 10 0 0 1 918 1280 V1266 A10 10 0 0 1 928 1256 Z" fill="none" stroke="#f97316" stroke-width="16" stroke-opacity="0.07" stroke-linejoin="round"/><path d="M928 1256 H1022 A10 10 0 0 1 1032 1266 V1280 A10 10 0 0 1 1022 1290 H928 A10 10 0 0 1 918 1280 V1266 A10 10 0 0 1 928 1256 Z" fill="none" stroke="#f97316" stroke-width="9" stroke-opacity="0.12" stroke-linejoin="round"/><path d="M928 1256 H1022 A10 10 0 0 1 1032 1266 V1280 A10 10 0 0 1 1022 1290 H928 A10 10 0 0 1 918 1280 V1266 A10 10 0 0 1 928 1256 Z" fill="none" stroke="#f97316" stroke-width="3.5" stroke-opacity="0.26" stroke-linejoin="round"/>
+<rect x="918" y="1256" width="114" height="34" rx="10" fill="url(#btn-orange)"/>
+<path d="M928 1257.2 H1022" stroke="#ffffff" stroke-opacity="0.45" stroke-linecap="round"/>
+<use href="#i-external" x="928" y="1266" width="14" height="14" fill="none" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="948" y="1277.3" class="sans" font-size="12" font-weight="600" fill="#ffffff">Live demo</text>
+<path d="M1017 1269 L1021 1273 L1017 1277" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1038.6" y="1256.6" width="82.8" height="32.8" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.26" stroke-width="1.2"/>
+<use href="#i-github" x="1048" y="1266" width="14" height="14" fill="#e2e8f0"/>
+<text x="1068" y="1277.3" class="sans" font-size="12" font-weight="600" fill="#e2e8f0">Source</text>
+<g clip-path="url(#sheen-occasio)"><g class="sheen" style="animation-delay: -3s"><rect x="858" y="1248" width="34" height="50" fill="url(#btnSheen)" transform="rotate(18 875 1273)"/></g></g>
+</svg>

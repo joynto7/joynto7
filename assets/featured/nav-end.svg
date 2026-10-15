@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="100" viewBox="1110 0 90 100" preserveAspectRatio="none" aria-hidden="true">
+<defs>
+<linearGradient id="space" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="2336"><stop offset="0" stop-color="#050817"/><stop offset="0.33" stop-color="#080c23"/><stop offset="0.67" stop-color="#070a1d"/><stop offset="1" stop-color="#04060f"/></linearGradient>
+<radialGradient id="nebula-0" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#7c3aed" stop-opacity="0.36"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></radialGradient>
+<radialGradient id="planetAura" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#8b5cf6" stop-opacity="0.35"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+<linearGradient id="ring" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#67e8f9"/><stop offset="0.5" stop-color="#a78bfa"/><stop offset="1" stop-color="#f0abfc"/></linearGradient>
+<radialGradient id="planetBody" cx="0.32" cy="0.28" r="0.85"><stop offset="0" stop-color="#d8ccff"/><stop offset="0.3" stop-color="#8b5cf6"/><stop offset="0.68" stop-color="#3b2a9e"/><stop offset="1" stop-color="#120c3a"/></radialGradient>
+<clipPath id="planetClip"><circle cx="1094" cy="158" r="88"/></clipPath>
+<radialGradient id="planetShade" cx="0.78" cy="0.82" r="0.75"><stop offset="0" stop-color="#05030f" stop-opacity="0.75"/><stop offset="1" stop-color="#05030f" stop-opacity="0"/></radialGradient>
+<linearGradient id="navEdge" gradientUnits="userSpaceOnUse" x1="20" y1="0" x2="1180" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset="0.5" stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<linearGradient id="navFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#111a3d"/><stop offset="1" stop-color="#0a0f28"/></linearGradient>
+<pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" fill-opacity="0.025"/></pattern>
+</defs>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+.bob { animation: bob 6s ease-in-out infinite; }
+.bob-s { animation: bob-s 5s ease-in-out infinite; }
+.tw { animation: tw 3s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.lava { animation: lava 2.6s ease-in-out infinite; }
+.spin { transform-box: fill-box; transform-origin: center; animation: spin 18s linear infinite; }
+.dash { animation: dash 3s linear infinite; }
+.rise { animation: rise 5s ease-in infinite; }
+.rise-s { animation: rise-s 3.4s ease-in infinite; }
+.type { transform-box: fill-box; transform-origin: left center; animation: type 3.6s steps(12) infinite; }
+.sweep { animation: sweep 8s ease-in-out infinite; }
+.sheen { animation: sheen 4.5s ease-in-out infinite; }
+.flicker { animation: flicker 4s ease-in-out infinite; }
+.blink { animation: blink 1.8s steps(2, jump-none) infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes bob-s { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes tw { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes lava { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes dash { to { stroke-dashoffset: -64; } }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+@keyframes rise-s { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-24px); opacity: 0; } }
+@keyframes type { 0% { transform: scaleX(0.05); } 70%, 100% { transform: scaleX(1); } }
+@keyframes sweep { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(600px); } }
+@keyframes sheen { 0% { transform: translateX(0); } 50%, 100% { transform: translateX(260px); } }
+@keyframes flicker { 0%, 100% { opacity: 0.8; } 45% { opacity: 1; } 50% { opacity: 0.85; } 55% { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="1200" height="2336" fill="url(#space)"/>
+<circle cx="1000" cy="120" r="500" fill="url(#nebula-0)"/>
+<circle cx="1125.65" cy="31.08" r="0.53" fill="#ffffff" fill-opacity="0.51"/>
+<circle cx="1180.54" cy="81.85" r="0.4" fill="#ffffff" fill-opacity="0.66"/>
+<circle class="tw" style="animation-delay: -3.46s; animation-duration: 3.94s" cx="1127.37" cy="88.51" r="0.92" fill="#ffffff" fill-opacity="0.46"/>
+<circle cx="1189.33" cy="100.34" r="1.5" fill="#ffffff" fill-opacity="0.64"/>
+<circle cx="1094" cy="158" r="140.8" fill="url(#planetAura)"/>
+<path d="M931.2 158 A162.8 29.92 0 0 1 1256.8 158" fill="none" stroke="#a78bfa" stroke-width="12" stroke-opacity="0.1" transform="rotate(-16 1094 158)"/>
+<path d="M931.2 158 A162.8 29.92 0 0 1 1256.8 158" fill="none" stroke="url(#ring)" stroke-width="3.5" stroke-opacity="0.75" transform="rotate(-16 1094 158)"/>
+<circle cx="1094" cy="158" r="88" fill="url(#planetBody)"/>
+<g clip-path="url(#planetClip)"><ellipse cx="1094" cy="109.6" rx="114.4" ry="8.8" fill="#e9d5ff" fill-opacity="0.12" transform="rotate(-14 1094 158)"/><ellipse cx="1094" cy="136" rx="114.4" ry="6.16" fill="#e9d5ff" fill-opacity="0.1" transform="rotate(-14 1094 158)"/><ellipse cx="1094" cy="162.4" rx="114.4" ry="10.56" fill="#e9d5ff" fill-opacity="0.14" transform="rotate(-14 1094 158)"/><ellipse cx="1094" cy="191.44" rx="114.4" ry="5.28" fill="#e9d5ff" fill-opacity="0.1" transform="rotate(-14 1094 158)"/><ellipse cx="1094" cy="212.56" rx="114.4" ry="7.92" fill="#e9d5ff" fill-opacity="0.08" transform="rotate(-14 1094 158)"/></g>
+<circle cx="1094" cy="158" r="88" fill="url(#planetShade)"/>
+<circle cx="1094" cy="158" r="90" fill="none" stroke="#c4b5fd" stroke-opacity="0.45" stroke-width="3"/>
+<circle cx="1094" cy="158" r="95" fill="none" stroke="#a78bfa" stroke-opacity="0.12" stroke-width="10"/>
+<path d="M931.2 158 A162.8 29.92 0 0 0 1256.8 158" fill="none" stroke="#a78bfa" stroke-width="12" stroke-opacity="0.1" transform="rotate(-16 1094 158)"/>
+<path d="M931.2 158 A162.8 29.92 0 0 0 1256.8 158" fill="none" stroke="url(#ring)" stroke-width="3.5" stroke-opacity="0.75" transform="rotate(-16 1094 158)"/>
+<path d="M20 44 L44 14 H1156 L1180 44 L1156 74 H44 Z" fill="none" stroke="url(#navEdge)" stroke-width="16" stroke-opacity="0.05" stroke-linejoin="round"/><path d="M20 44 L44 14 H1156 L1180 44 L1156 74 H44 Z" fill="none" stroke="url(#navEdge)" stroke-width="9" stroke-opacity="0.09" stroke-linejoin="round"/><path d="M20 44 L44 14 H1156 L1180 44 L1156 74 H44 Z" fill="none" stroke="url(#navEdge)" stroke-width="3.5" stroke-opacity="0.2" stroke-linejoin="round"/>
+<path d="M20 44 L44 14 H1156 L1180 44 L1156 74 H44 Z" fill="url(#navFill)" fill-opacity="0.94"/>
+<path d="M20 44 L44 14 H1156 L1180 44 L1156 74 H44 Z" fill="url(#scanlines)"/>
+<path d="M20 44 L44 14 H1156 L1180 44 L1156 74 H44 Z" fill="none" stroke="url(#navEdge)" stroke-width="1.4" stroke-opacity="0.9" stroke-linejoin="round"/>
+<path d="M54 15.5 H1146" stroke="#ffffff" stroke-opacity="0.1"/>
+<path d="M1133 44 L1137.5 36 H1146.5 L1151 44 L1146.5 52 H1137.5 Z" fill="none" stroke="#34d399" stroke-opacity="0.5"/>
+<circle class="pulse" cx="1142" cy="44" r="3.4" fill="#34d399"/>
+</svg>

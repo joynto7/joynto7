@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="100" viewBox="1160 1402 40 100" preserveAspectRatio="none" aria-hidden="true">
+<defs>
+<linearGradient id="space" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="2336"><stop offset="0" stop-color="#050817"/><stop offset="0.33" stop-color="#080c23"/><stop offset="0.67" stop-color="#070a1d"/><stop offset="1" stop-color="#04060f"/></linearGradient>
+<radialGradient id="nebula-4" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4338ca" stop-opacity="0.28"/><stop offset="1" stop-color="#4338ca" stop-opacity="0"/></radialGradient>
+<linearGradient id="edge-others" gradientUnits="userSpaceOnUse" x1="20" y1="1414" x2="1180" y2="1636"><stop offset="0" stop-color="#22d3ee"/><stop offset="0.5" stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient>
+<linearGradient id="panelFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f1637"/><stop offset="1" stop-color="#090d25"/></linearGradient>
+<pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" fill-opacity="0.025"/></pattern>
+</defs>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+.bob { animation: bob 6s ease-in-out infinite; }
+.bob-s { animation: bob-s 5s ease-in-out infinite; }
+.tw { animation: tw 3s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.lava { animation: lava 2.6s ease-in-out infinite; }
+.spin { transform-box: fill-box; transform-origin: center; animation: spin 18s linear infinite; }
+.dash { animation: dash 3s linear infinite; }
+.rise { animation: rise 5s ease-in infinite; }
+.rise-s { animation: rise-s 3.4s ease-in infinite; }
+.type { transform-box: fill-box; transform-origin: left center; animation: type 3.6s steps(12) infinite; }
+.sweep { animation: sweep 8s ease-in-out infinite; }
+.sheen { animation: sheen 4.5s ease-in-out infinite; }
+.flicker { animation: flicker 4s ease-in-out infinite; }
+.blink { animation: blink 1.8s steps(2, jump-none) infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes bob-s { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes tw { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes lava { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes dash { to { stroke-dashoffset: -64; } }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+@keyframes rise-s { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-24px); opacity: 0; } }
+@keyframes type { 0% { transform: scaleX(0.05); } 70%, 100% { transform: scaleX(1); } }
+@keyframes sweep { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(600px); } }
+@keyframes sheen { 0% { transform: translateX(0); } 50%, 100% { transform: translateX(260px); } }
+@keyframes flicker { 0%, 100% { opacity: 0.8; } 45% { opacity: 1; } 50% { opacity: 0.85; } 55% { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="1200" height="2336" fill="url(#space)"/>
+<circle cx="980" cy="1700" r="460" fill="url(#nebula-4)"/>
+<path d="M42 1414 H1158 L1180 1436 V1614 L1158 1636 H42 L20 1614 V1436 Z" fill="none" stroke="url(#edge-others)" stroke-width="16" stroke-opacity="0.05" stroke-linejoin="round"/><path d="M42 1414 H1158 L1180 1436 V1614 L1158 1636 H42 L20 1614 V1436 Z" fill="none" stroke="url(#edge-others)" stroke-width="9" stroke-opacity="0.09" stroke-linejoin="round"/><path d="M42 1414 H1158 L1180 1436 V1614 L1158 1636 H42 L20 1614 V1436 Z" fill="none" stroke="url(#edge-others)" stroke-width="3.5" stroke-opacity="0.2" stroke-linejoin="round"/>
+<path d="M42 1414 H1158 L1180 1436 V1614 L1158 1636 H42 L20 1614 V1436 Z" fill="url(#panelFill)" fill-opacity="0.88"/>
+<path d="M42 1414 H1158 L1180 1436 V1614 L1158 1636 H42 L20 1614 V1436 Z" fill="url(#scanlines)"/>
+<path d="M42 1414 H1158 L1180 1436 V1614 L1158 1636 H42 L20 1614 V1436 Z" fill="none" stroke="url(#edge-others)" stroke-width="1.3" stroke-opacity="0.9" stroke-linejoin="round"/>
+<path d="M20 1456 L20 1436 L42 1414 L62 1414" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1180 1594 L1180 1614 L1158 1636 L1138 1636" fill="none" stroke="#22d3ee" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

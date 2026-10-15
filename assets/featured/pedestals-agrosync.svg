@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="294" height="102" viewBox="306 1300 294 102" preserveAspectRatio="none" aria-hidden="true">
+<defs>
+<linearGradient id="space" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="2336"><stop offset="0" stop-color="#050817"/><stop offset="0.33" stop-color="#080c23"/><stop offset="0.67" stop-color="#070a1d"/><stop offset="1" stop-color="#04060f"/></linearGradient>
+<radialGradient id="nebula-3" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#0e7490" stop-opacity="0.2"/><stop offset="1" stop-color="#0e7490" stop-opacity="0"/></radialGradient>
+<radialGradient id="nebula-4" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4338ca" stop-opacity="0.28"/><stop offset="1" stop-color="#4338ca" stop-opacity="0"/></radialGradient>
+<linearGradient id="wash-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.28"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
+<pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#ffffff" fill-opacity="0.025"/></pattern>
+<linearGradient id="cardEdge-blue" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="0.5" stop-color="#3b82f6"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient>
+<linearGradient id="wash-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10b981" stop-opacity="0.28"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></linearGradient>
+<linearGradient id="cardEdge-green" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="0.5" stop-color="#10b981"/><stop offset="1" stop-color="#047857"/></linearGradient>
+<linearGradient id="wash-violet" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8b5cf6" stop-opacity="0.28"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient>
+<linearGradient id="cardEdge-violet" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#a78bfa"/><stop offset="0.5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#6d28d9"/></linearGradient>
+<radialGradient id="floor-blue" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.4"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<linearGradient id="pedestalSide" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d2547"/><stop offset="1" stop-color="#090c1d"/></linearGradient>
+<radialGradient id="pedTop-blue" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#60a5fa" stop-opacity="0.9"/><stop offset="0.55" stop-color="#3b82f6" stop-opacity="0.45"/><stop offset="1" stop-color="#1d4ed8" stop-opacity="0.35"/></radialGradient>
+<radialGradient id="floor-green" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#10b981" stop-opacity="0.4"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
+<radialGradient id="pedTop-green" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#34d399" stop-opacity="0.9"/><stop offset="0.55" stop-color="#10b981" stop-opacity="0.45"/><stop offset="1" stop-color="#047857" stop-opacity="0.35"/></radialGradient>
+<linearGradient id="beam-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34d399" stop-opacity="0"/><stop offset="1" stop-color="#10b981" stop-opacity="0.4"/></linearGradient>
+<radialGradient id="floor-violet" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#8b5cf6" stop-opacity="0.4"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+<radialGradient id="pedTop-violet" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#a78bfa" stop-opacity="0.9"/><stop offset="0.55" stop-color="#8b5cf6" stop-opacity="0.45"/><stop offset="1" stop-color="#6d28d9" stop-opacity="0.35"/></radialGradient>
+</defs>
+<style>
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
+.mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+.bob { animation: bob 6s ease-in-out infinite; }
+.bob-s { animation: bob-s 5s ease-in-out infinite; }
+.tw { animation: tw 3s ease-in-out infinite; }
+.pulse { animation: pulse 3.2s ease-in-out infinite; }
+.lava { animation: lava 2.6s ease-in-out infinite; }
+.spin { transform-box: fill-box; transform-origin: center; animation: spin 18s linear infinite; }
+.dash { animation: dash 3s linear infinite; }
+.rise { animation: rise 5s ease-in infinite; }
+.rise-s { animation: rise-s 3.4s ease-in infinite; }
+.type { transform-box: fill-box; transform-origin: left center; animation: type 3.6s steps(12) infinite; }
+.sweep { animation: sweep 8s ease-in-out infinite; }
+.sheen { animation: sheen 4.5s ease-in-out infinite; }
+.flicker { animation: flicker 4s ease-in-out infinite; }
+.blink { animation: blink 1.8s steps(2, jump-none) infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes bob-s { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes tw { 0%, 100% { opacity: 0.15; } 50% { opacity: 1; } }
+@keyframes pulse { 0%, 100% { opacity: 0.45; } 50% { opacity: 1; } }
+@keyframes lava { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes dash { to { stroke-dashoffset: -64; } }
+@keyframes rise { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 100% { transform: translateY(-80px); opacity: 0; } }
+@keyframes rise-s { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-24px); opacity: 0; } }
+@keyframes type { 0% { transform: scaleX(0.05); } 70%, 100% { transform: scaleX(1); } }
+@keyframes sweep { 0% { transform: translateX(0); } 55%, 100% { transform: translateX(600px); } }
+@keyframes sheen { 0% { transform: translateX(0); } 50%, 100% { transform: translateX(260px); } }
+@keyframes flicker { 0%, 100% { opacity: 0.8; } 45% { opacity: 1; } 50% { opacity: 0.85; } 55% { opacity: 1; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect width="1200" height="2336" fill="url(#space)"/>
+<circle cx="120" cy="1300" r="420" fill="url(#nebula-3)"/>
+<circle cx="980" cy="1700" r="460" fill="url(#nebula-4)"/>
+<circle cx="417.79" cy="1329.52" r="0.78" fill="#ffffff" fill-opacity="0.41"/>
+<circle class="tw" style="animation-delay: -1.27s; animation-duration: 3.98s" cx="322.57" cy="1370.76" r="0.48" fill="#ffffff" fill-opacity="0.84"/>
+<circle cx="440.81" cy="1381.5" r="0.63" fill="#ffffff" fill-opacity="0.49"/>
+<circle cx="382.23" cy="1350.75" r="0.9" fill="#ffffff" fill-opacity="0.41"/>
+<circle cx="496.21" cy="1386.95" r="0.41" fill="#ffffff" fill-opacity="0.37"/>
+<circle cx="339.36" cy="1372.22" r="1.47" fill="#ffffff" fill-opacity="0.32"/>
+<circle cx="439.75" cy="1311.29" r="0.65" fill="#ffffff" fill-opacity="0.27"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="#3b82f6" stroke-width="16" stroke-opacity="0.05"/><rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="#3b82f6" stroke-width="9" stroke-opacity="0.1"/><rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="#3b82f6" stroke-width="3.5" stroke-opacity="0.24"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="#0a1029" fill-opacity="0.95"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="url(#wash-blue)"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="url(#scanlines)"/>
+<rect x="20" y="800" width="278" height="510" rx="18" fill="none" stroke="url(#cardEdge-blue)" stroke-width="1.5"/>
+<path d="M44 801.2 H274" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M21 840 V818 A17 17 0 0 1 38 801 H60" fill="none" stroke="#60a5fa" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M297 1270 V1292 A17 17 0 0 1 280 1309 H258" fill="none" stroke="#60a5fa" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="#10b981" stroke-width="16" stroke-opacity="0.05"/><rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="#10b981" stroke-width="9" stroke-opacity="0.1"/><rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="#10b981" stroke-width="3.5" stroke-opacity="0.24"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="#0a1029" fill-opacity="0.95"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="url(#wash-green)"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="url(#scanlines)"/>
+<rect x="314" y="800" width="278" height="510" rx="18" fill="none" stroke="url(#cardEdge-green)" stroke-width="1.5"/>
+<path d="M338 801.2 H568" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M315 840 V818 A17 17 0 0 1 332 801 H354" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M591 1270 V1292 A17 17 0 0 1 574 1309 H552" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linecap="round"/>
+<rect x="608" y="800" width="278" height="510" rx="18" fill="none" stroke="#8b5cf6" stroke-width="16" stroke-opacity="0.05"/><rect x="608" y="800" width="278" height="510" rx="18" fill="none" stroke="#8b5cf6" stroke-width="9" stroke-opacity="0.1"/><rect x="608" y="800" width="278" height="510" rx="18" fill="none" stroke="#8b5cf6" stroke-width="3.5" stroke-opacity="0.24"/>
+<rect x="608" y="800" width="278" height="510" rx="18" fill="#0a1029" fill-opacity="0.95"/>
+<rect x="608" y="800" width="278" height="510" rx="18" fill="url(#wash-violet)"/>
+<rect x="608" y="800" width="278" height="510" rx="18" fill="url(#scanlines)"/>
+<rect x="608" y="800" width="278" height="510" rx="18" fill="none" stroke="url(#cardEdge-violet)" stroke-width="1.5"/>
+<path d="M632 801.2 H862" stroke="#ffffff" stroke-opacity="0.22"/>
+<path d="M609 840 V818 A17 17 0 0 1 626 801 H648" fill="none" stroke="#a78bfa" stroke-width="2.6" stroke-linecap="round"/>
+<path d="M885 1270 V1292 A17 17 0 0 1 868 1309 H846" fill="none" stroke="#a78bfa" stroke-width="2.6" stroke-linecap="round"/>
+<ellipse cx="159" cy="1362" rx="150.8" ry="18" fill="url(#floor-blue)"/>
+<path d="M55 1336 V1352 A104 14 0 0 0 263 1352 V1336 Z" fill="url(#pedestalSide)"/>
+<path d="M55 1352 A104 14 0 0 0 263 1352" fill="none" stroke="#3b82f6" stroke-opacity="0.85" stroke-width="1.6"/>
+<ellipse cx="159" cy="1336" rx="104" ry="14" fill="url(#pedTop-blue)" stroke="#60a5fa" stroke-width="1.6"/>
+<ellipse cx="453" cy="1362" rx="150.8" ry="18" fill="url(#floor-green)"/>
+<path d="M349 1336 V1352 A104 14 0 0 0 557 1352 V1336 Z" fill="url(#pedestalSide)"/>
+<path d="M349 1352 A104 14 0 0 0 557 1352" fill="none" stroke="#10b981" stroke-opacity="0.85" stroke-width="1.6"/>
+<ellipse cx="453" cy="1336" rx="104" ry="14" fill="url(#pedTop-green)" stroke="#34d399" stroke-width="1.6"/>
+<path class="pulse" style="animation-delay: -1s" d="M363.56 1336 L342.76 1312 H563.24 L542.44 1336 Z" fill="url(#beam-green)"/>
+<ellipse class="dash" cx="453" cy="1336" rx="87.36" ry="10.5" fill="none" stroke="#ffffff" stroke-opacity="0.65" stroke-width="1.1" stroke-dasharray="10 6"/>
+<ellipse class="pulse" cx="453" cy="1336" rx="52" ry="6" fill="#ffffff" fill-opacity="0.55"/>
+<circle class="rise-s" style="animation-delay: -1.49s" cx="443.52" cy="1332.49" r="2.01" fill="#ffffff"/><circle class="rise-s" style="animation-delay: -0.17s" cx="405.85" cy="1332.23" r="1.45" fill="#34d399"/><circle class="rise-s" style="animation-delay: -1.71s" cx="507.24" cy="1330.35" r="2" fill="#ffffff"/><circle class="rise-s" style="animation-delay: -3.09s" cx="416.09" cy="1333.57" r="1.42" fill="#34d399"/><circle class="rise-s" style="animation-delay: -0.17s" cx="449.22" cy="1331.42" r="1.48" fill="#ffffff"/><circle class="rise-s" style="animation-delay: -2.53s" cx="408.66" cy="1330.57" r="1.07" fill="#34d399"/>
+<ellipse cx="747" cy="1362" rx="150.8" ry="18" fill="url(#floor-violet)"/>
+<path d="M643 1336 V1352 A104 14 0 0 0 851 1352 V1336 Z" fill="url(#pedestalSide)"/>
+<path d="M643 1352 A104 14 0 0 0 851 1352" fill="none" stroke="#8b5cf6" stroke-opacity="0.85" stroke-width="1.6"/>
+<ellipse cx="747" cy="1336" rx="104" ry="14" fill="url(#pedTop-violet)" stroke="#a78bfa" stroke-width="1.6"/>
+</svg>

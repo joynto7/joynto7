@@ -1,28 +1,34 @@
 {
   "portfolio": "https://joyntoghosh.vercel.app",
+  "nav": [
+    { "label": "Home", "link": "https://joyntoghosh.vercel.app" },
+    { "label": "Projects", "link": "https://joyntoghosh.vercel.app/#projects", "active": true },
+    { "label": "About", "link": "https://joyntoghosh.vercel.app/#about" },
+    { "label": "Contact", "link": "https://joyntoghosh.vercel.app/#contact" }
+  ],
   "hero": {
     "greeting": "Hi, I'm",
     "name": ["Joynto", "Dev"],
     "roles": ["Full-stack Developer", "AI Enthusiast", "Problem Solver"],
     "description": "I build modern web applications, AI-powered tools, and scalable systems that solve real-world problems. Here's a collection of my featured work and projects I've built along the way.",
-    "note": ["Build", "Improve", "Repeat"],
-    "workingOn": { "title": "Sentra", "detail": "Red-teaming LLM apps", "icon": "shield", "accent": "blue" },
+    "note": ["Build", "Deploy", "Improve"],
+    "callout": "Turning ideas into real-world solutions",
     "buttons": {
       "projects": { "label": "View My Projects", "link": "https://joyntoghosh.vercel.app/#projects" },
       "contact": { "label": "Get in Touch", "link": "https://joyntoghosh.vercel.app/#contact" }
     }
   },
   "sections": {
-    "featured": { "eyebrow": "FEATURED WORK", "title": ["Selected", "Projects"], "subtitle": "Real-world solutions built with modern technologies, from idea to deployment." },
-    "others": { "title": "More Projects", "subtitle": "Additional projects I've worked on.", "link": "https://github.com/joynto7?tab=repositories" },
-    "tech": { "title": "Tech Stack", "subtitle": "Technologies I work with.", "note": "Tools I use to bring ideas to life" }
+    "featured": { "title": "Featured Work", "subtitle": "Handpicked projects that showcase my skills and creativity." },
+    "others": { "title": "Other Projects", "subtitle": "More projects I've worked on.", "link": "https://github.com/joynto7?tab=repositories" },
+    "tech": { "title": "Tech Stack", "subtitle": "Technologies I work with." }
   },
   "featured": [
     {
       "name": "Sentra",
       "subtitle": "AI Security Testing Platform",
       "category": "AI Security",
-      "motto": ["Test", "Detect", "Secure"],
+      "badge": "Featured",
       "team": 3,
       "icon": "shield",
       "accent": "blue",
@@ -35,7 +41,6 @@
       "name": "AgroSync",
       "subtitle": "Smart Irrigation Dashboard",
       "category": "IoT / AgriTech",
-      "motto": ["Smarter Farming", "Greener Future"],
       "icon": "leaf",
       "accent": "green",
       "description": "Streams soil moisture and temperature from ESP32 sensors, lets users start watering remotely, and stores history in PostgreSQL for trend charts.",
@@ -47,11 +52,10 @@
       "name": "FixItNow",
       "subtitle": "Home Services Marketplace",
       "category": "Marketplace",
-      "motto": ["Book", "Service", "Relax"],
       "icon": "wrench",
-      "accent": "indigo",
+      "accent": "violet",
       "description": "Customers book a technician for a time slot and pay with Stripe or SSLCommerz. Technicians manage their availability and jobs, and admins moderate the platform.",
-      "tech": ["Next.js", "TanStack Query", "Express", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
+      "tech": ["Next.js", "TypeScript", "Express", "Prisma", "PostgreSQL", "TanStack Query", "Stripe"],
       "thumbnail": "fixitnow.jpg",
       "mobile": "fixitnow-mobile.jpg",
       "links": { "live": "https://fixitnow-frontend-peach.vercel.app", "source": "https://github.com/joynto7/fixitnow-frontend", "api": "https://github.com/joynto7/fixitnow-backend" }
@@ -60,31 +64,34 @@
       "name": "Occasio",
       "subtitle": "Event Discovery & Booking",
       "category": "Events",
-      "motto": ["Discover", "Book", "Experience"],
       "icon": "calendar",
-      "accent": "magenta",
+      "accent": "orange",
       "description": "People find, book and review events. Organizers and admins manage everything from role-based dashboards with analytics.",
       "tech": ["Next.js 16", "Tailwind CSS v4", "Express", "Prisma", "PostgreSQL", "JWT"],
       "thumbnail": "occasio.jpg",
-      "mobile": "occasio-mobile.jpg",
       "links": { "live": "https://client-eight-rho-92.vercel.app", "source": "https://github.com/joynto7/Novi" }
     }
   ],
   "others": [
-    { "name": "SurplusBid", "subtitle": "Auction platform (Stripe)", "icon": "gavel", "accent": "blue", "link": "https://github.com/joynto7/surplusbid-backend" },
+    { "name": "SurplusBid", "subtitle": "Auction platform (Stripe)", "icon": "gavel", "accent": "violet", "link": "https://github.com/joynto7/surplusbid-backend" },
     { "name": "Club Connect", "subtitle": "University clubs platform", "icon": "users", "accent": "green", "link": "https://club-connect-rust.vercel.app" },
-    { "name": "DevPulse", "subtitle": "Bug-tracker API", "icon": "activity", "accent": "indigo", "link": "https://github.com/joynto7/devpulse" },
-    { "name": "Network Traffic Analyzer", "subtitle": "Python packet sniffer", "icon": "network", "accent": "violet", "link": "https://github.com/joynto7/network-analysis" }
+    { "name": "DevPulse", "subtitle": "Bug-tracker API", "icon": "activity", "accent": "blue", "link": "https://github.com/joynto7/devpulse" },
+    { "name": "Network Traffic Analyzer", "subtitle": "Python packet sniffer", "icon": "network", "accent": "magenta", "link": "https://github.com/joynto7/network-analysis" }
   ],
   "techStack": [
-    { "title": "Frontend", "subtitle": "Modern, responsive and interactive UIs", "icon": "monitor", "corner": "code", "accent": "blue", "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"] },
-    { "title": "Backend", "subtitle": "Scalable APIs and real-time systems", "icon": "server", "corner": "zap", "accent": "green", "tech": ["Python", "Node.js", "Express", "FastAPI"] },
-    { "title": "Data & Infrastructure", "subtitle": "Databases, cloud and deployment", "icon": "database", "corner": "cloud", "accent": "violet", "tech": ["PostgreSQL", "Prisma", "Docker"] }
+    { "title": "Frontend", "icon": "monitor", "accent": "blue", "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"] },
+    { "title": "Backend", "icon": "server", "accent": "green", "tech": ["Python", "Node.js", "Express", "FastAPI"] },
+    { "title": "Data & Infrastructure", "icon": "database", "accent": "violet", "tech": ["PostgreSQL", "Prisma", "Docker"] }
   ],
   "footer": {
     "name": "JoyntoDev",
-    "tagline": "Code · Build · Create",
+    "tagline": "Build • Learn • Improve",
     "motto": ["Better Systems.", "Brighter Future."],
-    "links": { "github": "https://github.com/joynto7", "linkedin": "https://www.linkedin.com/in/joynto7/", "email": "mailto:jg.contact.me07@gmail.com" }
+    "links": {
+      "github": "https://github.com/joynto7",
+      "linkedin": "https://www.linkedin.com/in/joynto7/",
+      "email": "mailto:jg.contact.me07@gmail.com",
+      "resume": "https://joyntoghosh.vercel.app/CV.pdf"
+    }
   }
 }
