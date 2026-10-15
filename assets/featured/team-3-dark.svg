@@ -19,6 +19,6 @@
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-<use href="#i-users" x="0" y="20" width="16" height="16" fill="none" stroke="#8a94aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="23" y="32.7" class="sans" font-size="13.5" font-weight="500" fill="#8a94aa">Team of 3</text>
+<use href="#i-users" x="0" y="20" width="16" height="16" fill="none" stroke="#b8aa9e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="23" y="32.7" class="sans" font-size="13.5" font-weight="500" fill="#b8aa9e">Team of 3</text>
 </svg>

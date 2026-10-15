@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="554" height="362" viewBox="0 0 554 362" role="img" aria-label="Sentra — AI Security Testing Platform">
   <title>Sentra — AI Security Testing Platform</title>
   <defs>
-<linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset="1" stop-color="#f6f8fc" stop-opacity="1"/></linearGradient>
-<radialGradient id="wash" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="380"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.12"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
-<radialGradient id="wash2" gradientUnits="userSpaceOnUse" cx="534" cy="342" r="300"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.06"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
-<linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8" stop-opacity="1"/><stop offset="1" stop-color="#3b82f6" stop-opacity="1"/></linearGradient>
-<radialGradient id="tileGlow" gradientUnits="userSpaceOnUse" cx="50" cy="86" r="58"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.33"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
-<radialGradient id="thumbGlow" gradientUnits="userSpaceOnUse" cx="98" cy="68" r="121.52"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.22"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
-<radialGradient id="phoneGlow" gradientUnits="userSpaceOnUse" cx="28" cy="54" r="64.8"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.25"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
+<linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset="1" stop-color="#faf8f5" stop-opacity="1"/></linearGradient>
+<radialGradient id="wash" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="380"><stop offset="0" stop-color="#c28a58" stop-opacity="0.12"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<radialGradient id="wash2" gradientUnits="userSpaceOnUse" cx="534" cy="342" r="300"><stop offset="0" stop-color="#c28a58" stop-opacity="0.06"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f4e37" stop-opacity="1"/><stop offset="1" stop-color="#c28a58" stop-opacity="1"/></linearGradient>
+<radialGradient id="tileGlow" gradientUnits="userSpaceOnUse" cx="50" cy="86" r="58"><stop offset="0" stop-color="#c28a58" stop-opacity="0.33"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<radialGradient id="thumbGlow" gradientUnits="userSpaceOnUse" cx="98" cy="68" r="121.52"><stop offset="0" stop-color="#c28a58" stop-opacity="0.22"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<radialGradient id="phoneGlow" gradientUnits="userSpaceOnUse" cx="28" cy="54" r="64.8"><stop offset="0" stop-color="#c28a58" stop-opacity="0.25"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
 <linearGradient id="glare" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.7"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
 <clipPath id="card"><rect x="0" y="0" width="534" height="342" rx="20"/></clipPath>
 <clipPath id="thumbClip"><rect x="0" y="0" width="196" height="136" rx="10"/></clipPath>
@@ -43,41 +43,41 @@
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 <g transform="translate(10 10)"><g class="float" style="animation-delay: -0s">
-<rect width="534" height="342" rx="20" fill="none" stroke="#3b82f6" stroke-width="12" stroke-opacity="0.03"/>
-<rect width="534" height="342" rx="20" fill="none" stroke="#3b82f6" stroke-width="7" stroke-opacity="0.04"/>
-<rect width="534" height="342" rx="20" fill="none" stroke="#3b82f6" stroke-width="3" stroke-opacity="0.09"/>
+<rect width="534" height="342" rx="20" fill="none" stroke="#c28a58" stroke-width="12" stroke-opacity="0.03"/>
+<rect width="534" height="342" rx="20" fill="none" stroke="#c28a58" stroke-width="7" stroke-opacity="0.04"/>
+<rect width="534" height="342" rx="20" fill="none" stroke="#c28a58" stroke-width="3" stroke-opacity="0.09"/>
 <rect width="534" height="342" rx="20" fill="url(#body)"/>
 <rect width="534" height="342" rx="20" fill="url(#wash)"/>
 <rect width="534" height="342" rx="20" fill="url(#wash2)"/>
 <g clip-path="url(#card)"><g class="glare"><rect x="-260" y="-342" width="170" height="1026" fill="url(#glare)" transform="rotate(18 -175 171)"/></g></g>
-<rect x="0.5" y="0.5" width="533" height="341" rx="19.5" fill="none" stroke="#3b82f6" stroke-opacity="0.45" stroke-width="1.3"/>
-<rect class="run" width="534" height="342" rx="20" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-dasharray="110 1607.66"/>
-<path d="M6 26 V12 a6 6 0 0 1 6 -6 H26 M508 336 H522 a6 6 0 0 0 6 -6 V316" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9"/>
-<rect x="20.5" y="18.5" width="95" height="25" rx="12.5" fill="#3b82f6" fill-opacity="0.1" stroke="#3b82f6" stroke-opacity="0.55"/>
-<g class="twinkle"><use href="#i-star" x="30" y="25" width="12" height="12" fill="#2563eb" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
-<text x="48" y="35.4" class="sans" font-size="12.5" font-weight="600" fill="#2563eb">Featured</text>
-<text x="514" y="35.5" class="sans" font-size="12.5" text-anchor="end" fill="#64748b">Web App</text>
+<rect x="0.5" y="0.5" width="533" height="341" rx="19.5" fill="none" stroke="#c28a58" stroke-opacity="0.5" stroke-width="1.3"/>
+<rect class="run" width="534" height="342" rx="20" fill="none" stroke="#a96d3e" stroke-width="2" stroke-linecap="round" stroke-dasharray="110 1607.66"/>
+<path d="M6 26 V12 a6 6 0 0 1 6 -6 H26 M508 336 H522 a6 6 0 0 0 6 -6 V316" fill="none" stroke="#a96d3e" stroke-width="2" stroke-linecap="round" stroke-opacity="0.9"/>
+<rect x="20.5" y="18.5" width="95" height="25" rx="12.5" fill="#c28a58" fill-opacity="0.1" stroke="#c28a58" stroke-opacity="0.55"/>
+<g class="twinkle"><use href="#i-star" x="30" y="25" width="12" height="12" fill="#a96d3e" stroke="#a96d3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+<text x="48" y="35.4" class="sans" font-size="12.5" font-weight="600" fill="#a96d3e">Featured</text>
+<text x="514" y="35.5" class="sans" font-size="12.5" text-anchor="end" fill="#68625b">Web App</text>
 <circle class="pulse" cx="50" cy="86" r="58" fill="url(#tileGlow)"/>
 <rect x="20" y="56" width="60" height="60" rx="15.6" fill="url(#tile)"/>
 <rect x="20.5" y="56.5" width="59" height="59" rx="15.1" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
 <path d="M35.6 57.5 H64.4" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
 <use href="#i-shield" x="35" y="71" width="30" height="30" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="96" y="85" class="sans" font-size="25" font-weight="700" letter-spacing="-0.3" fill="#0f172a" data-max="208">Sentra</text>
-<text x="96" y="109" class="sans" font-size="15" fill="#475569" data-max="208">AI Security Testing Platform</text>
-<text x="20" y="146" class="sans" font-size="14.5" fill="#475569" data-max="280">Tests LLM apps such as chatbots, RAG</text>
-<text x="20" y="167" class="sans" font-size="14.5" fill="#475569" data-max="280">systems and tool-using agents: maps</text>
-<text x="20" y="188" class="sans" font-size="14.5" fill="#475569" data-max="280">the attack surface, runs security tests,</text>
-<text x="20" y="209" class="sans" font-size="14.5" fill="#475569" data-max="280">records evidence, scores risk, and</text>
-<text x="20" y="230" class="sans" font-size="14.5" fill="#475569" data-max="280">re-tests after fixes.</text>
-<g transform="translate(20 256)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-nextdotjs" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="49">Next.js</text></g>
-<g transform="translate(109 256)"><rect x="0.5" y="0.5" width="104" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-typescript" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="73">TypeScript</text></g>
-<g transform="translate(222 256)"><rect x="0.5" y="0.5" width="87" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-fastapi" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="56">FastAPI</text></g>
-<g transform="translate(318 256)"><rect x="0.5" y="0.5" width="113" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-postgresql" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="82">PostgreSQL</text></g>
-<g transform="translate(20 292)"><rect x="0.5" y="0.5" width="128" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-celery" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="97">Celery + Redis</text></g>
-<g transform="translate(157 292)"><rect x="0.5" y="0.5" width="87" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-bot" x="9" y="7.5" width="13" height="13" fill="none" stroke="#475569" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="56">LiteLLM</text></g>
-<g transform="translate(253 292)"><rect x="0.5" y="0.5" width="82" height="27" rx="8" fill="#f1f5f9" stroke="#0f172a" stroke-opacity="0.1"/><use href="#i-docker" x="9" y="7.5" width="13" height="13" fill="#475569"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#334155" data-max="51">Docker</text></g>
+<text x="96" y="85" class="sans" font-size="25" font-weight="700" letter-spacing="-0.3" fill="#1b1a18" data-max="208">Sentra</text>
+<text x="96" y="109" class="sans" font-size="15" fill="#57504a" data-max="208">AI Security Testing Platform</text>
+<text x="20" y="146" class="sans" font-size="14.5" fill="#57504a" data-max="280">Tests LLM apps such as chatbots, RAG</text>
+<text x="20" y="167" class="sans" font-size="14.5" fill="#57504a" data-max="280">systems and tool-using agents: maps</text>
+<text x="20" y="188" class="sans" font-size="14.5" fill="#57504a" data-max="280">the attack surface, runs security tests,</text>
+<text x="20" y="209" class="sans" font-size="14.5" fill="#57504a" data-max="280">records evidence, scores risk, and</text>
+<text x="20" y="230" class="sans" font-size="14.5" fill="#57504a" data-max="280">re-tests after fixes.</text>
+<g transform="translate(20 256)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-nextdotjs" x="9" y="7.5" width="13" height="13" fill="#6f4e37"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="49">Next.js</text></g>
+<g transform="translate(109 256)"><rect x="0.5" y="0.5" width="104" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-typescript" x="9" y="7.5" width="13" height="13" fill="#6f4e37"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="73">TypeScript</text></g>
+<g transform="translate(222 256)"><rect x="0.5" y="0.5" width="87" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-fastapi" x="9" y="7.5" width="13" height="13" fill="#6f4e37"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="56">FastAPI</text></g>
+<g transform="translate(318 256)"><rect x="0.5" y="0.5" width="113" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-postgresql" x="9" y="7.5" width="13" height="13" fill="#6f4e37"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="82">PostgreSQL</text></g>
+<g transform="translate(20 292)"><rect x="0.5" y="0.5" width="128" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-celery" x="9" y="7.5" width="13" height="13" fill="#6f4e37"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="97">Celery + Redis</text></g>
+<g transform="translate(157 292)"><rect x="0.5" y="0.5" width="87" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-bot" x="9" y="7.5" width="13" height="13" fill="none" stroke="#6f4e37" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="56">LiteLLM</text></g>
+<g transform="translate(253 292)"><rect x="0.5" y="0.5" width="82" height="27" rx="8" fill="#f3eee8" stroke="#4a2f27" stroke-opacity="0.12"/><use href="#i-docker" x="9" y="7.5" width="13" height="13" fill="#6f4e37"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#4a2f27" data-max="51">Docker</text></g>
 <g class="lift" style="animation-delay: -0s"><g transform="translate(318 54)"><rect x="-18" y="-18" width="232" height="172" rx="26" fill="url(#thumbGlow)"/>
-<rect width="196" height="136" rx="10" fill="#0b1020"/>
+<rect width="196" height="136" rx="10" fill="#1b1512"/>
 <g clip-path="url(#thumbClip)"><g transform="translate(0 14) scale(1.11)"><rect width="176" height="117" fill="#0a0f1c"/>
 <rect width="34" height="117" fill="#0f172a"/>
 <rect x="9" y="8" width="16" height="16" rx="4" fill="#2563eb"/>
@@ -106,10 +106,10 @@
 <rect x="42" y="84" width="126" height="8" rx="2" fill="#0f172a"/><circle cx="47" cy="88" r="2" fill="#f43f5e"/><rect x="53" y="86.5" width="70" height="3" rx="1.5" fill="#334155"/><rect x="148" y="85.5" width="16" height="5" rx="2.5" fill="#f43f5e" fill-opacity="0.3"/>
 <rect x="42" y="95" width="126" height="8" rx="2" fill="#0f172a"/><circle cx="47" cy="99" r="2" fill="#f59e0b"/><rect x="53" y="97.5" width="56" height="3" rx="1.5" fill="#334155"/><rect x="148" y="96.5" width="16" height="5" rx="2.5" fill="#f59e0b" fill-opacity="0.3"/>
 <rect x="42" y="106" width="126" height="8" rx="2" fill="#0f172a"/><circle cx="47" cy="110" r="2" fill="#22c55e"/><rect x="53" y="108.5" width="82" height="3" rx="1.5" fill="#334155"/><rect x="148" y="107.5" width="16" height="5" rx="2.5" fill="#22c55e" fill-opacity="0.3"/></g></g>
-<path d="M0 10 a10 10 0 0 1 10 -10 H186 a10 10 0 0 1 10 10 V14 H0 Z" fill="#141c36"/>
-<circle cx="10" cy="7" r="2.2" fill="#f87171"/><circle cx="17.5" cy="7" r="2.2" fill="#fbbf24"/><circle cx="25" cy="7" r="2.2" fill="#34d399"/>
+<path d="M0 10 a10 10 0 0 1 10 -10 H186 a10 10 0 0 1 10 10 V14 H0 Z" fill="#2e251f"/>
+<circle cx="10" cy="7" r="2.2" fill="#d9776b"/><circle cx="17.5" cy="7" r="2.2" fill="#e9c46a"/><circle cx="25" cy="7" r="2.2" fill="#a3b18a"/>
 <rect x="40" y="4" width="116" height="6" rx="3" fill="#ffffff" fill-opacity="0.08"/>
-<rect x="0.5" y="0.5" width="195" height="135" rx="9.5" fill="none" stroke="#3b82f6" stroke-opacity="0.6"/></g></g>
+<rect x="0.5" y="0.5" width="195" height="135" rx="9.5" fill="none" stroke="#c28a58" stroke-opacity="0.6"/></g></g>
 
 </g></g>
 </svg>

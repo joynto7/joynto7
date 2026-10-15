@@ -28,7 +28,7 @@
       "type": "Web App",
       "team": 3,
       "icon": "shield",
-      "accent": "blue",
+      "accent": "caramel",
       "description": "Tests LLM apps such as chatbots, RAG systems and tool-using agents: maps the attack surface, runs security tests, records evidence, scores risk, and re-tests after fixes.",
       "tech": ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Celery + Redis", "LiteLLM", "Docker"],
       "thumbnail": "sentra",
@@ -42,7 +42,7 @@
       "badge": "IoT / AgriTech",
       "type": "Dashboard",
       "icon": "leaf",
-      "accent": "green",
+      "accent": "caramel",
       "description": "Streams soil moisture and temperature from ESP32 sensors, lets users start watering remotely, and stores history in PostgreSQL for trend charts.",
       "tech": ["ESP32", "MQTT", "Socket.IO", "Next.js", "Express", "Prisma", "PostgreSQL"],
       "thumbnail": "agrosync",
@@ -57,7 +57,7 @@
       "badge": "Marketplace",
       "type": "Web App",
       "icon": "wrench",
-      "accent": "indigo",
+      "accent": "caramel",
       "description": "Customers book a technician for a time slot and pay with Stripe or SSLCommerz. Technicians manage their availability and jobs, and admins moderate the platform.",
       "tech": ["Next.js", "TanStack Query", "Express", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
       "thumbnail": "fixitnow.jpg",
@@ -74,7 +74,7 @@
       "badge": "Events",
       "type": "Web App",
       "icon": "calendar",
-      "accent": "magenta",
+      "accent": "caramel",
       "description": "People find, book and review events. Organizers and admins manage everything from role-based dashboards with analytics.",
       "tech": ["Next.js 16", "Tailwind CSS v4", "Express", "Prisma", "PostgreSQL", "JWT"],
       "thumbnail": "occasio.jpg",
@@ -90,28 +90,28 @@
       "name": "SurplusBid",
       "subtitle": "Auction platform (Stripe)",
       "icon": "gavel",
-      "accent": "blue",
+      "accent": "caramel",
       "link": "https://github.com/joynto7/surplusbid-backend"
     },
     {
       "name": "Club Connect",
       "subtitle": "University clubs platform",
       "icon": "users",
-      "accent": "green",
+      "accent": "caramel",
       "link": "https://club-connect-rust.vercel.app"
     },
     {
       "name": "DevPulse",
       "subtitle": "Bug-tracker API",
       "icon": "activity",
-      "accent": "indigo",
+      "accent": "caramel",
       "link": "https://github.com/joynto7/devpulse"
     },
     {
       "name": "Network Traffic Analyzer",
       "subtitle": "Python packet sniffer",
       "icon": "network",
-      "accent": "amber",
+      "accent": "caramel",
       "link": "https://github.com/joynto7/network-analysis"
     }
   ],
@@ -120,21 +120,21 @@
       "title": "Frontend",
       "subtitle": "Modern, responsive and interactive UIs",
       "icon": "monitor",
-      "accent": "blue",
+      "accent": "caramel",
       "tech": ["TypeScript", "React", "Next.js", "Tailwind CSS"]
     },
     {
       "title": "Backend",
       "subtitle": "Scalable APIs and real-time systems",
       "icon": "server",
-      "accent": "green",
+      "accent": "caramel",
       "tech": ["Python", "Node.js", "Express", "FastAPI"]
     },
     {
       "title": "Data & Infrastructure",
       "subtitle": "Databases, cloud and deployment",
       "icon": "database",
-      "accent": "violet",
+      "accent": "caramel",
       "tech": ["PostgreSQL", "Prisma", "Docker"]
     }
   ],

@@ -26,7 +26,7 @@ own. The "Projects" and "Technologies" counts in the header update themselves.
 | `type` | | Label in the top-right corner, e.g. `"Web App"`. |
 | `team` | | Number — shows "Team of N" under the card. |
 | `icon` | yes | Icon in the colored tile (see the list below). |
-| `accent` | yes | `blue`, `green`, `indigo`, `violet`, `magenta`, `amber`, `teal`, `rose` or `cyan`. |
+| `accent` | yes | `caramel`, `mocha`, `latte` or `espresso` (the portfolio's coffee colors), or `blue`, `green`, `indigo`, `violet`, `magenta`, `amber`, `teal`, `rose`, `cyan`. |
 | `description` | yes | About 120–170 characters fits the card best. |
 | `tech` | | Plain names, e.g. `["Next.js", "Prisma"]`. Known ones get a logo, others a dot. |
 | `thumbnail` | | Screenshot file in `thumbs/` (about 480×320 JPG). Leave it out for a drawn placeholder in the accent color. |

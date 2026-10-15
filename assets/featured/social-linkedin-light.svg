@@ -19,6 +19,6 @@
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-<circle cx="28" cy="60" r="22" fill="#ffffff" stroke="#0f172a" stroke-opacity="0.2"/>
-<rect x="18" y="50" width="20" height="20" rx="4" fill="#0f172a"/><text x="21.4" y="66" class="sans" font-size="13.5" font-weight="800" fill="#ffffff">in</text>
+<circle cx="28" cy="60" r="22" fill="#ffffff" stroke="#4a2f27" stroke-opacity="0.25"/>
+<rect x="18" y="50" width="20" height="20" rx="4" fill="#4a2f27"/><text x="21.4" y="66" class="sans" font-size="13.5" font-weight="800" fill="#ffffff">in</text>
 </svg>

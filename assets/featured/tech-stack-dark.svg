@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1128" height="229" viewBox="0 0 1128 229" role="img" aria-label="Tech stack — Frontend: TypeScript, React, Next.js, Tailwind CSS. Backend: Python, Node.js, Express, FastAPI. Data &amp; Infrastructure: PostgreSQL, Prisma, Docker">
   <title>Tech stack — Frontend: TypeScript, React, Next.js, Tailwind CSS. Backend: Python, Node.js, Express, FastAPI. Data &amp; Infrastructure: PostgreSQL, Prisma, Docker</title>
   <defs>
-<linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#111a35" stop-opacity="1"/><stop offset="1" stop-color="#0a0f20" stop-opacity="1"/></linearGradient>
-<radialGradient id="wash-0" gradientUnits="userSpaceOnUse" cx="184.67" cy="249" r="260"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.2"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>
-<radialGradient id="wash-1" gradientUnits="userSpaceOnUse" cx="554" cy="249" r="260"><stop offset="0" stop-color="#10b981" stop-opacity="0.2"/><stop offset="1" stop-color="#10b981" stop-opacity="0"/></radialGradient>
-<radialGradient id="wash-2" gradientUnits="userSpaceOnUse" cx="923.33" cy="249" r="260"><stop offset="0" stop-color="#8b5cf6" stop-opacity="0.2"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-<linearGradient id="tile-0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d4ed8" stop-opacity="1"/><stop offset="1" stop-color="#3b82f6" stop-opacity="1"/></linearGradient>
-<linearGradient id="tile-1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#047857" stop-opacity="1"/><stop offset="1" stop-color="#10b981" stop-opacity="1"/></linearGradient>
-<linearGradient id="tile-2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d28d9" stop-opacity="1"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="1"/></linearGradient>
-<linearGradient id="glare" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.5" stop-color="#ffffff" stop-opacity="0.1"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a211b" stop-opacity="1"/><stop offset="1" stop-color="#1d1713" stop-opacity="1"/></linearGradient>
+<radialGradient id="wash-0" gradientUnits="userSpaceOnUse" cx="184.67" cy="249" r="260"><stop offset="0" stop-color="#c28a58" stop-opacity="0.2"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<radialGradient id="wash-1" gradientUnits="userSpaceOnUse" cx="554" cy="249" r="260"><stop offset="0" stop-color="#c28a58" stop-opacity="0.2"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<radialGradient id="wash-2" gradientUnits="userSpaceOnUse" cx="923.33" cy="249" r="260"><stop offset="0" stop-color="#c28a58" stop-opacity="0.2"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<linearGradient id="tile-0" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f4e37" stop-opacity="1"/><stop offset="1" stop-color="#c28a58" stop-opacity="1"/></linearGradient>
+<linearGradient id="tile-1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f4e37" stop-opacity="1"/><stop offset="1" stop-color="#c28a58" stop-opacity="1"/></linearGradient>
+<linearGradient id="tile-2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6f4e37" stop-opacity="1"/><stop offset="1" stop-color="#c28a58" stop-opacity="1"/></linearGradient>
+<linearGradient id="glare" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff7ed" stop-opacity="0"/><stop offset="0.5" stop-color="#fff7ed" stop-opacity="0.08"/><stop offset="1" stop-color="#fff7ed" stop-opacity="0"/></linearGradient>
 <clipPath id="panel"><path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z"/></clipPath>
 <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></symbol>
 <symbol id="i-typescript" viewBox="0 0 24 24"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></symbol>
@@ -45,48 +45,48 @@
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
 <g transform="translate(10 10)"><g class="float">
-<path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#3b82f6" stroke-width="10" stroke-opacity="0.05"/>
-<path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#3b82f6" stroke-width="4" stroke-opacity="0.12"/>
+<path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#c28a58" stroke-width="10" stroke-opacity="0.05"/>
+<path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#c28a58" stroke-width="4" stroke-opacity="0.12"/>
 <path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="url(#body)"/>
 <path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="url(#wash-0)"/>
 <path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="url(#wash-1)"/>
 <path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="url(#wash-2)"/>
 <g clip-path="url(#panel)"><g class="glare"><rect x="-260" y="-209" width="170" height="627" fill="url(#glare)" transform="rotate(18 -175 104.5)"/></g></g>
-<path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#3b82f6" stroke-opacity="0.55" stroke-width="1.3"/>
-<path class="run" d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 2534"/>
-<path d="M369.33 44 V185" stroke="#f8fafc" stroke-opacity="0.1"/>
-<path d="M738.67 44 V185" stroke="#f8fafc" stroke-opacity="0.1"/>
-<circle class="pulse" style="animation-delay: -0s" cx="50" cy="66" r="44" fill="#3b82f6" fill-opacity="0.12"/>
+<path d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#c28a58" stroke-opacity="0.55" stroke-width="1.3"/>
+<path class="run" d="M0 30 V193 a16 16 0 0 0 16 16 H1092 a16 16 0 0 0 16 -16 V34 L1074 0 H230 L208 22 H16 a16 16 0 0 0 -16 16 Z" fill="none" stroke="#d7b899" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 2534"/>
+<path d="M369.33 44 V185" stroke="#f3eee8" stroke-opacity="0.1"/>
+<path d="M738.67 44 V185" stroke="#f3eee8" stroke-opacity="0.1"/>
+<circle class="pulse" style="animation-delay: -0s" cx="50" cy="66" r="44" fill="#c28a58" fill-opacity="0.12"/>
 <rect x="24" y="40" width="52" height="52" rx="13.52" fill="url(#tile-0)"/>
 <rect x="24.5" y="40.5" width="51" height="51" rx="13.02" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
 <path d="M37.52 41.5 H62.48" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
 <use href="#i-monitor" x="37" y="53" width="26" height="26" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="92" y="62" class="sans" font-size="18" font-weight="700" fill="#f8fafc" data-max="273.33">Frontend</text>
-<text x="92" y="84" class="sans" font-size="12.5" fill="#aeb8cc" data-max="273.33">Modern, responsive and interactive UIs</text>
-<g transform="translate(24 119)"><rect x="0.5" y="0.5" width="104" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-typescript" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="73">TypeScript</text></g>
-<g transform="translate(137 119)"><rect x="0.5" y="0.5" width="74" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-react" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="43">React</text></g>
-<g transform="translate(220 119)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-nextdotjs" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="49">Next.js</text></g>
-<g transform="translate(24 155)"><rect x="0.5" y="0.5" width="120" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-tailwindcss" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="89">Tailwind CSS</text></g>
-<circle class="pulse" style="animation-delay: -1s" cx="419.33" cy="66" r="44" fill="#10b981" fill-opacity="0.12"/>
+<text x="92" y="62" class="sans" font-size="18" font-weight="700" fill="#f3eee8" data-max="273.33">Frontend</text>
+<text x="92" y="84" class="sans" font-size="12.5" fill="#cfc3b6" data-max="273.33">Modern, responsive and interactive UIs</text>
+<g transform="translate(24 119)"><rect x="0.5" y="0.5" width="104" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-typescript" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="73">TypeScript</text></g>
+<g transform="translate(137 119)"><rect x="0.5" y="0.5" width="74" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-react" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="43">React</text></g>
+<g transform="translate(220 119)"><rect x="0.5" y="0.5" width="80" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-nextdotjs" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="49">Next.js</text></g>
+<g transform="translate(24 155)"><rect x="0.5" y="0.5" width="120" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-tailwindcss" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="89">Tailwind CSS</text></g>
+<circle class="pulse" style="animation-delay: -1s" cx="419.33" cy="66" r="44" fill="#c28a58" fill-opacity="0.12"/>
 <rect x="393.33" y="40" width="52" height="52" rx="13.52" fill="url(#tile-1)"/>
 <rect x="393.83" y="40.5" width="51" height="51" rx="13.02" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
 <path d="M406.85 41.5 H431.81" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
 <use href="#i-server" x="406.33" y="53" width="26" height="26" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="461.33" y="62" class="sans" font-size="18" font-weight="700" fill="#f8fafc" data-max="273.33">Backend</text>
-<text x="461.33" y="84" class="sans" font-size="12.5" fill="#aeb8cc" data-max="273.33">Scalable APIs and real-time systems</text>
-<g transform="translate(393.33 119)"><rect x="0.5" y="0.5" width="81" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-python" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="50">Python</text></g>
-<g transform="translate(483.33 119)"><rect x="0.5" y="0.5" width="85" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-nodedotjs" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="54">Node.js</text></g>
-<g transform="translate(577.33 119)"><rect x="0.5" y="0.5" width="88" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-express" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="57">Express</text></g>
-<g transform="translate(393.33 155)"><rect x="0.5" y="0.5" width="87" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-fastapi" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="56">FastAPI</text></g>
-<circle class="pulse" style="animation-delay: -2s" cx="788.67" cy="66" r="44" fill="#8b5cf6" fill-opacity="0.12"/>
+<text x="461.33" y="62" class="sans" font-size="18" font-weight="700" fill="#f3eee8" data-max="273.33">Backend</text>
+<text x="461.33" y="84" class="sans" font-size="12.5" fill="#cfc3b6" data-max="273.33">Scalable APIs and real-time systems</text>
+<g transform="translate(393.33 119)"><rect x="0.5" y="0.5" width="81" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-python" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="50">Python</text></g>
+<g transform="translate(483.33 119)"><rect x="0.5" y="0.5" width="85" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-nodedotjs" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="54">Node.js</text></g>
+<g transform="translate(577.33 119)"><rect x="0.5" y="0.5" width="88" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-express" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="57">Express</text></g>
+<g transform="translate(393.33 155)"><rect x="0.5" y="0.5" width="87" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-fastapi" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="56">FastAPI</text></g>
+<circle class="pulse" style="animation-delay: -2s" cx="788.67" cy="66" r="44" fill="#c28a58" fill-opacity="0.12"/>
 <rect x="762.67" y="40" width="52" height="52" rx="13.52" fill="url(#tile-2)"/>
 <rect x="763.17" y="40.5" width="51" height="51" rx="13.02" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
 <path d="M776.19 41.5 H801.15" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
 <use href="#i-database" x="775.67" y="53" width="26" height="26" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="830.67" y="62" class="sans" font-size="18" font-weight="700" fill="#f8fafc" data-max="273.33">Data &amp; Infrastructure</text>
-<text x="830.67" y="84" class="sans" font-size="12.5" fill="#aeb8cc" data-max="273.33">Databases, cloud and deployment</text>
-<g transform="translate(762.67 119)"><rect x="0.5" y="0.5" width="113" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-postgresql" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="82">PostgreSQL</text></g>
-<g transform="translate(884.67 119)"><rect x="0.5" y="0.5" width="81" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-prisma" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="50">Prisma</text></g>
-<g transform="translate(974.67 119)"><rect x="0.5" y="0.5" width="82" height="27" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.12"/><use href="#i-docker" x="9" y="7.5" width="13" height="13" fill="#c3cddc"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#d6deea" data-max="51">Docker</text></g>
+<text x="830.67" y="62" class="sans" font-size="18" font-weight="700" fill="#f3eee8" data-max="273.33">Data &amp; Infrastructure</text>
+<text x="830.67" y="84" class="sans" font-size="12.5" fill="#cfc3b6" data-max="273.33">Databases, cloud and deployment</text>
+<g transform="translate(762.67 119)"><rect x="0.5" y="0.5" width="113" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-postgresql" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="82">PostgreSQL</text></g>
+<g transform="translate(884.67 119)"><rect x="0.5" y="0.5" width="81" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-prisma" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="50">Prisma</text></g>
+<g transform="translate(974.67 119)"><rect x="0.5" y="0.5" width="82" height="27" rx="8" fill="#d7b899" fill-opacity="0.06" stroke="#d7b899" stroke-opacity="0.2"/><use href="#i-docker" x="9" y="7.5" width="13" height="13" fill="#d7b899"/><text x="28" y="18.4" class="sans" font-size="12.5" font-weight="500" fill="#ede4da" data-max="51">Docker</text></g>
 </g></g>
 </svg>

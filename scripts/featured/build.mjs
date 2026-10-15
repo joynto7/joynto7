@@ -29,8 +29,15 @@ const DATA = JSON.parse(readFileSync(join(HERE, "projects.json"), "utf8"));
 
 // ---------------------------------------------------------------- design tokens
 
-/** deep/base paint tiles, borders and glows; onDark/onLight are text colors for each theme. */
+/**
+ * deep/base paint tiles, borders and glows; onDark/onLight are text colors for each theme.
+ * caramel, mocha, latte and espresso are the portfolio's coffee palette (joyntoghosh.vercel.app).
+ */
 const ACCENTS = {
+  caramel: { deep: "#6f4e37", base: "#c28a58", onDark: "#d7b899", onLight: "#a96d3e" },
+  mocha: { deep: "#4a2f27", base: "#6f4e37", onDark: "#c9a27c", onLight: "#6f4e37" },
+  latte: { deep: "#a97f58", base: "#d7b899", onDark: "#e8d3bd", onLight: "#8a6643" },
+  espresso: { deep: "#3a241e", base: "#4a2f27", onDark: "#c28a58", onLight: "#4a2f27" },
   blue: { deep: "#1d4ed8", base: "#3b82f6", onDark: "#60a5fa", onLight: "#2563eb" },
   green: { deep: "#047857", base: "#10b981", onDark: "#34d399", onLight: "#059669" },
   indigo: { deep: "#4338ca", base: "#6366f1", onDark: "#818cf8", onLight: "#4f46e5" },
@@ -42,24 +49,25 @@ const ACCENTS = {
   cyan: { deep: "#0e7490", base: "#06b6d4", onDark: "#22d3ee", onLight: "#0891b2" },
 };
 
+/** The portfolio's two looks: warm white with espresso text, and its dark espresso variant. */
 const THEMES = {
   dark: {
-    name: "dark", glow: 1, cardTop: "#111a35", cardBottom: "#0a0f20", borderOpacity: 0.55,
-    title: "#f8fafc", body: "#aeb8cc", muted: "#8a94aa", faint: "#5c6780",
-    chipFill: ["#ffffff", 0.04], chipStroke: ["#ffffff", 0.12], chipText: "#d6deea", chipIcon: "#c3cddc",
-    outlineFill: ["#ffffff", 0.03], outlineStroke: ["#ffffff", 0.22], outlineText: "#e2e8f0",
-    rail: ["#3b82f6", "#8b5cf6"], railOpacity: 0.65, circleFill: "#0b1020",
-    eyebrow: "#60a5fa", gradient: ["#60a5fa", "#a78bfa"], glare: ["#ffffff", 0.1],
-    panel: "#0d1530", panelStroke: 0.55, note: "#cbd5e1", mountains: ["#1e293b", "#111827"],
+    name: "dark", glow: 1, cardTop: "#2a211b", cardBottom: "#1d1713", borderOpacity: 0.55,
+    title: "#f3eee8", body: "#cfc3b6", muted: "#b8aa9e", faint: "#7d6e62",
+    chipFill: ["#d7b899", 0.06], chipStroke: ["#d7b899", 0.2], chipText: "#ede4da", chipIcon: "#d7b899",
+    outlineFill: ["#f3eee8", 0.03], outlineStroke: ["#d7b899", 0.32], outlineText: "#f3eee8",
+    rail: ["#c28a58", "#6f4e37"], railOpacity: 0.7, circleFill: "#1b1512",
+    eyebrow: "#c28a58", gradient: ["#e3c4a0", "#c28a58"], glare: ["#fff7ed", 0.08],
+    panel: "#241d18", panelStroke: 0.6, note: "#d7b899", mountains: ["#2e251f", "#241d18"],
   },
   light: {
-    name: "light", glow: 0.55, cardTop: "#ffffff", cardBottom: "#f6f8fc", borderOpacity: 0.45,
-    title: "#0f172a", body: "#475569", muted: "#64748b", faint: "#94a3b8",
-    chipFill: ["#f1f5f9", 1], chipStroke: ["#0f172a", 0.1], chipText: "#334155", chipIcon: "#475569",
-    outlineFill: ["#ffffff", 1], outlineStroke: ["#0f172a", 0.2], outlineText: "#0f172a",
-    rail: ["#2563eb", "#7c3aed"], railOpacity: 0.45, circleFill: "#ffffff",
-    eyebrow: "#2563eb", gradient: ["#2563eb", "#7c3aed"], glare: ["#ffffff", 0.7],
-    panel: "#ffffff", panelStroke: 0.4, note: "#475569", mountains: ["#cbd5e1", "#e2e8f0"],
+    name: "light", glow: 0.55, cardTop: "#ffffff", cardBottom: "#faf8f5", borderOpacity: 0.5,
+    title: "#1b1a18", body: "#57504a", muted: "#68625b", faint: "#b5a99c",
+    chipFill: ["#f3eee8", 1], chipStroke: ["#4a2f27", 0.12], chipText: "#4a2f27", chipIcon: "#6f4e37",
+    outlineFill: ["#ffffff", 1], outlineStroke: ["#4a2f27", 0.25], outlineText: "#4a2f27",
+    rail: ["#c28a58", "#6f4e37"], railOpacity: 0.55, circleFill: "#ffffff",
+    eyebrow: "#a96d3e", gradient: ["#c28a58", "#6f4e37"], glare: ["#ffffff", 0.7],
+    panel: "#ffffff", panelStroke: 0.45, note: "#6f4e37", mountains: ["#e8ded5", "#f3eee8"],
   },
 };
 
@@ -412,14 +420,14 @@ function agrosyncScreen() {
 function genericScreen(p, a) {
   const points = [30, 26, 28, 20, 23, 15, 18, 11, 14].map((v, i) => `${n(52 + i * 16.5)},${58 + v}`);
   return [
-    `<rect width="196" height="122" fill="#0a0f1d"/>`,
+    `<rect width="196" height="122" fill="#17120f"/>`,
     `<rect width="38" height="122" fill="${a.deep}" fill-opacity="0.25"/>`,
     `<rect x="10" y="9" width="18" height="18" rx="5" fill="${a.base}"/>`,
     useIcon(p.icon, 13, 12, 12, "#ffffff"),
-    ...[0, 1, 2, 3, 4].map((i) => `<rect x="10" y="${38 + i * 12}" width="18" height="5" rx="2.5" fill="${i === 0 ? a.base : "#1e293b"}"/>`),
-    text(48, 18, p.name, { size: 8, weight: 700, fill: "#e2e8f0" }),
+    ...[0, 1, 2, 3, 4].map((i) => `<rect x="10" y="${38 + i * 12}" width="18" height="5" rx="2.5" fill="${i === 0 ? a.base : "#2e251f"}"/>`),
+    text(48, 18, p.name, { size: 8, weight: 700, fill: "#f3eee8" }),
     ...[0, 1, 2].map((i) => `<rect x="${n(48.5 + i * 47)}" y="26.5" width="41" height="24" rx="4" fill="#ffffff" fill-opacity="0.04" stroke="${a.base}" stroke-opacity="0.35"/><rect x="${n(54 + i * 47)}" y="33" width="18" height="3" rx="1.5" fill="#64748b"/><rect x="${n(54 + i * 47)}" y="40" width="${24 - i * 4}" height="5" rx="2.5" fill="${a.onDark}"/>`),
-    `<rect x="48.5" y="56.5" width="139" height="40" rx="4" fill="#ffffff" fill-opacity="0.03" stroke="#1e293b"/>`,
+    `<rect x="48.5" y="56.5" width="139" height="40" rx="4" fill="#ffffff" fill-opacity="0.03" stroke="#3a2e27"/>`,
     `<path d="M${points.join(" L")} L184,96 L52,96 Z" fill="${a.base}" fill-opacity="0.18"/>`,
     `<polyline points="${points.join(" ")}" fill="none" stroke="${a.onDark}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>`,
     ...[0, 1].map((i) => `<rect x="48.5" y="${102.5 + i * 9}" width="139" height="6" rx="3" fill="#ffffff" fill-opacity="0.04"/>`),
@@ -435,18 +443,18 @@ function thumbnail(p, a) {
   else screen = `<g transform="translate(0 ${bar})">${genericScreen(p, a)}</g>`;
 
   const window = `<rect x="-18" y="-18" width="${W + 36}" height="${H + 36}" rx="26" fill="url(#thumbGlow)"/>
-<rect width="${W}" height="${H}" rx="10" fill="#0b1020"/>
+<rect width="${W}" height="${H}" rx="10" fill="#1b1512"/>
 <g clip-path="url(#thumbClip)">${screen}</g>
-<path d="M0 10 a10 10 0 0 1 10 -10 H${W - 10} a10 10 0 0 1 10 10 V${bar} H0 Z" fill="#141c36"/>
-<circle cx="10" cy="7" r="2.2" fill="#f87171"/><circle cx="17.5" cy="7" r="2.2" fill="#fbbf24"/><circle cx="25" cy="7" r="2.2" fill="#34d399"/>
+<path d="M0 10 a10 10 0 0 1 10 -10 H${W - 10} a10 10 0 0 1 10 10 V${bar} H0 Z" fill="#2e251f"/>
+<circle cx="10" cy="7" r="2.2" fill="#d9776b"/><circle cx="17.5" cy="7" r="2.2" fill="#e9c46a"/><circle cx="25" cy="7" r="2.2" fill="#a3b18a"/>
 <rect x="40" y="4" width="${W - 80}" height="6" rx="3" fill="#ffffff" fill-opacity="0.08"/>
 <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="9.5" fill="none" stroke="${a.base}" stroke-opacity="0.6"/>`;
 
   const phone = p.mobile
     ? `<rect x="-12" y="-12" width="${PHONE.w + 24}" height="${PHONE.h + 24}" rx="22" fill="url(#phoneGlow)"/>
-<rect width="${PHONE.w}" height="${PHONE.h}" rx="11" fill="#05070d" stroke="${a.base}" stroke-opacity="0.75" stroke-width="1.4"/>
+<rect width="${PHONE.w}" height="${PHONE.h}" rx="11" fill="#120d0b" stroke="${a.base}" stroke-opacity="0.75" stroke-width="1.4"/>
 <g clip-path="url(#phoneClip)"><image href="${imageData(p.mobile)}" x="3" y="3" width="${PHONE.w - 6}" height="${PHONE.h - 6}" preserveAspectRatio="xMidYMin slice"/></g>
-<rect x="${PHONE.w / 2 - 9}" y="5.5" width="18" height="4" rx="2" fill="#05070d"/>`
+<rect x="${PHONE.w / 2 - 9}" y="5.5" width="18" height="4" rx="2" fill="#120d0b"/>`
     : "";
   return { window, phone };
 }
@@ -476,14 +484,14 @@ ${text(x + 58, statsY + 39, label, { size: 13.5, fill: t.muted })}`;
     return part;
   });
 
-  const panel = (px, py, w, h, content, cls, delay, stroke = "#3b82f6") =>
+  const panel = (px, py, w, h, content, cls, delay, stroke = "#c28a58") =>
     `<g class="${cls}" style="animation-delay: ${delay}s"><g transform="translate(${px} ${py}) skewY(-6)">
 <rect width="${w}" height="${h}" rx="12" fill="${t.panel}" fill-opacity="0.94" stroke="${stroke}" stroke-opacity="${t.panelStroke}" stroke-width="1.4"/>
 ${content}</g></g>`;
 
-  const codeRows = [[[18, "#c084fc"], [46, "#60a5fa"], [24, "#34d399"]], [[30, "#60a5fa"], [60, "#94a3b8"]], [[12, "#f472b6"], [38, "#fbbf24"], [30, "#60a5fa"]],
-    [[52, "#34d399"], [26, "#c084fc"]], [[20, "#60a5fa"], [70, "#94a3b8"]], [[36, "#fbbf24"], [22, "#f472b6"], [28, "#34d399"]], [[44, "#c084fc"], [40, "#60a5fa"]], [[26, "#94a3b8"], [34, "#34d399"]]];
-  const code = `<circle cx="16" cy="14" r="3" fill="#f87171"/><circle cx="26" cy="14" r="3" fill="#fbbf24"/><circle cx="36" cy="14" r="3" fill="#34d399"/>
+  const codeRows = [[[18, "#e0a96d"], [46, "#c28a58"], [24, "#a3b18a"]], [[30, "#c28a58"], [60, "#b8aa9e"]], [[12, "#d9776b"], [38, "#e9c46a"], [30, "#c28a58"]],
+    [[52, "#a3b18a"], [26, "#e0a96d"]], [[20, "#c28a58"], [70, "#b8aa9e"]], [[36, "#e9c46a"], [22, "#d9776b"], [28, "#a3b18a"]], [[44, "#e0a96d"], [40, "#c28a58"]], [[26, "#b8aa9e"], [34, "#a3b18a"]]];
+  const code = `<circle cx="16" cy="14" r="3" fill="#d9776b"/><circle cx="26" cy="14" r="3" fill="#e9c46a"/><circle cx="36" cy="14" r="3" fill="#a3b18a"/>
 ${codeRows.map((row, i) => {
   let cx = 30;
   return `<circle cx="17" cy="${36 + i * 14}" r="1.6" fill="${t.faint}"/>` + row.map(([w, color]) => {
@@ -494,26 +502,26 @@ ${codeRows.map((row, i) => {
 }).join("\n")}`;
   const chart = `${[18, 30, 22, 38, 28].map((h, i) => `<rect x="${14 + i * 13}" y="${56 - h}" width="8" height="${h}" rx="2" fill="url(#bars)"/>`).join("")}
 <rect x="12" y="10" width="34" height="5" rx="2.5" fill="${t.faint}"/>`;
-  const list = [0, 1, 2, 3].map((i) => `<circle cx="18" cy="${18 + i * 19}" r="5" fill="${["#60a5fa", "#a78bfa", "#34d399", "#f472b6"][i]}" fill-opacity="0.85"/><rect x="30" y="${14 + i * 19}" width="${80 - i * 9}" height="4" rx="2" fill="${t.faint}"/><rect x="30" y="${21 + i * 19}" width="${50 - i * 5}" height="3" rx="1.5" fill="${t.faint}" fill-opacity="0.6"/>`).join("");
+  const list = [0, 1, 2, 3].map((i) => `<circle cx="18" cy="${18 + i * 19}" r="5" fill="${["#c28a58", "#d7b899", "#a3b18a", "#d9776b"][i]}" fill-opacity="0.85"/><rect x="30" y="${14 + i * 19}" width="${80 - i * 9}" height="4" rx="2" fill="${t.faint}"/><rect x="30" y="${21 + i * 19}" width="${50 - i * 5}" height="3" rx="1.5" fill="${t.faint}" fill-opacity="0.6"/>`).join("");
   const front = `<rect x="12" y="12" width="60" height="6" rx="3" fill="${t.title}" fill-opacity="0.75"/>
 <rect x="12" y="24" width="40" height="4" rx="2" fill="${t.faint}"/>
-<path d="M12 84 L36 70 L58 76 L82 56 L104 62 L128 44 L150 50" fill="none" stroke="#34d399" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 84 L36 70 L58 76 L82 56 L104 62 L128 44 L150 50 V96 H12 Z" fill="#34d399" fill-opacity="0.14"/>
-<rect x="116" y="12" width="36" height="16" rx="8" fill="#3b82f6" fill-opacity="0.85"/><circle cx="144" cy="20" r="5" fill="#ffffff"/>`;
+<path d="M12 84 L36 70 L58 76 L82 56 L104 62 L128 44 L150 50" fill="none" stroke="#c28a58" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 84 L36 70 L58 76 L82 56 L104 62 L128 44 L150 50 V96 H12 Z" fill="#c28a58" fill-opacity="0.16"/>
+<rect x="116" y="12" width="36" height="16" rx="8" fill="#6f4e37" fill-opacity="0.9"/><circle cx="144" cy="20" r="5" fill="#ffffff"/>`;
 
   const note = wrap(hero.note, 18, 128);
   const defs = [
     `<linearGradient id="word" gradientUnits="userSpaceOnUse" x1="${n(firstWidth)}" y1="0" x2="${n(firstWidth + wordWidth)}" y2="0"><stop offset="0" stop-color="${t.gradient[0]}"/><stop offset="1" stop-color="${t.gradient[1]}"/></linearGradient>`,
     linear("rule", [t.eyebrow, t.eyebrow], { y2: 0, toOpacity: 0 }),
-    linear("ring", ["#3b82f6", "#a855f7"], { y2: 0 }),
-    linear("codeTile", ["#1d4ed8", "#6366f1"]),
-    linear("bars", ["#a78bfa", "#3b82f6"], { x2: 0 }),
-    linear("prismA", ["#c4b5fd", "#8b5cf6"]),
-    linear("prismB", ["#7c3aed", "#4c1d95"]),
-    linear("prismC", ["#a78bfa", "#6d28d9"], { x2: 0 }),
-    radial("platform", "#3b82f6", 0.32 * t.glow + 0.08, 905, 282, 260),
-    radial("tileGlow", "#6366f1", 0.55, 932, 78, 70),
-    radial("prismGlow", "#a855f7", 0.5, 1052, 236, 70),
+    linear("ring", ["#c28a58", "#6f4e37"], { y2: 0 }),
+    linear("codeTile", ["#6f4e37", "#c28a58"]),
+    linear("bars", ["#d7b899", "#c28a58"], { x2: 0 }),
+    linear("prismA", ["#ecd9c2", "#c28a58"]),
+    linear("prismB", ["#8b5e3c", "#4a2f27"]),
+    linear("prismC", ["#d7b899", "#6f4e37"], { x2: 0 }),
+    radial("platform", "#c28a58", 0.32 * t.glow + 0.08, 905, 282, 260),
+    radial("tileGlow", "#c28a58", 0.55, 932, 78, 70),
+    radial("prismGlow", "#d7b899", 0.5, 1052, 236, 70),
     iconSymbols(["box", "cpu", "badge", "code"]),
   ].join("\n");
 
@@ -536,10 +544,10 @@ ${codeRows.map((row, i) => {
     `<g class="bob" style="animation-delay: -1.8s"><g transform="translate(892 38) skewY(-6)"><rect width="80" height="80" rx="20" fill="url(#codeTile)"/><rect x="0.5" y="0.5" width="79" height="79" rx="19.5" fill="none" stroke="#ffffff" stroke-opacity="0.3"/>${useIcon("code", 18, 18, 44, "#ffffff", { width: 2.2 })}</g></g>`,
     `<circle class="pulse" cx="1052" cy="236" r="70" fill="url(#prismGlow)"/>`,
     `<g class="lift" style="animation-delay: -0.7s"><g transform="translate(1022 192)"><path d="M30 0 L60 30 L30 34 Z" fill="url(#prismA)"/><path d="M30 0 L0 30 L30 34 Z" fill="url(#prismC)"/><path d="M0 30 L30 34 L30 92 Z" fill="url(#prismB)"/><path d="M60 30 L30 34 L30 92 Z" fill="url(#prismA)" fill-opacity="0.85"/></g></g>`,
-    `<g class="bob" style="animation-delay: -0.9s"><rect x="1078" y="70" width="14" height="14" rx="3" fill="#60a5fa" transform="rotate(45 1085 77)"/></g>`,
-    `<g class="bob" style="animation-delay: -3.1s"><rect x="958" y="44" width="10" height="10" rx="2" fill="#a78bfa" transform="rotate(45 963 49)"/></g>`,
-    `<g class="bob" style="animation-delay: -2.2s"><rect x="1146" y="300" width="12" height="12" rx="3" fill="#3b82f6" fill-opacity="0.8" transform="rotate(45 1152 306)"/></g>`,
-    sparkle(640, 70, 7, "#93c5fd", 0), sparkle(1130, 44, 6, "#c4b5fd", -1.1), sparkle(760, 336, 5, "#93c5fd", -0.5), sparkle(1176, 250, 6, "#f0abfc", -1.8), sparkle(860, 20, 4, "#e0e7ff", -2.2),
+    `<g class="bob" style="animation-delay: -0.9s"><rect x="1078" y="70" width="14" height="14" rx="3" fill="#d7b899" transform="rotate(45 1085 77)"/></g>`,
+    `<g class="bob" style="animation-delay: -3.1s"><rect x="958" y="44" width="10" height="10" rx="2" fill="#c28a58" transform="rotate(45 963 49)"/></g>`,
+    `<g class="bob" style="animation-delay: -2.2s"><rect x="1146" y="300" width="12" height="12" rx="3" fill="#a96d3e" fill-opacity="0.8" transform="rotate(45 1152 306)"/></g>`,
+    sparkle(640, 70, 7, "#d7b899", 0), sparkle(1130, 44, 6, "#e0a96d", -1.1), sparkle(760, 336, 5, "#d7b899", -0.5), sparkle(1176, 250, 6, "#c28a58", -1.8), sparkle(860, 20, 4, "#ecd9c2", -2.2),
     `<g transform="translate(1072 112) rotate(-10)">${note.map((line, i) => text(0, i * 22, line, { size: 18, fill: t.note, cls: "hand" })).join("")}</g>`,
     `<path class="draw" d="M1154 ${112 + note.length * 22 - 4} C 1172 ${142 + note.length * 22}, 1150 ${166 + note.length * 22}, 1108 ${170 + note.length * 22}" fill="none" stroke="${t.note}" stroke-width="1.6" stroke-linecap="round"/>`,
     `<path d="M1117 ${163 + note.length * 22} L1107 ${170 + note.length * 22} L1118 ${176 + note.length * 22}" fill="none" stroke="${t.note}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>`,
@@ -770,13 +778,13 @@ function techSvg(t) {
     iconSymbols(columns.flatMap(({ group, chipRows }) => [group.icon, ...chipRows.placed.map((chip) => chip.icon)])),
   ].join("\n");
   const body = `<g transform="translate(${CARD.inset} ${CARD.inset})"><g class="float">
-<path d="${shape}" fill="none" stroke="#3b82f6" stroke-width="10" stroke-opacity="${n(0.05 * t.glow)}"/>
-<path d="${shape}" fill="none" stroke="#3b82f6" stroke-width="4" stroke-opacity="${n(0.12 * t.glow)}"/>
+<path d="${shape}" fill="none" stroke="#c28a58" stroke-width="10" stroke-opacity="${n(0.05 * t.glow)}"/>
+<path d="${shape}" fill="none" stroke="#c28a58" stroke-width="4" stroke-opacity="${n(0.12 * t.glow)}"/>
 <path d="${shape}" fill="url(#body)"/>
 ${columns.map((_, i) => `<path d="${shape}" fill="url(#wash-${i})"/>`).join("\n")}
 ${glare(h, "panel")}
-<path d="${shape}" fill="none" stroke="#3b82f6" stroke-opacity="${t.borderOpacity}" stroke-width="1.3"/>
-<path class="run" d="${shape}" fill="none" stroke="${accentText(ACCENTS.blue, t)}" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 ${n(perimeter - 140)}"/>
+<path d="${shape}" fill="none" stroke="#c28a58" stroke-opacity="${t.borderOpacity}" stroke-width="1.3"/>
+<path class="run" d="${shape}" fill="none" stroke="${accentText(ACCENTS.caramel, t)}" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 ${n(perimeter - 140)}"/>
 ${columns.slice(1).map((_, i) => `<path d="M${n(colW * (i + 1))} 44 V${h - 24}" stroke="${t.title}" stroke-opacity="0.1"/>`).join("\n")}
 ${columns.map(({ group, lines, chipsY, chipRows }, i) => {
   const x = colW * i + 24;
@@ -827,7 +835,7 @@ function socialSvg(kind, t) {
   const cy = FOOTER_H / 2;
   const color = t.outlineText;
   const mark = kind === "linkedin"
-    ? `<rect x="${cx - 10}" y="${cy - 10}" width="20" height="20" rx="4" fill="${color}"/><text x="${cx - 6.6}" y="${cy + 6}" class="sans" font-size="13.5" font-weight="800" fill="${t.name === "dark" ? "#0b1020" : "#ffffff"}">in</text>`
+    ? `<rect x="${cx - 10}" y="${cy - 10}" width="20" height="20" rx="4" fill="${color}"/><text x="${cx - 6.6}" y="${cy + 6}" class="sans" font-size="13.5" font-weight="800" fill="${t.name === "dark" ? "#1b1512" : "#ffffff"}">in</text>`
     : useIcon(SOCIALS[kind].icon, cx - 10, cy - 10, 20, color);
   const body = `<circle cx="${cx}" cy="${cy}" r="22" ${paint("fill", t.outlineFill)} ${paint("stroke", t.outlineStroke)}/>
 ${mark}`;
