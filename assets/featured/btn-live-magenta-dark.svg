@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="135" height="64" viewBox="0 0 135 64" role="img" aria-label="Live demo">
   <title>Live demo</title>
   <defs>
-<linearGradient id="fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f4e37" stop-opacity="1"/><stop offset="1" stop-color="#c28a58" stop-opacity="1"/></linearGradient>
+<linearGradient id="fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a21caf" stop-opacity="1"/><stop offset="1" stop-color="#d946ef" stop-opacity="1"/></linearGradient>
 <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
   </defs>
   <style>
@@ -20,7 +20,7 @@
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-<rect class="pulse" x="1.5" y="9.5" width="132" height="37" rx="11" fill="none" stroke="#c28a58" stroke-width="3" stroke-opacity="0.7"/>
+<rect class="pulse" x="1.5" y="9.5" width="132" height="37" rx="11" fill="none" stroke="#d946ef" stroke-width="3" stroke-opacity="0.7"/>
 <rect x="3" y="11" width="129" height="34" rx="9" fill="url(#fill)"/>
 <path d="M12 12 H123" stroke="#ffffff" stroke-opacity="0.35" stroke-linecap="round"/>
 <text x="18" y="33" class="sans" font-size="14.5" font-weight="600" fill="#ffffff">Live demo</text>

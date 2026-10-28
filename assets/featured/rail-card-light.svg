@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="72" height="362" viewBox="0 0 72 362" role="img" aria-label="">
   <title></title>
   <defs>
-<linearGradient id="rail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c28a58" stop-opacity="1"/><stop offset="1" stop-color="#6f4e37" stop-opacity="1"/></linearGradient>
-<radialGradient id="dotGlow" gradientUnits="userSpaceOnUse" cx="36" cy="181" r="14"><stop offset="0" stop-color="#c28a58" stop-opacity="0.6"/><stop offset="1" stop-color="#c28a58" stop-opacity="0"/></radialGradient>
+<linearGradient id="rail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2563eb" stop-opacity="1"/><stop offset="1" stop-color="#7c3aed" stop-opacity="1"/></linearGradient>
+<radialGradient id="dotGlow" gradientUnits="userSpaceOnUse" cx="36" cy="181" r="14"><stop offset="0" stop-color="#2563eb" stop-opacity="0.6"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></radialGradient>
   </defs>
   <style>
 .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
@@ -20,6 +20,6 @@
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-<rect x="35" y="0" width="2" height="362" fill="url(#rail)" fill-opacity="0.55"/>
-<circle class="pulse" cx="36" cy="181" r="14" fill="url(#dotGlow)"/><circle cx="36" cy="181" r="4" fill="#c28a58"/>
+<rect x="35" y="0" width="2" height="362" fill="url(#rail)" fill-opacity="0.45"/>
+<circle class="pulse" cx="36" cy="181" r="14" fill="url(#dotGlow)"/><circle cx="36" cy="181" r="4" fill="#2563eb"/>
 </svg>
