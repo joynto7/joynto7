@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1004" height="120" viewBox="0 0 1004 120" role="img" aria-label="Build · Learn · Improve">
   <title>Build · Learn · Improve</title>
   <defs>
-<linearGradient id="rail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c28a58" stop-opacity="1"/><stop offset="1" stop-color="#6f4e37" stop-opacity="0"/></linearGradient>
-<linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2e251f" stop-opacity="1"/><stop offset="1" stop-color="#2e251f" stop-opacity="0"/></linearGradient>
-<linearGradient id="fade2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#241d18" stop-opacity="1"/><stop offset="1" stop-color="#241d18" stop-opacity="0"/></linearGradient>
+<linearGradient id="rail" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b82f6" stop-opacity="1"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></linearGradient>
+<linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1e293b" stop-opacity="1"/><stop offset="1" stop-color="#1e293b" stop-opacity="0"/></linearGradient>
+<linearGradient id="fade2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#111827" stop-opacity="1"/><stop offset="1" stop-color="#111827" stop-opacity="0"/></linearGradient>
   </defs>
   <style>
 .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif; }
@@ -23,7 +23,7 @@
   </style>
 <path d="M0 120 L60 84 L110 100 L180 66 L250 94 L320 74 L400 102 L480 80 L560 104 L640 86 L720 120 Z" fill="url(#fade)" fill-opacity="0.6"/>
 <path d="M0 120 L90 100 L170 110 L260 92 L360 112 L470 98 L600 120 Z" fill="url(#fade2)" fill-opacity="0.8"/>
-<path d="M36 0 V26 Q36 52 66 56" fill="none" stroke="#c28a58" stroke-opacity="0.7" stroke-width="2" stroke-linecap="round"/>
-<text x="76" y="62" class="hand" font-size="21" fill="#d7b899">Build · Learn · Improve</text>
-<path d="M314.05 56 H344.05 M336.05 50 L344.05 56 L336.05 62" fill="none" stroke="#d7b899" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M36 0 V26 Q36 52 66 56" fill="none" stroke="#3b82f6" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round"/>
+<text x="76" y="62" class="hand" font-size="21" fill="#cbd5e1">Build · Learn · Improve</text>
+<path d="M314.05 56 H344.05 M336.05 50 L344.05 56 L336.05 62" fill="none" stroke="#cbd5e1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

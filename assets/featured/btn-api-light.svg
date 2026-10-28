@@ -19,7 +19,7 @@
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
-<rect x="3.5" y="11.5" width="78" height="33" rx="9" fill="#ffffff" stroke="#4a2f27" stroke-opacity="0.25"/>
-<use href="#i-github" x="18" y="20.5" width="15" height="15" fill="#4a2f27"/>
-<text x="41" y="33" class="sans" font-size="14.5" font-weight="600" fill="#4a2f27">API</text>
+<rect x="3.5" y="11.5" width="78" height="33" rx="9" fill="#ffffff" stroke="#0f172a" stroke-opacity="0.2"/>
+<use href="#i-github" x="18" y="20.5" width="15" height="15" fill="#0f172a"/>
+<text x="41" y="33" class="sans" font-size="14.5" font-weight="600" fill="#0f172a">API</text>
 </svg>
